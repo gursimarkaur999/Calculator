@@ -1,0 +1,5 @@
+.idea
+venv
+App/__pycharm__
+App/initial_window.ui
+App/initial_window.py

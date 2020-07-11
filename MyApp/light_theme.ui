@@ -31,6 +31,10 @@
   <property name="windowTitle">
    <string>Calculator</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>images/logo.png</normaloff>images/logo.png</iconset>
+  </property>
   <property name="toolTipDuration">
    <number>-1</number>
   </property>
@@ -767,10 +771,16 @@ border-radius: 30px;</string>
     </rect>
    </property>
    <widget class="QMenu" name="menuSettings">
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
     <property name="title">
      <string>Settings</string>
     </property>
     <widget class="QMenu" name="menuThemes">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <property name="title">
       <string>Themes</string>
      </property>

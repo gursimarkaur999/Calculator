@@ -1,5 +1,5 @@
+
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtGui import QIcon
 
 
 class Ui_MainWindow2(object):
@@ -9,11 +9,13 @@ class Ui_MainWindow2(object):
         MainWindow.setMinimumSize(QtCore.QSize(339, 565))
         MainWindow.setMaximumSize(QtCore.QSize(339, 565))
         MainWindow.setSizeIncrement(QtCore.QSize(0, 1))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("images/logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MainWindow.setWindowIcon(icon)
         MainWindow.setToolTipDuration(-1)
         MainWindow.setLayoutDirection(QtCore.Qt.LeftToRight)
         MainWindow.setAutoFillBackground(False)
         MainWindow.setStyleSheet("")
-        MainWindow.setWindowIcon(QIcon(".\\images\\Logo.png"))
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.centralwidget.setObjectName("centralwidget")
@@ -263,11 +265,13 @@ class Ui_MainWindow2(object):
         self.label.setObjectName("label")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menuBar = QtWidgets.QMenuBar(MainWindow)
-        self.menuBar.setGeometry(QtCore.QRect(0, 0, 339, 25))
+        self.menuBar.setGeometry(QtCore.QRect(0, 0, 339, 26))
         self.menuBar.setObjectName("menuBar")
         self.menuSettings = QtWidgets.QMenu(self.menuBar)
+        self.menuSettings.setStyleSheet("")
         self.menuSettings.setObjectName("menuSettings")
         self.menuThemes = QtWidgets.QMenu(self.menuSettings)
+        self.menuThemes.setStyleSheet("")
         self.menuThemes.setObjectName("menuThemes")
         MainWindow.setMenuBar(self.menuBar)
         self.actionDark = QtWidgets.QAction(MainWindow)

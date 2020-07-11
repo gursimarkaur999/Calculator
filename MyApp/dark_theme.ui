@@ -31,6 +31,10 @@
   <property name="windowTitle">
    <string>Calculator</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>images/logo.png</normaloff>images/logo.png</iconset>
+  </property>
   <property name="toolTipDuration">
    <number>-1</number>
   </property>
@@ -42,6 +46,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(0, 0, 0);
+selection-background-color: rgba(148, 148, 148, 50);
 color: rgb(255, 255, 255);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -55,7 +60,7 @@ color: rgb(255, 255, 255);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(0, 0, 0);</string>
+     <string notr="true">background-color: rgba(0, 0, 0, 50);</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -760,17 +765,31 @@ color: rgb(255, 255, 255);</string>
      <x>0</x>
      <y>0</y>
      <width>339</width>
-     <height>25</height>
+     <height>26</height>
     </rect>
    </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">selection-background-color: rgba(150, 150, 150, 50);</string>
+   </property>
+   <property name="nativeMenuBar">
+    <bool>false</bool>
+   </property>
    <widget class="QMenu" name="menuSettings">
+    <property name="styleSheet">
+     <string notr="true">selection-background-color: rgba(150, 150, 150, 50);</string>
+    </property>
     <property name="title">
      <string>Settings</string>
     </property>
     <widget class="QMenu" name="menuThemes">
+     <property name="mouseTracking">
+      <bool>true</bool>
+     </property>
      <property name="styleSheet">
-      <string notr="true">background-color: transparent;
-color: rgb(255, 255, 255);</string>
+      <string notr="true">selection-background-color: rgba(150, 150, 150, 50);</string>
      </property>
      <property name="title">
       <string>Themes</string>

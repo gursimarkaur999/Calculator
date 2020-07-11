@@ -1,5 +1,5 @@
+
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtGui import QIcon
 
 
 class Ui_MainWindow(object):
@@ -9,16 +9,20 @@ class Ui_MainWindow(object):
         MainWindow.setMinimumSize(QtCore.QSize(339, 565))
         MainWindow.setMaximumSize(QtCore.QSize(339, 565))
         MainWindow.setSizeIncrement(QtCore.QSize(0, 1))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("images/logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MainWindow.setWindowIcon(icon)
         MainWindow.setToolTipDuration(-1)
         MainWindow.setLayoutDirection(QtCore.Qt.LeftToRight)
         MainWindow.setAutoFillBackground(False)
         MainWindow.setStyleSheet("background-color: rgb(0, 0, 0);\n"
+"selection-background-color: rgba(148, 148, 148, 50);\n"
 "color: rgb(255, 255, 255);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.frame = QtWidgets.QFrame(self.centralwidget)
         self.frame.setGeometry(QtCore.QRect(0, 0, 341, 531))
-        self.frame.setStyleSheet("background-color: rgb(0, 0, 0);")
+        self.frame.setStyleSheet("background-color: rgba(0, 0, 0, 50);")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
@@ -261,13 +265,17 @@ class Ui_MainWindow(object):
         self.label.setObjectName("label")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menuBar = QtWidgets.QMenuBar(MainWindow)
-        self.menuBar.setGeometry(QtCore.QRect(0, 0, 339, 25))
+        self.menuBar.setGeometry(QtCore.QRect(0, 0, 339, 26))
+        self.menuBar.setAutoFillBackground(False)
+        self.menuBar.setStyleSheet("selection-background-color: rgba(150, 150, 150, 50);")
+        self.menuBar.setNativeMenuBar(False)
         self.menuBar.setObjectName("menuBar")
         self.menuSettings = QtWidgets.QMenu(self.menuBar)
+        self.menuSettings.setStyleSheet("selection-background-color: rgba(150, 150, 150, 50);")
         self.menuSettings.setObjectName("menuSettings")
         self.menuThemes = QtWidgets.QMenu(self.menuSettings)
-        self.menuThemes.setStyleSheet("background-color: transparent;\n"
-"color: rgb(255, 255, 255);")
+        self.menuThemes.setMouseTracking(True)
+        self.menuThemes.setStyleSheet("selection-background-color: rgba(150, 150, 150, 50);")
         self.menuThemes.setObjectName("menuThemes")
         MainWindow.setMenuBar(self.menuBar)
         self.actionDark = QtWidgets.QAction(MainWindow)
@@ -285,7 +293,6 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Calculator"))
-        MainWindow.setWindowIcon(QIcon(".\\images\\Logo.png"))
         self.point.setText(_translate("MainWindow", "."))
         self.three.setText(_translate("MainWindow", "3"))
         self.zero.setText(_translate("MainWindow", "0"))

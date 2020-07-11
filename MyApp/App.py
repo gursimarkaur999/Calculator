@@ -1,14 +1,17 @@
 from PyQt5 import QtWidgets
+from MyApp.initial_window import Ui_MainWindowInit
 from MyApp.dark_theme import Ui_MainWindow
 from MyApp.light_theme import Ui_MainWindow2
 import math
+import time
 
 
 class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow, Ui_MainWindow2):
     def __init__(self, parent=None):
         super(MyMainWindow, self).__init__(parent)
-        self.setupUi2(self)  # here we setup ui file of light mode (Initially)
 
+        self.setupUi2(self)  # here we setup ui file of light mode (Initially)
+        self.change_theme_to_light()
         self.actionDark.triggered.connect(self.change_theme_to_dark)
         self.actionLight.triggered.connect(self.change_theme_to_light)
 
@@ -314,4 +317,8 @@ if __name__ == '__main__':
     app = QtWidgets.QApplication([])
     win = MyMainWindow()
     win.show()
-    app.exec_()
+    # app.exec_()
+    import sys
+    sys.exit(app.exec_())
+
+
