@@ -770,26 +770,64 @@ border-radius: 30px;</string>
      <height>26</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuSettings">
+   <widget class="QMenu" name="menuOption">
     <property name="styleSheet">
      <string notr="true"/>
     </property>
     <property name="title">
-     <string>Settings</string>
+     <string/>
     </property>
-    <widget class="QMenu" name="menuThemes">
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../images/text.png</normaloff>../images/text.png</iconset>
+    </property>
+    <widget class="QMenu" name="menuCalculator">
      <property name="title">
-      <string>Themes</string>
+      <string>Calculator</string>
      </property>
-     <addaction name="actionDark"/>
-     <addaction name="actionLight"/>
+     <property name="icon">
+      <iconset>
+       <normaloff>images/calculator(3).png</normaloff>images/calculator(3).png</iconset>
+     </property>
+     <addaction name="actionStandard"/>
+     <addaction name="actionScientific"/>
+     <addaction name="actionProgrammer"/>
+     <addaction name="actionDate_Calculation"/>
     </widget>
-    <addaction name="menuThemes"/>
+    <widget class="QMenu" name="menuConverter">
+     <property name="title">
+      <string>Converter</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>images/recycle.png</normaloff>images/recycle.png</iconset>
+     </property>
+     <addaction name="actionCurrency"/>
+     <addaction name="actionVolume"/>
+     <addaction name="actionLength"/>
+     <addaction name="actionWeight_and_Mass"/>
+     <addaction name="actionTemperature"/>
+     <addaction name="actionEnergy"/>
+     <addaction name="actionArea"/>
+     <addaction name="actionSpeed"/>
+     <addaction name="actionTime"/>
+     <addaction name="actionPower"/>
+     <addaction name="actionData"/>
+     <addaction name="actionPressure"/>
+     <addaction name="actionAngle"/>
+    </widget>
+    <addaction name="menuCalculator"/>
+    <addaction name="menuConverter"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
    </widget>
-   <addaction name="menuSettings"/>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+   </widget>
+   <addaction name="menuOption"/>
+   <addaction name="menuHelp"/>
   </widget>
   <action name="actionDark">
    <property name="text">
@@ -797,6 +835,188 @@ border-radius: 30px;</string>
    </property>
   </action>
   <action name="actionLight">
+   <property name="text">
+    <string>Light</string>
+   </property>
+  </action>
+  <action name="actionSetting">
+   <property name="text">
+    <string>Setting</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset>
+     <normaloff>../images/logout.png</normaloff>../images/logout.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionStandard">
+   <property name="icon">
+    <iconset>
+     <normaloff>../images/calculator.png</normaloff>../images/calculator.png</iconset>
+   </property>
+   <property name="text">
+    <string>Standard</string>
+   </property>
+  </action>
+  <action name="actionScientific">
+   <property name="icon">
+    <iconset>
+     <normaloff>../images/microscope.png</normaloff>../images/microscope.png</iconset>
+   </property>
+   <property name="text">
+    <string>Scientific</string>
+   </property>
+  </action>
+  <action name="actionProgrammer">
+   <property name="icon">
+    <iconset>
+     <normaloff>../images/code.png</normaloff>../images/code.png</iconset>
+   </property>
+   <property name="text">
+    <string>Programmer</string>
+   </property>
+  </action>
+  <action name="actionDate_Calculation">
+   <property name="icon">
+    <iconset>
+     <normaloff>../images/calendar.png</normaloff>../images/calendar.png</iconset>
+   </property>
+   <property name="text">
+    <string>Date Calculation</string>
+   </property>
+  </action>
+  <action name="actionCurrency">
+   <property name="icon">
+    <iconset>
+     <normaloff>../images/money.png</normaloff>../images/money.png</iconset>
+   </property>
+   <property name="text">
+    <string>Currency</string>
+   </property>
+  </action>
+  <action name="actionVolume">
+   <property name="icon">
+    <iconset>
+     <normaloff>../images/shapes.png</normaloff>../images/shapes.png</iconset>
+   </property>
+   <property name="text">
+    <string>Volume</string>
+   </property>
+  </action>
+  <action name="actionLength">
+   <property name="icon">
+    <iconset>
+     <normaloff>../images/ruler.png</normaloff>../images/ruler.png</iconset>
+   </property>
+   <property name="text">
+    <string>Length</string>
+   </property>
+  </action>
+  <action name="actionWeight_and_Mass">
+   <property name="icon">
+    <iconset>
+     <normaloff>../images/weighing-scale.png</normaloff>../images/weighing-scale.png</iconset>
+   </property>
+   <property name="text">
+    <string>Weight and Mass</string>
+   </property>
+  </action>
+  <action name="actionTemperature">
+   <property name="icon">
+    <iconset>
+     <normaloff>../images/temperature.png</normaloff>../images/temperature.png</iconset>
+   </property>
+   <property name="text">
+    <string>Temperature</string>
+   </property>
+  </action>
+  <action name="actionEnergy">
+   <property name="icon">
+    <iconset>
+     <normaloff>../images/fire.png</normaloff>../images/fire.png</iconset>
+   </property>
+   <property name="text">
+    <string>Energy</string>
+   </property>
+  </action>
+  <action name="actionArea">
+   <property name="icon">
+    <iconset>
+     <normaloff>../images/area.png</normaloff>../images/area.png</iconset>
+   </property>
+   <property name="text">
+    <string>Area</string>
+   </property>
+  </action>
+  <action name="actionSpeed">
+   <property name="icon">
+    <iconset>
+     <normaloff>../images/fast.png</normaloff>../images/fast.png</iconset>
+   </property>
+   <property name="text">
+    <string>Speed</string>
+   </property>
+  </action>
+  <action name="actionTime">
+   <property name="icon">
+    <iconset>
+     <normaloff>../images/clock.png</normaloff>../images/clock.png</iconset>
+   </property>
+   <property name="text">
+    <string>Time</string>
+   </property>
+  </action>
+  <action name="actionPower">
+   <property name="icon">
+    <iconset>
+     <normaloff>../images/energy.png</normaloff>../images/energy.png</iconset>
+   </property>
+   <property name="text">
+    <string>Power</string>
+   </property>
+  </action>
+  <action name="actionData">
+   <property name="icon">
+    <iconset>
+     <normaloff>../images/statistics.png</normaloff>../images/statistics.png</iconset>
+   </property>
+   <property name="text">
+    <string>Data</string>
+   </property>
+  </action>
+  <action name="actionPressure">
+   <property name="icon">
+    <iconset>
+     <normaloff>../images/indicator.png</normaloff>../images/indicator.png</iconset>
+   </property>
+   <property name="text">
+    <string>Pressure</string>
+   </property>
+  </action>
+  <action name="actionAngle">
+   <property name="icon">
+    <iconset>
+     <normaloff>../images/angle.png</normaloff>../images/angle.png</iconset>
+   </property>
+   <property name="text">
+    <string>Angle</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="text">
+    <string>Help</string>
+   </property>
+  </action>
+  <action name="actionDark_">
+   <property name="text">
+    <string>Dark</string>
+   </property>
+  </action>
+  <action name="actionLight_">
    <property name="text">
     <string>Light</string>
    </property>
