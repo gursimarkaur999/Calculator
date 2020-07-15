@@ -1101,7 +1101,6 @@ border-radius: 22px;</string>
       <iconset>
        <normaloff>../images/recycle.png</normaloff>../images/recycle.png</iconset>
      </property>
-     <addaction name="actionCurrency"/>
      <addaction name="actionVolume"/>
      <addaction name="actionLength"/>
      <addaction name="actionWeight_and_Mass"/>
