@@ -87,7 +87,7 @@
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <widget class="QPushButton" name="pr_point">
+     <widget class="QPushButton" name="da_point">
       <property name="geometry">
        <rect>
         <x>220</x>
@@ -110,7 +110,7 @@ border-radius: 26px;</string>
        <string>.</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pr_three">
+     <widget class="QPushButton" name="da_three">
       <property name="geometry">
        <rect>
         <x>220</x>
@@ -133,7 +133,7 @@ border-radius: 26px;</string>
        <string>3</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pr_zero">
+     <widget class="QPushButton" name="da_zero">
       <property name="geometry">
        <rect>
         <x>110</x>
@@ -156,7 +156,7 @@ border-radius: 26px;</string>
        <string>0</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pr_two">
+     <widget class="QPushButton" name="da_two">
       <property name="geometry">
        <rect>
         <x>110</x>
@@ -179,7 +179,7 @@ border-radius: 26px;</string>
        <string>2</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pr_eight">
+     <widget class="QPushButton" name="da_eight">
       <property name="geometry">
        <rect>
         <x>110</x>
@@ -202,7 +202,7 @@ border-radius: 26px;</string>
        <string>8</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pr_five">
+     <widget class="QPushButton" name="da_five">
       <property name="geometry">
        <rect>
         <x>110</x>
@@ -225,7 +225,7 @@ border-radius: 26px;</string>
        <string>5</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pr_seven">
+     <widget class="QPushButton" name="da_seven">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -248,7 +248,7 @@ border-radius: 26px;</string>
        <string>7</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pr_six">
+     <widget class="QPushButton" name="da_six">
       <property name="geometry">
        <rect>
         <x>220</x>
@@ -271,7 +271,7 @@ border-radius: 26px;</string>
        <string>6</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pr_four">
+     <widget class="QPushButton" name="da_four">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -294,7 +294,7 @@ border-radius: 26px;</string>
        <string>4</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pr_nine">
+     <widget class="QPushButton" name="da_nine">
       <property name="geometry">
        <rect>
         <x>220</x>
@@ -317,7 +317,7 @@ border-radius: 26px;</string>
        <string>9</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pr_one">
+     <widget class="QPushButton" name="da_one">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -340,7 +340,7 @@ border-radius: 26px;</string>
        <string>1</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pr_ce">
+     <widget class="QPushButton" name="da_ce">
       <property name="geometry">
        <rect>
         <x>110</x>
@@ -366,7 +366,7 @@ border-radius: 25px;</string>
        <string>CE</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pr_back">
+     <widget class="QPushButton" name="da_back">
       <property name="geometry">
        <rect>
         <x>220</x>
@@ -412,7 +412,7 @@ background-color: rgb(255, 216, 97);
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <widget class="QLabel" name="pr_label_1">
+     <widget class="QLabel" name="da_label_1">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -433,7 +433,7 @@ background-color: rgb(255, 216, 97);
        <string>0</string>
       </property>
      </widget>
-     <widget class="QLabel" name="pr_label_2">
+     <widget class="QLabel" name="da_label_2">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -454,12 +454,78 @@ background-color: rgb(255, 216, 97);
        <string>0</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="pr_comboBox_2">
+     <widget class="QComboBox" name="da_comboBox_1">
+      <property name="geometry">
+       <rect>
+        <x>12</x>
+        <y>60</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(117, 117, 117);
+border-radius: 50px;
+background-color: rgb(232, 232, 232);
+</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>Bytes</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Kilobytes</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Megabytes</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Gigabytes</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Terabytes</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Petabytes</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Exabytes</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Zetabytes</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yottabyte</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QComboBox" name="da_comboBox_2">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>140</y>
-        <width>141</width>
+        <width>131</width>
         <height>31</height>
        </rect>
       </property>
@@ -479,83 +545,47 @@ background-color: rgb(232, 232, 232);
       </property>
       <item>
        <property name="text">
-        <string>Atmosphere</string>
+        <string>Bytes</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>Bars</string>
+        <string>Kilobytes</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>Kilopascals</string>
+        <string>Megabytes</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>Millimeters of mercury</string>
+        <string>Gigabytes</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>Pascals</string>
+        <string>Terabytes</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>Pounds per square inch</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QComboBox" name="pr_comboBox_1">
-      <property name="geometry">
-       <rect>
-        <x>12</x>
-        <y>60</y>
-        <width>140</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>11</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(117, 117, 117);
-border-radius: 50px;
-background-color: rgb(232, 232, 232);
-</string>
-      </property>
-      <item>
-       <property name="text">
-        <string>Atmosphere</string>
+        <string>Petabytes</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>Bars</string>
+        <string>Exabytes</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>Kilopascals</string>
+        <string>Zetabytes</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>Millimeters of mercury</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Pascals</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Pounds per square inch</string>
+        <string>Yottabyte</string>
        </property>
       </item>
      </widget>
@@ -578,7 +608,7 @@ background-color: rgb(232, 232, 232);
       <string notr="true">color: rgb(117, 117, 117);</string>
      </property>
      <property name="text">
-      <string>Pressure</string>
+      <string>Data</string>
      </property>
     </widget>
    </widget>
