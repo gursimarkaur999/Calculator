@@ -1,17 +1,10 @@
-# -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file 'Designing/light_theme_Temperature.ui'
-#
-# Created by: PyQt5 UI code generator 5.13.0
-#
-# WARNING! All changes made in this file will be lost!
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
+class Ui_MainWindow_Temperature(object):
+    def setupUiTemperature(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(339, 565)
         MainWindow.setMinimumSize(QtCore.QSize(339, 565))
@@ -423,7 +416,7 @@ if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
+    ui = Ui_MainWindow_Temperature()
+    ui.setupUiTemperature(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())

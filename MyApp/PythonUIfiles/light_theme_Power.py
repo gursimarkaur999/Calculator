@@ -1,17 +1,10 @@
-# -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file 'Designing/light_theme_Speed.ui'
-#
-# Created by: PyQt5 UI code generator 5.13.0
-#
-# WARNING! All changes made in this file will be lost!
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
+class Ui_MainWindow_Power(object):
+    def setupUiPower(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(339, 565)
         MainWindow.setMinimumSize(QtCore.QSize(339, 565))
@@ -39,170 +32,170 @@ class Ui_MainWindow(object):
         self.frame_buttons.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_buttons.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_buttons.setObjectName("frame_buttons")
-        self.sp_point = QtWidgets.QPushButton(self.frame_buttons)
-        self.sp_point.setGeometry(QtCore.QRect(220, 240, 100, 55))
+        self.pow_point = QtWidgets.QPushButton(self.frame_buttons)
+        self.pow_point.setGeometry(QtCore.QRect(220, 240, 100, 55))
         font = QtGui.QFont()
         font.setPointSize(16)
-        self.sp_point.setFont(font)
-        self.sp_point.setStyleSheet("color: rgb(120, 120, 120);\n"
+        self.pow_point.setFont(font)
+        self.pow_point.setStyleSheet("color: rgb(120, 120, 120);\n"
 "background-color: rgb(193, 193, 193);\n"
 "border-radius: 26px;")
-        self.sp_point.setObjectName("sp_point")
-        self.sp_three = QtWidgets.QPushButton(self.frame_buttons)
-        self.sp_three.setGeometry(QtCore.QRect(220, 180, 100, 55))
+        self.pow_point.setObjectName("pow_point")
+        self.pow_three = QtWidgets.QPushButton(self.frame_buttons)
+        self.pow_three.setGeometry(QtCore.QRect(220, 180, 100, 55))
         font = QtGui.QFont()
         font.setPointSize(16)
-        self.sp_three.setFont(font)
-        self.sp_three.setStyleSheet("color: rgb(120, 120, 120);\n"
+        self.pow_three.setFont(font)
+        self.pow_three.setStyleSheet("color: rgb(120, 120, 120);\n"
 "background-color: rgb(193, 193, 193);\n"
 "border-radius: 26px;")
-        self.sp_three.setObjectName("sp_three")
-        self.sp_zero = QtWidgets.QPushButton(self.frame_buttons)
-        self.sp_zero.setGeometry(QtCore.QRect(110, 240, 100, 55))
+        self.pow_three.setObjectName("pow_three")
+        self.pow_zero = QtWidgets.QPushButton(self.frame_buttons)
+        self.pow_zero.setGeometry(QtCore.QRect(110, 240, 100, 55))
         font = QtGui.QFont()
         font.setPointSize(16)
-        self.sp_zero.setFont(font)
-        self.sp_zero.setStyleSheet("color: rgb(120, 120, 120);\n"
+        self.pow_zero.setFont(font)
+        self.pow_zero.setStyleSheet("color: rgb(120, 120, 120);\n"
 "background-color: rgb(193, 193, 193);\n"
 "border-radius: 26px;")
-        self.sp_zero.setObjectName("sp_zero")
-        self.sp_two = QtWidgets.QPushButton(self.frame_buttons)
-        self.sp_two.setGeometry(QtCore.QRect(110, 180, 100, 55))
+        self.pow_zero.setObjectName("pow_zero")
+        self.pow_two = QtWidgets.QPushButton(self.frame_buttons)
+        self.pow_two.setGeometry(QtCore.QRect(110, 180, 100, 55))
         font = QtGui.QFont()
         font.setPointSize(16)
-        self.sp_two.setFont(font)
-        self.sp_two.setStyleSheet("color: rgb(120, 120, 120);\n"
+        self.pow_two.setFont(font)
+        self.pow_two.setStyleSheet("color: rgb(120, 120, 120);\n"
 "background-color: rgb(193, 193, 193);\n"
 "border-radius: 26px;")
-        self.sp_two.setObjectName("sp_two")
-        self.sp_eight = QtWidgets.QPushButton(self.frame_buttons)
-        self.sp_eight.setGeometry(QtCore.QRect(110, 60, 100, 55))
+        self.pow_two.setObjectName("pow_two")
+        self.pow_eight = QtWidgets.QPushButton(self.frame_buttons)
+        self.pow_eight.setGeometry(QtCore.QRect(110, 60, 100, 55))
         font = QtGui.QFont()
         font.setPointSize(16)
-        self.sp_eight.setFont(font)
-        self.sp_eight.setStyleSheet("color: rgb(120, 120, 120);\n"
+        self.pow_eight.setFont(font)
+        self.pow_eight.setStyleSheet("color: rgb(120, 120, 120);\n"
 "background-color: rgb(193, 193, 193);\n"
 "border-radius: 26px;")
-        self.sp_eight.setObjectName("sp_eight")
-        self.sp_five = QtWidgets.QPushButton(self.frame_buttons)
-        self.sp_five.setGeometry(QtCore.QRect(110, 120, 100, 55))
+        self.pow_eight.setObjectName("pow_eight")
+        self.pow_five = QtWidgets.QPushButton(self.frame_buttons)
+        self.pow_five.setGeometry(QtCore.QRect(110, 120, 100, 55))
         font = QtGui.QFont()
         font.setPointSize(16)
-        self.sp_five.setFont(font)
-        self.sp_five.setStyleSheet("color: rgb(120, 120, 120);\n"
+        self.pow_five.setFont(font)
+        self.pow_five.setStyleSheet("color: rgb(120, 120, 120);\n"
 "background-color: rgb(193, 193, 193);\n"
 "border-radius: 26px;")
-        self.sp_five.setObjectName("sp_five")
-        self.sp_seven = QtWidgets.QPushButton(self.frame_buttons)
-        self.sp_seven.setGeometry(QtCore.QRect(0, 60, 100, 55))
+        self.pow_five.setObjectName("pow_five")
+        self.pow_seven = QtWidgets.QPushButton(self.frame_buttons)
+        self.pow_seven.setGeometry(QtCore.QRect(0, 60, 100, 55))
         font = QtGui.QFont()
         font.setPointSize(16)
-        self.sp_seven.setFont(font)
-        self.sp_seven.setStyleSheet("color: rgb(120, 120, 120);\n"
+        self.pow_seven.setFont(font)
+        self.pow_seven.setStyleSheet("color: rgb(120, 120, 120);\n"
 "background-color: rgb(193, 193, 193);\n"
 "border-radius: 26px;")
-        self.sp_seven.setObjectName("sp_seven")
-        self.sp_six = QtWidgets.QPushButton(self.frame_buttons)
-        self.sp_six.setGeometry(QtCore.QRect(220, 120, 100, 55))
+        self.pow_seven.setObjectName("pow_seven")
+        self.pow_six = QtWidgets.QPushButton(self.frame_buttons)
+        self.pow_six.setGeometry(QtCore.QRect(220, 120, 100, 55))
         font = QtGui.QFont()
         font.setPointSize(16)
-        self.sp_six.setFont(font)
-        self.sp_six.setStyleSheet("color: rgb(120, 120, 120);\n"
+        self.pow_six.setFont(font)
+        self.pow_six.setStyleSheet("color: rgb(120, 120, 120);\n"
 "background-color: rgb(193, 193, 193);\n"
 "border-radius: 26px;")
-        self.sp_six.setObjectName("sp_six")
-        self.sp_four = QtWidgets.QPushButton(self.frame_buttons)
-        self.sp_four.setGeometry(QtCore.QRect(0, 120, 100, 55))
+        self.pow_six.setObjectName("pow_six")
+        self.pow_four = QtWidgets.QPushButton(self.frame_buttons)
+        self.pow_four.setGeometry(QtCore.QRect(0, 120, 100, 55))
         font = QtGui.QFont()
         font.setPointSize(16)
-        self.sp_four.setFont(font)
-        self.sp_four.setStyleSheet("color: rgb(120, 120, 120);\n"
+        self.pow_four.setFont(font)
+        self.pow_four.setStyleSheet("color: rgb(120, 120, 120);\n"
 "background-color: rgb(193, 193, 193);\n"
 "border-radius: 26px;")
-        self.sp_four.setObjectName("sp_four")
-        self.sp_nine = QtWidgets.QPushButton(self.frame_buttons)
-        self.sp_nine.setGeometry(QtCore.QRect(220, 60, 100, 55))
+        self.pow_four.setObjectName("pow_four")
+        self.pow_nine = QtWidgets.QPushButton(self.frame_buttons)
+        self.pow_nine.setGeometry(QtCore.QRect(220, 60, 100, 55))
         font = QtGui.QFont()
         font.setPointSize(16)
-        self.sp_nine.setFont(font)
-        self.sp_nine.setStyleSheet("color: rgb(120, 120, 120);\n"
+        self.pow_nine.setFont(font)
+        self.pow_nine.setStyleSheet("color: rgb(120, 120, 120);\n"
 "background-color: rgb(193, 193, 193);\n"
 "border-radius: 26px;")
-        self.sp_nine.setObjectName("sp_nine")
-        self.sp_one = QtWidgets.QPushButton(self.frame_buttons)
-        self.sp_one.setGeometry(QtCore.QRect(0, 180, 100, 55))
+        self.pow_nine.setObjectName("pow_nine")
+        self.pow_one = QtWidgets.QPushButton(self.frame_buttons)
+        self.pow_one.setGeometry(QtCore.QRect(0, 180, 100, 55))
         font = QtGui.QFont()
         font.setPointSize(16)
-        self.sp_one.setFont(font)
-        self.sp_one.setStyleSheet("color: rgb(120, 120, 120);\n"
+        self.pow_one.setFont(font)
+        self.pow_one.setStyleSheet("color: rgb(120, 120, 120);\n"
 "background-color: rgb(193, 193, 193);\n"
 "border-radius: 26px;")
-        self.sp_one.setObjectName("sp_one")
-        self.sp_ce = QtWidgets.QPushButton(self.frame_buttons)
-        self.sp_ce.setGeometry(QtCore.QRect(110, 0, 100, 55))
+        self.pow_one.setObjectName("pow_one")
+        self.pow_ce = QtWidgets.QPushButton(self.frame_buttons)
+        self.pow_ce.setGeometry(QtCore.QRect(110, 0, 100, 55))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.sp_ce.setFont(font)
-        self.sp_ce.setStyleSheet("color: rgb(120, 120, 120);\n"
+        self.pow_ce.setFont(font)
+        self.pow_ce.setStyleSheet("color: rgb(120, 120, 120);\n"
 "background-color: rgb(232, 232, 232);\n"
 "border-radius: 25px;")
-        self.sp_ce.setObjectName("sp_ce")
-        self.sp_back = QtWidgets.QPushButton(self.frame_buttons)
-        self.sp_back.setGeometry(QtCore.QRect(220, 0, 100, 55))
+        self.pow_ce.setObjectName("pow_ce")
+        self.pow_back = QtWidgets.QPushButton(self.frame_buttons)
+        self.pow_back.setGeometry(QtCore.QRect(220, 0, 100, 55))
         font = QtGui.QFont()
         font.setPointSize(16)
-        self.sp_back.setFont(font)
-        self.sp_back.setStyleSheet("color: rgb(120, 120, 120);\n"
+        self.pow_back.setFont(font)
+        self.pow_back.setStyleSheet("color: rgb(120, 120, 120);\n"
 "border-radius: 25px;\n"
 "background-color: rgb(255, 216, 97);\n"
 "")
-        self.sp_back.setObjectName("sp_back")
+        self.pow_back.setObjectName("pow_back")
         self.frame_calculations_display = QtWidgets.QFrame(self.frame)
         self.frame_calculations_display.setGeometry(QtCore.QRect(10, 50, 321, 181))
         self.frame_calculations_display.setStyleSheet("")
         self.frame_calculations_display.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_calculations_display.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_calculations_display.setObjectName("frame_calculations_display")
-        self.sp_label_1 = QtWidgets.QLabel(self.frame_calculations_display)
-        self.sp_label_1.setGeometry(QtCore.QRect(10, 20, 141, 31))
+        self.pow_label_1 = QtWidgets.QLabel(self.frame_calculations_display)
+        self.pow_label_1.setGeometry(QtCore.QRect(10, 20, 141, 31))
         font = QtGui.QFont()
         font.setPointSize(15)
-        self.sp_label_1.setFont(font)
-        self.sp_label_1.setStyleSheet("color: rgb(117, 117, 117);")
-        self.sp_label_1.setObjectName("sp_label_1")
-        self.sp_label_2 = QtWidgets.QLabel(self.frame_calculations_display)
-        self.sp_label_2.setGeometry(QtCore.QRect(10, 100, 171, 31))
+        self.pow_label_1.setFont(font)
+        self.pow_label_1.setStyleSheet("color: rgb(117, 117, 117);")
+        self.pow_label_1.setObjectName("pow_label_1")
+        self.pow_label_2 = QtWidgets.QLabel(self.frame_calculations_display)
+        self.pow_label_2.setGeometry(QtCore.QRect(10, 100, 171, 31))
         font = QtGui.QFont()
         font.setPointSize(15)
-        self.sp_label_2.setFont(font)
-        self.sp_label_2.setStyleSheet("color: rgb(117, 117, 117);")
-        self.sp_label_2.setObjectName("sp_label_2")
-        self.sp_comboBox_1 = QtWidgets.QComboBox(self.frame_calculations_display)
-        self.sp_comboBox_1.setGeometry(QtCore.QRect(12, 60, 221, 31))
+        self.pow_label_2.setFont(font)
+        self.pow_label_2.setStyleSheet("color: rgb(117, 117, 117);")
+        self.pow_label_2.setObjectName("pow_label_2")
+        self.pow_comboBox_1 = QtWidgets.QComboBox(self.frame_calculations_display)
+        self.pow_comboBox_1.setGeometry(QtCore.QRect(12, 60, 131, 31))
         font = QtGui.QFont()
         font.setPointSize(11)
-        self.sp_comboBox_1.setFont(font)
-        self.sp_comboBox_1.setStyleSheet("color: rgb(117, 117, 117);\n"
+        self.pow_comboBox_1.setFont(font)
+        self.pow_comboBox_1.setStyleSheet("color: rgb(117, 117, 117);\n"
 "border-radius: 50px;\n"
 "background-color: rgb(232, 232, 232);\n"
 "")
-        self.sp_comboBox_1.setObjectName("sp_comboBox_1")
-        self.sp_comboBox_1.addItem("")
-        self.sp_comboBox_1.addItem("")
-        self.sp_comboBox_1.addItem("")
-        self.sp_comboBox_2 = QtWidgets.QComboBox(self.frame_calculations_display)
-        self.sp_comboBox_2.setGeometry(QtCore.QRect(10, 140, 221, 31))
+        self.pow_comboBox_1.setObjectName("pow_comboBox_1")
+        self.pow_comboBox_1.addItem("")
+        self.pow_comboBox_1.addItem("")
+        self.pow_comboBox_1.addItem("")
+        self.pow_comboBox_2 = QtWidgets.QComboBox(self.frame_calculations_display)
+        self.pow_comboBox_2.setGeometry(QtCore.QRect(10, 140, 131, 31))
         font = QtGui.QFont()
         font.setPointSize(11)
-        self.sp_comboBox_2.setFont(font)
-        self.sp_comboBox_2.setStyleSheet("color: rgb(117, 117, 117);\n"
+        self.pow_comboBox_2.setFont(font)
+        self.pow_comboBox_2.setStyleSheet("color: rgb(117, 117, 117);\n"
 "border-radius: 50px;\n"
 "background-color: rgb(232, 232, 232);\n"
 "")
-        self.sp_comboBox_2.setObjectName("sp_comboBox_2")
-        self.sp_comboBox_2.addItem("")
-        self.sp_comboBox_2.addItem("")
-        self.sp_comboBox_2.addItem("")
+        self.pow_comboBox_2.setObjectName("pow_comboBox_2")
+        self.pow_comboBox_2.addItem("")
+        self.pow_comboBox_2.addItem("")
+        self.pow_comboBox_2.addItem("")
         self.label = QtWidgets.QLabel(self.frame)
         self.label.setGeometry(QtCore.QRect(20, 10, 311, 41))
         font = QtGui.QFont()
@@ -360,36 +353,36 @@ class Ui_MainWindow(object):
         self.menuBar.addAction(self.menuHelp.menuAction())
 
         self.retranslateUi(MainWindow)
-        self.sp_comboBox_2.setCurrentIndex(1)
+        self.pow_comboBox_2.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Calculator"))
-        self.sp_point.setText(_translate("MainWindow", "."))
-        self.sp_three.setText(_translate("MainWindow", "3"))
-        self.sp_zero.setText(_translate("MainWindow", "0"))
-        self.sp_two.setText(_translate("MainWindow", "2"))
-        self.sp_eight.setText(_translate("MainWindow", "8"))
-        self.sp_five.setText(_translate("MainWindow", "5"))
-        self.sp_seven.setText(_translate("MainWindow", "7"))
-        self.sp_six.setText(_translate("MainWindow", "6"))
-        self.sp_four.setText(_translate("MainWindow", "4"))
-        self.sp_nine.setText(_translate("MainWindow", "9"))
-        self.sp_one.setText(_translate("MainWindow", "1"))
-        self.sp_ce.setToolTip(_translate("MainWindow", "Clear"))
-        self.sp_ce.setText(_translate("MainWindow", "CE"))
-        self.sp_back.setToolTip(_translate("MainWindow", "Remove/Back"))
-        self.sp_back.setText(_translate("MainWindow", "<"))
-        self.sp_label_1.setText(_translate("MainWindow", "0"))
-        self.sp_label_2.setText(_translate("MainWindow", "0"))
-        self.sp_comboBox_1.setItemText(0, _translate("MainWindow", "Centimeters per second"))
-        self.sp_comboBox_1.setItemText(1, _translate("MainWindow", "Meters per second"))
-        self.sp_comboBox_1.setItemText(2, _translate("MainWindow", "Kilometers per hour"))
-        self.sp_comboBox_2.setItemText(0, _translate("MainWindow", "Centimeters per second"))
-        self.sp_comboBox_2.setItemText(1, _translate("MainWindow", "Meters per second"))
-        self.sp_comboBox_2.setItemText(2, _translate("MainWindow", "Kilometers per hour"))
-        self.label.setText(_translate("MainWindow", "Speed"))
+        self.pow_point.setText(_translate("MainWindow", "."))
+        self.pow_three.setText(_translate("MainWindow", "3"))
+        self.pow_zero.setText(_translate("MainWindow", "0"))
+        self.pow_two.setText(_translate("MainWindow", "2"))
+        self.pow_eight.setText(_translate("MainWindow", "8"))
+        self.pow_five.setText(_translate("MainWindow", "5"))
+        self.pow_seven.setText(_translate("MainWindow", "7"))
+        self.pow_six.setText(_translate("MainWindow", "6"))
+        self.pow_four.setText(_translate("MainWindow", "4"))
+        self.pow_nine.setText(_translate("MainWindow", "9"))
+        self.pow_one.setText(_translate("MainWindow", "1"))
+        self.pow_ce.setToolTip(_translate("MainWindow", "Clear"))
+        self.pow_ce.setText(_translate("MainWindow", "CE"))
+        self.pow_back.setToolTip(_translate("MainWindow", "Remove/Back"))
+        self.pow_back.setText(_translate("MainWindow", "<"))
+        self.pow_label_1.setText(_translate("MainWindow", "0"))
+        self.pow_label_2.setText(_translate("MainWindow", "0"))
+        self.pow_comboBox_1.setItemText(0, _translate("MainWindow", "Watts"))
+        self.pow_comboBox_1.setItemText(1, _translate("MainWindow", "Kilowatts"))
+        self.pow_comboBox_1.setItemText(2, _translate("MainWindow", "Horsepower"))
+        self.pow_comboBox_2.setItemText(0, _translate("MainWindow", "Watts"))
+        self.pow_comboBox_2.setItemText(1, _translate("MainWindow", "Kilowatts"))
+        self.pow_comboBox_2.setItemText(2, _translate("MainWindow", "Horsepower"))
+        self.label.setText(_translate("MainWindow", "Power"))
         self.menuCalculator.setTitle(_translate("MainWindow", "Calculator"))
         self.menuConverter.setTitle(_translate("MainWindow", "Converter"))
         self.menuHelp.setTitle(_translate("MainWindow", "Help"))
@@ -423,7 +416,7 @@ if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
+    ui = Ui_MainWindow_Power()
+    ui.setupUiPower(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())

@@ -1,17 +1,9 @@
-# -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file 'Designing/light_theme_Angle.ui'
-#
-# Created by: PyQt5 UI code generator 5.13.0
-#
-# WARNING! All changes made in this file will be lost!
-
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
+class Ui_MainWindow_Area(object):
+    def setupUiArea(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(339, 565)
         MainWindow.setMinimumSize(QtCore.QSize(339, 565))
@@ -39,170 +31,172 @@ class Ui_MainWindow(object):
         self.frame_buttons.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_buttons.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_buttons.setObjectName("frame_buttons")
-        self.a_point = QtWidgets.QPushButton(self.frame_buttons)
-        self.a_point.setGeometry(QtCore.QRect(220, 240, 100, 55))
+        self.area_point = QtWidgets.QPushButton(self.frame_buttons)
+        self.area_point.setGeometry(QtCore.QRect(220, 240, 100, 55))
         font = QtGui.QFont()
         font.setPointSize(16)
-        self.a_point.setFont(font)
-        self.a_point.setStyleSheet("color: rgb(120, 120, 120);\n"
+        self.area_point.setFont(font)
+        self.area_point.setStyleSheet("color: rgb(120, 120, 120);\n"
 "background-color: rgb(193, 193, 193);\n"
 "border-radius: 26px;")
-        self.a_point.setObjectName("a_point")
-        self.a_three = QtWidgets.QPushButton(self.frame_buttons)
-        self.a_three.setGeometry(QtCore.QRect(220, 180, 100, 55))
+        self.area_point.setObjectName("area_point")
+        self.area_three = QtWidgets.QPushButton(self.frame_buttons)
+        self.area_three.setGeometry(QtCore.QRect(220, 180, 100, 55))
         font = QtGui.QFont()
         font.setPointSize(16)
-        self.a_three.setFont(font)
-        self.a_three.setStyleSheet("color: rgb(120, 120, 120);\n"
+        self.area_three.setFont(font)
+        self.area_three.setStyleSheet("color: rgb(120, 120, 120);\n"
 "background-color: rgb(193, 193, 193);\n"
 "border-radius: 26px;")
-        self.a_three.setObjectName("a_three")
-        self.a_zero = QtWidgets.QPushButton(self.frame_buttons)
-        self.a_zero.setGeometry(QtCore.QRect(110, 240, 100, 55))
+        self.area_three.setObjectName("area_three")
+        self.area_zero = QtWidgets.QPushButton(self.frame_buttons)
+        self.area_zero.setGeometry(QtCore.QRect(110, 240, 100, 55))
         font = QtGui.QFont()
         font.setPointSize(16)
-        self.a_zero.setFont(font)
-        self.a_zero.setStyleSheet("color: rgb(120, 120, 120);\n"
+        self.area_zero.setFont(font)
+        self.area_zero.setStyleSheet("color: rgb(120, 120, 120);\n"
 "background-color: rgb(193, 193, 193);\n"
 "border-radius: 26px;")
-        self.a_zero.setObjectName("a_zero")
-        self.a_two = QtWidgets.QPushButton(self.frame_buttons)
-        self.a_two.setGeometry(QtCore.QRect(110, 180, 100, 55))
+        self.area_zero.setObjectName("area_zero")
+        self.area_two = QtWidgets.QPushButton(self.frame_buttons)
+        self.area_two.setGeometry(QtCore.QRect(110, 180, 100, 55))
         font = QtGui.QFont()
         font.setPointSize(16)
-        self.a_two.setFont(font)
-        self.a_two.setStyleSheet("color: rgb(120, 120, 120);\n"
+        self.area_two.setFont(font)
+        self.area_two.setStyleSheet("color: rgb(120, 120, 120);\n"
 "background-color: rgb(193, 193, 193);\n"
 "border-radius: 26px;")
-        self.a_two.setObjectName("a_two")
-        self.a_eight = QtWidgets.QPushButton(self.frame_buttons)
-        self.a_eight.setGeometry(QtCore.QRect(110, 60, 100, 55))
+        self.area_two.setObjectName("area_two")
+        self.area_eight = QtWidgets.QPushButton(self.frame_buttons)
+        self.area_eight.setGeometry(QtCore.QRect(110, 60, 100, 55))
         font = QtGui.QFont()
         font.setPointSize(16)
-        self.a_eight.setFont(font)
-        self.a_eight.setStyleSheet("color: rgb(120, 120, 120);\n"
+        self.area_eight.setFont(font)
+        self.area_eight.setStyleSheet("color: rgb(120, 120, 120);\n"
 "background-color: rgb(193, 193, 193);\n"
 "border-radius: 26px;")
-        self.a_eight.setObjectName("a_eight")
-        self.a_five = QtWidgets.QPushButton(self.frame_buttons)
-        self.a_five.setGeometry(QtCore.QRect(110, 120, 100, 55))
+        self.area_eight.setObjectName("area_eight")
+        self.area_five = QtWidgets.QPushButton(self.frame_buttons)
+        self.area_five.setGeometry(QtCore.QRect(110, 120, 100, 55))
         font = QtGui.QFont()
         font.setPointSize(16)
-        self.a_five.setFont(font)
-        self.a_five.setStyleSheet("color: rgb(120, 120, 120);\n"
+        self.area_five.setFont(font)
+        self.area_five.setStyleSheet("color: rgb(120, 120, 120);\n"
 "background-color: rgb(193, 193, 193);\n"
 "border-radius: 26px;")
-        self.a_five.setObjectName("a_five")
-        self.a_seven = QtWidgets.QPushButton(self.frame_buttons)
-        self.a_seven.setGeometry(QtCore.QRect(0, 60, 100, 55))
+        self.area_five.setObjectName("area_five")
+        self.area_seven = QtWidgets.QPushButton(self.frame_buttons)
+        self.area_seven.setGeometry(QtCore.QRect(0, 60, 100, 55))
         font = QtGui.QFont()
         font.setPointSize(16)
-        self.a_seven.setFont(font)
-        self.a_seven.setStyleSheet("color: rgb(120, 120, 120);\n"
+        self.area_seven.setFont(font)
+        self.area_seven.setStyleSheet("color: rgb(120, 120, 120);\n"
 "background-color: rgb(193, 193, 193);\n"
 "border-radius: 26px;")
-        self.a_seven.setObjectName("a_seven")
-        self.a_six = QtWidgets.QPushButton(self.frame_buttons)
-        self.a_six.setGeometry(QtCore.QRect(220, 120, 100, 55))
+        self.area_seven.setObjectName("area_seven")
+        self.area_six = QtWidgets.QPushButton(self.frame_buttons)
+        self.area_six.setGeometry(QtCore.QRect(220, 120, 100, 55))
         font = QtGui.QFont()
         font.setPointSize(16)
-        self.a_six.setFont(font)
-        self.a_six.setStyleSheet("color: rgb(120, 120, 120);\n"
+        self.area_six.setFont(font)
+        self.area_six.setStyleSheet("color: rgb(120, 120, 120);\n"
 "background-color: rgb(193, 193, 193);\n"
 "border-radius: 26px;")
-        self.a_six.setObjectName("a_six")
-        self.a_four = QtWidgets.QPushButton(self.frame_buttons)
-        self.a_four.setGeometry(QtCore.QRect(0, 120, 100, 55))
+        self.area_six.setObjectName("area_six")
+        self.area_four = QtWidgets.QPushButton(self.frame_buttons)
+        self.area_four.setGeometry(QtCore.QRect(0, 120, 100, 55))
         font = QtGui.QFont()
         font.setPointSize(16)
-        self.a_four.setFont(font)
-        self.a_four.setStyleSheet("color: rgb(120, 120, 120);\n"
+        self.area_four.setFont(font)
+        self.area_four.setStyleSheet("color: rgb(120, 120, 120);\n"
 "background-color: rgb(193, 193, 193);\n"
 "border-radius: 26px;")
-        self.a_four.setObjectName("a_four")
-        self.a_nine = QtWidgets.QPushButton(self.frame_buttons)
-        self.a_nine.setGeometry(QtCore.QRect(220, 60, 100, 55))
+        self.area_four.setObjectName("area_four")
+        self.area_nine = QtWidgets.QPushButton(self.frame_buttons)
+        self.area_nine.setGeometry(QtCore.QRect(220, 60, 100, 55))
         font = QtGui.QFont()
         font.setPointSize(16)
-        self.a_nine.setFont(font)
-        self.a_nine.setStyleSheet("color: rgb(120, 120, 120);\n"
+        self.area_nine.setFont(font)
+        self.area_nine.setStyleSheet("color: rgb(120, 120, 120);\n"
 "background-color: rgb(193, 193, 193);\n"
 "border-radius: 26px;")
-        self.a_nine.setObjectName("a_nine")
-        self.a_one = QtWidgets.QPushButton(self.frame_buttons)
-        self.a_one.setGeometry(QtCore.QRect(0, 180, 100, 55))
+        self.area_nine.setObjectName("area_nine")
+        self.area_one = QtWidgets.QPushButton(self.frame_buttons)
+        self.area_one.setGeometry(QtCore.QRect(0, 180, 100, 55))
         font = QtGui.QFont()
         font.setPointSize(16)
-        self.a_one.setFont(font)
-        self.a_one.setStyleSheet("color: rgb(120, 120, 120);\n"
+        self.area_one.setFont(font)
+        self.area_one.setStyleSheet("color: rgb(120, 120, 120);\n"
 "background-color: rgb(193, 193, 193);\n"
 "border-radius: 26px;")
-        self.a_one.setObjectName("a_one")
-        self.a_ce = QtWidgets.QPushButton(self.frame_buttons)
-        self.a_ce.setGeometry(QtCore.QRect(110, 0, 100, 55))
+        self.area_one.setObjectName("area_one")
+        self.area_ce = QtWidgets.QPushButton(self.frame_buttons)
+        self.area_ce.setGeometry(QtCore.QRect(110, 0, 100, 55))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.a_ce.setFont(font)
-        self.a_ce.setStyleSheet("color: rgb(120, 120, 120);\n"
+        self.area_ce.setFont(font)
+        self.area_ce.setStyleSheet("color: rgb(120, 120, 120);\n"
 "background-color: rgb(232, 232, 232);\n"
 "border-radius: 25px;")
-        self.a_ce.setObjectName("a_ce")
-        self.a_back = QtWidgets.QPushButton(self.frame_buttons)
-        self.a_back.setGeometry(QtCore.QRect(220, 0, 100, 55))
+        self.area_ce.setObjectName("area_ce")
+        self.area_back = QtWidgets.QPushButton(self.frame_buttons)
+        self.area_back.setGeometry(QtCore.QRect(220, 0, 100, 55))
         font = QtGui.QFont()
         font.setPointSize(16)
-        self.a_back.setFont(font)
-        self.a_back.setStyleSheet("color: rgb(120, 120, 120);\n"
+        self.area_back.setFont(font)
+        self.area_back.setStyleSheet("color: rgb(120, 120, 120);\n"
 "border-radius: 25px;\n"
 "background-color: rgb(255, 216, 97);\n"
 "")
-        self.a_back.setObjectName("a_back")
+        self.area_back.setObjectName("area_back")
         self.frame_calculations_display = QtWidgets.QFrame(self.frame)
         self.frame_calculations_display.setGeometry(QtCore.QRect(10, 50, 321, 181))
         self.frame_calculations_display.setStyleSheet("")
         self.frame_calculations_display.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_calculations_display.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_calculations_display.setObjectName("frame_calculations_display")
-        self.a_label_1 = QtWidgets.QLabel(self.frame_calculations_display)
-        self.a_label_1.setGeometry(QtCore.QRect(10, 20, 141, 31))
+        self.area_label_1 = QtWidgets.QLabel(self.frame_calculations_display)
+        self.area_label_1.setGeometry(QtCore.QRect(10, 20, 141, 31))
         font = QtGui.QFont()
         font.setPointSize(15)
-        self.a_label_1.setFont(font)
-        self.a_label_1.setStyleSheet("color: rgb(117, 117, 117);")
-        self.a_label_1.setObjectName("a_label_1")
-        self.a_label_2 = QtWidgets.QLabel(self.frame_calculations_display)
-        self.a_label_2.setGeometry(QtCore.QRect(10, 100, 171, 31))
+        self.area_label_1.setFont(font)
+        self.area_label_1.setStyleSheet("color: rgb(117, 117, 117);")
+        self.area_label_1.setObjectName("area_label_1")
+        self.area_label_2 = QtWidgets.QLabel(self.frame_calculations_display)
+        self.area_label_2.setGeometry(QtCore.QRect(10, 100, 171, 31))
         font = QtGui.QFont()
         font.setPointSize(15)
-        self.a_label_2.setFont(font)
-        self.a_label_2.setStyleSheet("color: rgb(117, 117, 117);")
-        self.a_label_2.setObjectName("a_label_2")
-        self.a_comboBox_2 = QtWidgets.QComboBox(self.frame_calculations_display)
-        self.a_comboBox_2.setGeometry(QtCore.QRect(10, 140, 141, 31))
+        self.area_label_2.setFont(font)
+        self.area_label_2.setStyleSheet("color: rgb(117, 117, 117);")
+        self.area_label_2.setObjectName("area_label_2")
+        self.area_comboBox_1 = QtWidgets.QComboBox(self.frame_calculations_display)
+        self.area_comboBox_1.setGeometry(QtCore.QRect(12, 60, 221, 31))
         font = QtGui.QFont()
         font.setPointSize(11)
-        self.a_comboBox_2.setFont(font)
-        self.a_comboBox_2.setStyleSheet("color: rgb(117, 117, 117);\n"
+        self.area_comboBox_1.setFont(font)
+        self.area_comboBox_1.setStyleSheet("color: rgb(117, 117, 117);\n"
 "border-radius: 50px;\n"
 "background-color: rgb(232, 232, 232);\n"
 "")
-        self.a_comboBox_2.setObjectName("a_comboBox_2")
-        self.a_comboBox_2.addItem("")
-        self.a_comboBox_2.addItem("")
-        self.a_comboBox_2.addItem("")
-        self.a_comboBox_1 = QtWidgets.QComboBox(self.frame_calculations_display)
-        self.a_comboBox_1.setGeometry(QtCore.QRect(12, 60, 131, 31))
+        self.area_comboBox_1.setObjectName("area_comboBox_1")
+        self.area_comboBox_1.addItem("")
+        self.area_comboBox_1.addItem("")
+        self.area_comboBox_1.addItem("")
+        self.area_comboBox_1.addItem("")
+        self.area_comboBox_2 = QtWidgets.QComboBox(self.frame_calculations_display)
+        self.area_comboBox_2.setGeometry(QtCore.QRect(10, 140, 221, 31))
         font = QtGui.QFont()
         font.setPointSize(11)
-        self.a_comboBox_1.setFont(font)
-        self.a_comboBox_1.setStyleSheet("color: rgb(117, 117, 117);\n"
+        self.area_comboBox_2.setFont(font)
+        self.area_comboBox_2.setStyleSheet("color: rgb(117, 117, 117);\n"
 "border-radius: 50px;\n"
 "background-color: rgb(232, 232, 232);\n"
 "")
-        self.a_comboBox_1.setObjectName("a_comboBox_1")
-        self.a_comboBox_1.addItem("")
-        self.a_comboBox_1.addItem("")
-        self.a_comboBox_1.addItem("")
+        self.area_comboBox_2.setObjectName("area_comboBox_2")
+        self.area_comboBox_2.addItem("")
+        self.area_comboBox_2.addItem("")
+        self.area_comboBox_2.addItem("")
+        self.area_comboBox_2.addItem("")
         self.label = QtWidgets.QLabel(self.frame)
         self.label.setGeometry(QtCore.QRect(20, 10, 311, 41))
         font = QtGui.QFont()
@@ -360,36 +354,38 @@ class Ui_MainWindow(object):
         self.menuBar.addAction(self.menuHelp.menuAction())
 
         self.retranslateUi(MainWindow)
-        self.a_comboBox_2.setCurrentIndex(1)
+        self.area_comboBox_2.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Calculator"))
-        self.a_point.setText(_translate("MainWindow", "."))
-        self.a_three.setText(_translate("MainWindow", "3"))
-        self.a_zero.setText(_translate("MainWindow", "0"))
-        self.a_two.setText(_translate("MainWindow", "2"))
-        self.a_eight.setText(_translate("MainWindow", "8"))
-        self.a_five.setText(_translate("MainWindow", "5"))
-        self.a_seven.setText(_translate("MainWindow", "7"))
-        self.a_six.setText(_translate("MainWindow", "6"))
-        self.a_four.setText(_translate("MainWindow", "4"))
-        self.a_nine.setText(_translate("MainWindow", "9"))
-        self.a_one.setText(_translate("MainWindow", "1"))
-        self.a_ce.setToolTip(_translate("MainWindow", "Clear"))
-        self.a_ce.setText(_translate("MainWindow", "CE"))
-        self.a_back.setToolTip(_translate("MainWindow", "Remove/Back"))
-        self.a_back.setText(_translate("MainWindow", "<"))
-        self.a_label_1.setText(_translate("MainWindow", "0"))
-        self.a_label_2.setText(_translate("MainWindow", "0"))
-        self.a_comboBox_2.setItemText(0, _translate("MainWindow", "Degrees"))
-        self.a_comboBox_2.setItemText(1, _translate("MainWindow", "Radians"))
-        self.a_comboBox_2.setItemText(2, _translate("MainWindow", "Gradians"))
-        self.a_comboBox_1.setItemText(0, _translate("MainWindow", "Degrees"))
-        self.a_comboBox_1.setItemText(1, _translate("MainWindow", "Radians"))
-        self.a_comboBox_1.setItemText(2, _translate("MainWindow", "Gradians"))
-        self.label.setText(_translate("MainWindow", "Angle"))
+        self.area_point.setText(_translate("MainWindow", "."))
+        self.area_three.setText(_translate("MainWindow", "3"))
+        self.area_zero.setText(_translate("MainWindow", "0"))
+        self.area_two.setText(_translate("MainWindow", "2"))
+        self.area_eight.setText(_translate("MainWindow", "8"))
+        self.area_five.setText(_translate("MainWindow", "5"))
+        self.area_seven.setText(_translate("MainWindow", "7"))
+        self.area_six.setText(_translate("MainWindow", "6"))
+        self.area_four.setText(_translate("MainWindow", "4"))
+        self.area_nine.setText(_translate("MainWindow", "9"))
+        self.area_one.setText(_translate("MainWindow", "1"))
+        self.area_ce.setToolTip(_translate("MainWindow", "Clear"))
+        self.area_ce.setText(_translate("MainWindow", "CE"))
+        self.area_back.setToolTip(_translate("MainWindow", "Remove/Back"))
+        self.area_back.setText(_translate("MainWindow", "<"))
+        self.area_label_1.setText(_translate("MainWindow", "0"))
+        self.area_label_2.setText(_translate("MainWindow", "0"))
+        self.area_comboBox_1.setItemText(0, _translate("MainWindow", "Square millimeters"))
+        self.area_comboBox_1.setItemText(1, _translate("MainWindow", "Square centimeters"))
+        self.area_comboBox_1.setItemText(2, _translate("MainWindow", "Square meters"))
+        self.area_comboBox_1.setItemText(3, _translate("MainWindow", "Square Kilometers"))
+        self.area_comboBox_2.setItemText(0, _translate("MainWindow", "Square millimeters"))
+        self.area_comboBox_2.setItemText(1, _translate("MainWindow", "Square centimeters"))
+        self.area_comboBox_2.setItemText(2, _translate("MainWindow", "Square meters"))
+        self.area_comboBox_2.setItemText(3, _translate("MainWindow", "Square Kilometers"))
+        self.label.setText(_translate("MainWindow", "Area"))
         self.menuCalculator.setTitle(_translate("MainWindow", "Calculator"))
         self.menuConverter.setTitle(_translate("MainWindow", "Converter"))
         self.menuHelp.setTitle(_translate("MainWindow", "Help"))
@@ -423,7 +419,7 @@ if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
+    ui = Ui_MainWindow_Area()
+    ui.setupUiArea(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())

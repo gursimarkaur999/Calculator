@@ -1,8 +1,8 @@
 import sys
 
 from PyQt5 import QtWidgets, QtGui, QtCore
-from MyApp.light_theme import Ui_MainWindow2
-from MyApp.light_theme_scientific import Ui_MainWindow_Scientific
+from MyApp.PythonUIfiles.light_theme import Ui_MainWindow2
+from MyApp.PythonUIfiles.light_theme_scientific import Ui_MainWindow_Scientific
 import math
 from decimal import Decimal
 
@@ -50,7 +50,6 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
         self.actionProgrammer.triggered.connect(self.change_to_programmer)
 
         self.actionDate_Calculation.triggered.connect(self.change_to_date)
-        self.actionCurrency.triggered.connect(self.change_to_currency)
         self.actionVolume.triggered.connect(self.change_to_volume)
         self.actionLength.triggered.connect(self.change_to_length)
         self.actionWeight_and_Mass.triggered.connect(self.change_to_weightmass)
@@ -110,7 +109,6 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
             self.actionProgrammer.triggered.connect(self.change_to_programmer)
 
             self.actionDate_Calculation.triggered.connect(self.change_to_date)
-            self.actionCurrency.triggered.connect(self.change_to_currency)
             self.actionVolume.triggered.connect(self.change_to_volume)
             self.actionLength.triggered.connect(self.change_to_length)
             self.actionWeight_and_Mass.triggered.connect(self.change_to_weightmass)
