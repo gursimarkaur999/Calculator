@@ -266,10 +266,10 @@ class Ui_MainWindow_Date(object):
         self.menuBar.addAction(self.menuOption.menuAction())
         self.menuBar.addAction(self.menuHelp.menuAction())
 
-        self.retranslateUi(MainWindow)
+        self.dc_retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-    def retranslateUi(self, MainWindow):
+    def dc_retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Calculator"))
         self.dc_comboBox.setItemText(0, _translate("MainWindow", "Difference between dates"))

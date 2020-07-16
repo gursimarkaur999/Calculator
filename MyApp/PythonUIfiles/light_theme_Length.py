@@ -356,11 +356,11 @@ class Ui_MainWindow_Length(object):
         self.menuBar.addAction(self.menuOption.menuAction())
         self.menuBar.addAction(self.menuHelp.menuAction())
 
-        self.retranslateUi(MainWindow)
+        self.len_retranslateUi(MainWindow)
         self.len_comboBox_2.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-    def retranslateUi(self, MainWindow):
+    def len_retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Calculator"))
         self.len_point.setText(_translate("MainWindow", "."))

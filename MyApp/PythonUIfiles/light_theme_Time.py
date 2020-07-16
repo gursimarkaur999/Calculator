@@ -358,11 +358,11 @@ class Ui_MainWindow_Time(object):
         self.menuBar.addAction(self.menuOption.menuAction())
         self.menuBar.addAction(self.menuHelp.menuAction())
 
-        self.retranslateUi(MainWindow)
+        self.t_retranslateUi(MainWindow)
         self.t_comboBox_2.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-    def retranslateUi(self, MainWindow):
+    def t_retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Calculator"))
         self.t_point.setText(_translate("MainWindow", "."))

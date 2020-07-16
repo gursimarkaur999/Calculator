@@ -352,11 +352,11 @@ class Ui_MainWindow_Temperature(object):
         self.menuBar.addAction(self.menuOption.menuAction())
         self.menuBar.addAction(self.menuHelp.menuAction())
 
-        self.retranslateUi(MainWindow)
+        self.temp_retranslateUi(MainWindow)
         self.temp_comboBox_2.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-    def retranslateUi(self, MainWindow):
+    def temp_retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Calculator"))
         self.temp_point.setText(_translate("MainWindow", "."))

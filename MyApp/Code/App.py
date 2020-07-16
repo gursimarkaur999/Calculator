@@ -3,15 +3,54 @@ import sys
 from PyQt5 import QtWidgets, QtGui, QtCore
 from MyApp.PythonUIfiles.light_theme import Ui_MainWindow2
 from MyApp.PythonUIfiles.light_theme_scientific import Ui_MainWindow_Scientific
+from MyApp.PythonUIfiles.light_theme_Programmer import Ui_MainWindow_Programmer
+from MyApp.PythonUIfiles.light_theme_date_cal import Ui_MainWindow_Date
+from MyApp.PythonUIfiles.light_theme_Volume import Ui_MainWindow_Volume
+from MyApp.PythonUIfiles.light_theme_Length import Ui_MainWindow_Length
+from MyApp.PythonUIfiles.light_theme_WeightandMass import Ui_MainWindow_WeightMass
+from MyApp.PythonUIfiles.light_theme_Temperature import Ui_MainWindow_Temperature
+from MyApp.PythonUIfiles.light_theme_Energy import Ui_MainWindow_Energy
+from MyApp.PythonUIfiles.light_theme_Area import Ui_MainWindow_Area
+from MyApp.PythonUIfiles.light_theme_Speed import Ui_MainWindow_Speed
+from MyApp.PythonUIfiles.light_theme_Time import Ui_MainWindow_Time
+from MyApp.PythonUIfiles.light_theme_Power import Ui_MainWindow_Power
+from MyApp.PythonUIfiles.light_theme_Data import Ui_MainWindow_Data
+from MyApp.PythonUIfiles.light_theme_Pressure import Ui_MainWindow_Pressure
+from MyApp.PythonUIfiles.light_theme_Angle import Ui_MainWindow_Angle
+
 import math
 from decimal import Decimal
 
 
-class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientific):
+class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientific, Ui_MainWindow_Programmer,
+                   Ui_MainWindow_Date, Ui_MainWindow_Volume, Ui_MainWindow_Length, Ui_MainWindow_WeightMass,
+                   Ui_MainWindow_Temperature, Ui_MainWindow_Energy, Ui_MainWindow_Area, Ui_MainWindow_Speed,
+                   Ui_MainWindow_Time, Ui_MainWindow_Power, Ui_MainWindow_Data, Ui_MainWindow_Pressure,
+                   Ui_MainWindow_Angle):
     def __init__(self, parent=None):
         super(MyMainWindow, self).__init__(parent)
         self.change_to_standard()
         MyMainWindow.winFlag = ''
+
+    def link_menu_fnc(self):
+        # linking Menu bar function
+        self.actionStandard.triggered.connect(self.change_to_standard)
+        self.actionScientific.triggered.connect(self.change_to_scientific)
+        self.actionProgrammer.triggered.connect(self.change_to_programmer)
+
+        self.actionDate_Calculation.triggered.connect(self.change_to_date)
+        self.actionVolume.triggered.connect(self.change_to_volume)
+        self.actionLength.triggered.connect(self.change_to_length)
+        self.actionWeight_and_Mass.triggered.connect(self.change_to_weightmass)
+        self.actionTemperature.triggered.connect(self.change_to_temperature)
+        self.actionEnergy.triggered.connect(self.change_to_energy)
+        self.actionArea.triggered.connect(self.change_to_area)
+        self.actionSpeed.triggered.connect(self.change_to_speed)
+        self.actionTime.triggered.connect(self.change_to_time)
+        self.actionPower.triggered.connect(self.change_to_power)
+        self.actionData.triggered.connect(self.change_to_data)
+        self.actionPressure.triggered.connect(self.change_to_pressure)
+        self.actionAngle.triggered.connect(self.change_to_angle)
 
     def change_to_standard(self):
         MyMainWindow.winFlag = 'n' #normal
@@ -45,23 +84,7 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
 
 
         # linking Menu bar function
-        self.actionStandard.triggered.connect(self.change_to_standard)
-        self.actionScientific.triggered.connect(self.change_to_scientific)
-        self.actionProgrammer.triggered.connect(self.change_to_programmer)
-
-        self.actionDate_Calculation.triggered.connect(self.change_to_date)
-        self.actionVolume.triggered.connect(self.change_to_volume)
-        self.actionLength.triggered.connect(self.change_to_length)
-        self.actionWeight_and_Mass.triggered.connect(self.change_to_weightmass)
-        self.actionTemperature.triggered.connect(self.change_to_temperature)
-        self.actionEnergy.triggered.connect(self.change_to_energy)
-        self.actionArea.triggered.connect(self.change_to_area)
-        self.actionSpeed.triggered.connect(self.change_to_speed)
-        self.actionTime.triggered.connect(self.change_to_time)
-        self.actionPower.triggered.connect(self.change_to_power)
-        self.actionData.triggered.connect(self.change_to_data)
-        self.actionPressure.triggered.connect(self.change_to_pressure)
-        self.actionAngle.triggered.connect(self.change_to_angle)
+        self.link_menu_fnc()
 
     def change_to_scientific(self):
         try:
@@ -104,58 +127,109 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
             self.s_ln.clicked.connect(lambda: self.get_scientific('ln'))
 
             # linking Menu bar function
-            self.actionStandard.triggered.connect(self.change_to_standard)
-            self.actionScientific.triggered.connect(self.change_to_scientific)
-            self.actionProgrammer.triggered.connect(self.change_to_programmer)
-
-            self.actionDate_Calculation.triggered.connect(self.change_to_date)
-            self.actionVolume.triggered.connect(self.change_to_volume)
-            self.actionLength.triggered.connect(self.change_to_length)
-            self.actionWeight_and_Mass.triggered.connect(self.change_to_weightmass)
-            self.actionTemperature.triggered.connect(self.change_to_temperature)
-            self.actionEnergy.triggered.connect(self.change_to_energy)
-            self.actionArea.triggered.connect(self.change_to_area)
-            self.actionSpeed.triggered.connect(self.change_to_speed)
-            self.actionTime.triggered.connect(self.change_to_time)
-            self.actionPower.triggered.connect(self.change_to_power)
-            self.actionData.triggered.connect(self.change_to_data)
-            self.actionPressure.triggered.connect(self.change_to_pressure)
-            self.actionAngle.triggered.connect(self.change_to_angle)
+            self.link_menu_fnc()
 
 
         except Exception as e:
             print(e)
 
     def change_to_programmer(self):
-        pass
+        MyMainWindow.winflag = 'p' #programmer
+        self.setupUiProgrammer(self)
+
+        # linking Menu bar function
+        self.link_menu_fnc()
+
     def change_to_date(self):
-        pass
-    def change_to_currency(self):
-        pass
+        MyMainWindow.winflag = 'dc'  # date cal
+        self.setupUiDate(self)
+
+        # linking Menu bar function
+        self.link_menu_fnc()
+
     def change_to_volume(self):
-        pass
+        MyMainWindow.winflag = 'vol'  # volume
+        self.setupUiVolume(self)
+
+        # linking Menu bar function
+        self.link_menu_fnc()
+
+
     def change_to_length(self):
-        pass
+        MyMainWindow.winflag = 'len'  # length
+        self.setupUiLength(self)
+        # linking Menu bar function
+        self.link_menu_fnc()
+
     def change_to_weightmass(self):
-        pass
+        MyMainWindow.winflag = 'wm'  # weight and mass
+        self.setupUiWeightMass(self)
+
+        # linking Menu bar function
+        self.link_menu_fnc()
+
     def change_to_temperature(self):
-        pass
+        MyMainWindow.winflag = 'temp'  # temperature
+        self.setupUiTemperature(self)
+
+        # linking Menu bar function
+        self.link_menu_fnc()
+
     def change_to_energy(self):
-        pass
+        MyMainWindow.winflag = 'ener'  # energy
+        self.setupUiEnergy(self)
+
+        # linking Menu bar function
+        self.link_menu_fnc()
+
     def change_to_area(self):
-        pass
+        MyMainWindow.winflag = 'area'  # area
+        self.setupUiArea(self)
+
+        # linking Menu bar function
+        self.link_menu_fnc()
+
     def change_to_speed(self):
-        pass
+        MyMainWindow.winflag = 'sp'  # speed
+        self.setupUiSpeed(self)
+
+        # linking Menu bar function
+        self.link_menu_fnc()
+
     def change_to_time(self):
-        pass
+        MyMainWindow.winflag = 't'  # programmer
+        self.setupUiTime(self)
+
+        # linking Menu bar function
+        self.link_menu_fnc()
+
     def change_to_power(self):
-        pass
+        MyMainWindow.winflag = 'pow'  # power
+        self.setupUiPower(self)
+
+        # linking Menu bar function
+        self.link_menu_fnc()
+
     def change_to_data(self):
-        pass
+        MyMainWindow.winflag = 'da'  # data
+        self.setupUiData(self)
+
+        # linking Menu bar function
+        self.link_menu_fnc()
+
     def change_to_pressure(self):
-        pass
+        MyMainWindow.winflag = 'pr'  # pressure
+        self.setupUiPressure(self)
+
+        # linking Menu bar function
+        self.link_menu_fnc()
+
     def change_to_angle(self):
-        pass
+        MyMainWindow.winflag = 'a'  # angle
+        self.setupUiAngle(self)
+
+        # linking Menu bar function
+        self.link_menu_fnc()
 
     def get_scientific(self, data):
         if self.s_label_2.text() != 'Error':
