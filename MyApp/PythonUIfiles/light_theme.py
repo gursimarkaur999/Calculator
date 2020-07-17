@@ -246,6 +246,8 @@ class Ui_MainWindow2(object):
         self.label_2.setFont(font)
         self.label_2.setStyleSheet("color: rgb(0, 0, 0);")
         self.label_2.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_2.setStyleSheet("color: rgb(117, 117, 117);")
+
         self.label_2.setObjectName("label_2")
         self.label_3 = QtWidgets.QLabel(self.frame_calculations_display)
         self.label_3.setGeometry(QtCore.QRect(0, 0, 311, 20))
@@ -256,6 +258,8 @@ class Ui_MainWindow2(object):
         self.label_3.setStyleSheet("color: rgb(0, 0, 0);")
         self.label_3.setText("")
         self.label_3.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_3.setStyleSheet("color: rgb(117, 117, 117);")
+
         self.label_3.setObjectName("label_3")
         self.label = QtWidgets.QLabel(self.frame)
         self.label.setGeometry(QtCore.QRect(20, 10, 111, 21))
