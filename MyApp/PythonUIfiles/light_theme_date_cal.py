@@ -28,8 +28,7 @@ class Ui_MainWindow_Date(object):
         self.frame.setObjectName("frame")
         self.frame_calculations_display = QtWidgets.QFrame(self.frame)
         self.frame_calculations_display.setGeometry(QtCore.QRect(10, 70, 321, 51))
-        self.frame_calculations_display.setStyleSheet("color: rgb(117, 117, 117);\n"
-"selection-background-color: rgb(116, 116, 116);")
+        self.frame_calculations_display.setStyleSheet("color: rgb(117, 117, 117);\n")
         self.frame_calculations_display.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_calculations_display.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_calculations_display.setObjectName("frame_calculations_display")
@@ -39,7 +38,7 @@ class Ui_MainWindow_Date(object):
         font.setPointSize(12)
         self.dc_comboBox.setFont(font)
         self.dc_comboBox.setStyleSheet("color: rgb(117, 117, 117);\n"
-"selection-background-color: rgb(116, 116, 116);")
+)
         self.dc_comboBox.setFrame(False)
         self.dc_comboBox.setObjectName("dc_comboBox")
         self.dc_comboBox.addItem("")
