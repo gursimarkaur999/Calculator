@@ -134,52 +134,55 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
             print(e)
 
     def change_to_programmer(self):
-        MyMainWindow.winflag = 'p' #programmer
-        self.setupUiProgrammer(self)
-        self.p_zero.clicked.connect(lambda: self.get_programmer('0'))
-        self.p_one.clicked.connect(lambda: self.get_programmer('1'))
-        self.p_two.clicked.connect(lambda: self.get_programmer('2'))
-        self.p_three.clicked.connect(lambda: self.get_programmer('3'))
-        self.p_four.clicked.connect(lambda: self.get_programmer('4'))
-        self.p_five.clicked.connect(lambda: self.get_programmer('5'))
-        self.p_six.clicked.connect(lambda: self.get_programmer('6'))
-        self.p_seven.clicked.connect(lambda: self.get_programmer('7'))
-        self.p_eight.clicked.connect(lambda: self.get_programmer('8'))
-        self.p_nine.clicked.connect(lambda: self.get_programmer('9'))
-        self.p_plus.clicked.connect(lambda: self.get_programmer('+'))
-        self.p_minus.clicked.connect(lambda: self.get_programmer('-'))
-        self.p_multiply.clicked.connect(lambda: self.get_programmer('*'))
-        self.p_divide.clicked.connect(lambda: self.get_programmer('/'))
-        self.p_plus_minus.clicked.connect(lambda: self.get_programmer('+_-'))
-        self.p_per.clicked.connect(lambda: self.get_programmer('%'))
-        self.p_back.clicked.connect(lambda: self.get_programmer('<'))
-        self.p_ce.clicked.connect(lambda: self.get_programmer('CE'))
-        self.p_equal.clicked.connect(lambda: self.get_programmer('='))
-        self.p_open_bracket.clicked.connect(lambda: self.get_programmer('('))
-        self.p_close_bracket.clicked.connect(lambda: self.get_programmer(')'))
-        self.p_lsh.clicked.connect(lambda: self.get_programmer('<<'))
-        self.p_rsh.clicked.connect(lambda: self.get_programmer('>>'))
-        self.p_a.clicked.connect(lambda: self.get_programmer('A'))
-        self.p_b.clicked.connect(lambda: self.get_programmer('B'))
-        self.p_c.clicked.connect(lambda: self.get_programmer('C'))
-        self.p_d.clicked.connect(lambda: self.get_programmer('D'))
-        self.p_e.clicked.connect(lambda: self.get_programmer('E'))
-        self.p_f.clicked.connect(lambda: self.get_programmer('F'))
-        self.p_label_hex.mousePressEvent(lambda: self.changevalue('hex'))
-        self.p_label_hex_val.mousePressEvent(lambda: self.changevalue('hex'))
-        self.p_label_dec.mousePressEvent(lambda: self.changevalue('dec'))
-        self.p_label_dec_val.mousePressEvent(lambda: self.changevalue('dec'))
-        self.p_label_oct.mousePressEvent(lambda: self.changevalue('oct'))
-        self.p_label_oct_val.mousePressEvent(lambda: self.changevalue('oct'))
-        self.p_label_bin.mousePressEvent(lambda: self.changevalue('bin'))
-        self.p_label_bin_val.mousePressEvent(lambda: self.changevalue('bin'))
-        self.p_point.setEnabled(False)
-        self.p_point.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
-                                   "background-color: rgba(193, 193, 193, 27);\n"
-                                   "border-radius: 22px;")
+        try:
+            MyMainWindow.winflag = 'p' #programmer
+            self.setupUiProgrammer(self)
+            self.p_zero.clicked.connect(lambda: self.get_programmer('0'))
+            self.p_one.clicked.connect(lambda: self.get_programmer('1'))
+            self.p_two.clicked.connect(lambda: self.get_programmer('2'))
+            self.p_three.clicked.connect(lambda: self.get_programmer('3'))
+            self.p_four.clicked.connect(lambda: self.get_programmer('4'))
+            self.p_five.clicked.connect(lambda: self.get_programmer('5'))
+            self.p_six.clicked.connect(lambda: self.get_programmer('6'))
+            self.p_seven.clicked.connect(lambda: self.get_programmer('7'))
+            self.p_eight.clicked.connect(lambda: self.get_programmer('8'))
+            self.p_nine.clicked.connect(lambda: self.get_programmer('9'))
+            self.p_plus.clicked.connect(lambda: self.get_programmer('+'))
+            self.p_minus.clicked.connect(lambda: self.get_programmer('-'))
+            self.p_multiply.clicked.connect(lambda: self.get_programmer('*'))
+            self.p_divide.clicked.connect(lambda: self.get_programmer('/'))
+            self.p_plus_minus.clicked.connect(lambda: self.get_programmer('+_-'))
+            self.p_per.clicked.connect(lambda: self.get_programmer('%'))
+            self.p_back.clicked.connect(lambda: self.get_programmer('<'))
+            self.p_ce.clicked.connect(lambda: self.get_programmer('CE'))
+            self.p_equal.clicked.connect(lambda: self.get_programmer('='))
+            self.p_open_bracket.clicked.connect(lambda: self.get_programmer('('))
+            self.p_close_bracket.clicked.connect(lambda: self.get_programmer(')'))
+            self.p_lsh.clicked.connect(lambda: self.get_programmer('<<'))
+            self.p_rsh.clicked.connect(lambda: self.get_programmer('>>'))
+            self.p_a.clicked.connect(lambda: self.get_programmer('A'))
+            self.p_b.clicked.connect(lambda: self.get_programmer('B'))
+            self.p_c.clicked.connect(lambda: self.get_programmer('C'))
+            self.p_d.clicked.connect(lambda: self.get_programmer('D'))
+            self.p_e.clicked.connect(lambda: self.get_programmer('E'))
+            self.p_f.clicked.connect(lambda: self.get_programmer('F'))
+            self.p_label_hex.mousePressEvent = self.change_value_hex
+            self.p_label_hex_val.mousePressEvent = self.change_value_hex
+            self.p_label_dec.mousePressEvent = self.change_value_dec
+            self.p_label_dec_val.mousePressEvent = self.change_value_dec
+            self.p_label_oct.mousePressEvent = self.change_value_oct
+            self.p_label_oct_val.mousePressEvent = self.change_value_oct
+            self.p_label_bin.mousePressEvent = self.change_value_bin
+            self.p_label_bin_val.mousePressEvent = self.change_value_bin
+            self.p_point.setEnabled(False)
+            self.p_point.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
+                                       "background-color: rgba(193, 193, 193, 27);\n"
+                                       "border-radius: 22px;")
 
-        # linking Menu bar function
-        self.link_menu_fnc()
+            # linking Menu bar function
+            self.link_menu_fnc()
+        except Exception as e:
+            print(e)
 
     def change_to_date(self):
         MyMainWindow.winflag = 'dc'  # date cal
@@ -271,6 +274,162 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
 
         # linking Menu bar function
         self.link_menu_fnc()
+
+    def change_value_hex(self):
+        try:
+            self.p_a.setEnabled(True)
+            self.p_b.setEnabled(True)
+            self.p_c.setEnabled(True)
+            self.p_d.setEnabled(True)
+            self.p_e.setEnabled(True)
+            self.p_f.setEnabled(True)
+            self.p_a.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                   "background-color: rgb(232, 232, 232);\n"
+                                   "border-radius: 22px;")
+            self.p_b.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                   "background-color: rgb(232, 232, 232);\n"
+                                   "border-radius: 22px;")
+            self.p_c.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                   "background-color: rgb(232, 232, 232);\n"
+                                   "border-radius: 22px;")
+            self.p_d.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                   "background-color: rgb(232, 232, 232);\n"
+                                   "border-radius: 22px;")
+            self.p_e.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                   "background-color: rgb(232, 232, 232);\n"
+                                   "border-radius: 22px;")
+            self.p_f.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                   "background-color: rgb(232, 232, 232);\n"
+                                   "border-radius: 22px;")
+        except Exception as e:
+            print(e)
+
+    def change_value_dec(self):
+        try:
+            self.p_a.setEnabled(False)
+            self.p_b.setEnabled(False)
+            self.p_c.setEnabled(False)
+            self.p_d.setEnabled(False)
+            self.p_e.setEnabled(False)
+            self.p_f.setEnabled(False)
+            self.p_a.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
+                                   "background-color: rgba(193, 193, 193, 27);\n"
+                                   "border-radius: 22px;")
+            self.p_b.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
+                                   "background-color: rgba(193, 193, 193, 27);\n"
+                                   "border-radius: 22px;")
+            self.p_c.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
+                                   "background-color: rgba(193, 193, 193, 27);\n"
+                                   "border-radius: 22px;")
+            self.p_d.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
+                                   "background-color: rgba(193, 193, 193, 27);\n"
+                                   "border-radius: 22px;")
+            self.p_e.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
+                                   "background-color: rgba(193, 193, 193, 27);\n"
+                                   "border-radius: 22px;")
+            self.p_f.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
+                                   "background-color: rgba(193, 193, 193, 27);\n"
+                                   "border-radius: 22px;")
+        except Exception as e:
+            print(e)
+
+    def change_value_oct(self):
+        try:
+            self.p_a.setEnabled(False)
+            self.p_b.setEnabled(False)
+            self.p_c.setEnabled(False)
+            self.p_d.setEnabled(False)
+            self.p_e.setEnabled(False)
+            self.p_f.setEnabled(False)
+            self.p_eight.setEnabled(False)
+            self.p_nine.setEnabled(False)
+            self.p_a.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
+                                   "background-color: rgba(193, 193, 193, 27);\n"
+                                   "border-radius: 22px;")
+            self.p_b.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
+                                   "background-color: rgba(193, 193, 193, 27);\n"
+                                   "border-radius: 22px;")
+            self.p_c.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
+                                   "background-color: rgba(193, 193, 193, 27);\n"
+                                   "border-radius: 22px;")
+            self.p_d.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
+                                   "background-color: rgba(193, 193, 193, 27);\n"
+                                   "border-radius: 22px;")
+            self.p_e.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
+                                   "background-color: rgba(193, 193, 193, 27);\n"
+                                   "border-radius: 22px;")
+            self.p_f.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
+                                   "background-color: rgba(193, 193, 193, 27);\n"
+                                   "border-radius: 22px;")
+            self.p_eight.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
+                                       "background-color: rgba(193, 193, 193, 27);\n"
+                                       "border-radius: 22px;")
+            self.p_nine.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
+                                      "background-color: rgba(193, 193, 193, 27);\n"
+                                      "border-radius: 22px;")
+        except Exception as e:
+            print(e)
+
+    def change_value_bin(self):
+        try:
+            self.p_a.setEnabled(False)
+            self.p_b.setEnabled(False)
+            self.p_c.setEnabled(False)
+            self.p_d.setEnabled(False)
+            self.p_e.setEnabled(False)
+            self.p_f.setEnabled(False)
+            self.p_nine.setEnabled(False)
+            self.p_eight.setEnabled(False)
+            self.p_seven.setEnabled(False)
+            self.p_six.setEnabled(False)
+            self.p_five.setEnabled(False)
+            self.p_four.setEnabled(False)
+            self.p_three.setEnabled(False)
+            self.p_two.setEnabled(False)
+            self.p_a.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
+                                   "background-color: rgba(193, 193, 193, 27);\n"
+                                   "border-radius: 22px;")
+            self.p_b.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
+                                   "background-color: rgba(193, 193, 193, 27);\n"
+                                   "border-radius: 22px;")
+            self.p_c.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
+                                   "background-color: rgba(193, 193, 193, 27);\n"
+                                   "border-radius: 22px;")
+            self.p_d.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
+                                   "background-color: rgba(193, 193, 193, 27);\n"
+                                   "border-radius: 22px;")
+            self.p_e.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
+                                   "background-color: rgba(193, 193, 193, 27);\n"
+                                   "border-radius: 22px;")
+            self.p_f.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
+                                   "background-color: rgba(193, 193, 193, 27);\n"
+                                   "border-radius: 22px;")
+            self.p_eight.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
+                                       "background-color: rgba(193, 193, 193, 27);\n"
+                                       "border-radius: 22px;")
+            self.p_nine.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
+                                      "background-color: rgba(193, 193, 193, 27);\n"
+                                      "border-radius: 22px;")
+            self.p_seven.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
+                                       "background-color: rgba(193, 193, 193, 27);\n"
+                                       "border-radius: 22px;")
+            self.p_six.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
+                                     "background-color: rgba(193, 193, 193, 27);\n"
+                                     "border-radius: 22px;")
+            self.p_five.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
+                                      "background-color: rgba(193, 193, 193, 27);\n"
+                                      "border-radius: 22px;")
+            self.p_four.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
+                                      "background-color: rgba(193, 193, 193, 27);\n"
+                                      "border-radius: 22px;")
+            self.p_three.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
+                                       "background-color: rgba(193, 193, 193, 27);\n"
+                                       "border-radius: 22px;")
+            self.p_two.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
+                                     "background-color: rgba(193, 193, 193, 27);\n"
+                                     "border-radius: 22px;")
+        except Exception as e:
+            print(e)
 
     def get_scientific(self, data):
         if self.s_label_2.text() != 'Error':
