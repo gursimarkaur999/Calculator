@@ -339,7 +339,7 @@ class Ui_MainWindow_Programmer(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.p_label_3.setFont(font)
-        self.p_label_3.setStyleSheet("color: rgb(0, 0, 0);")
+        self.p_label_3.setStyleSheet("color: rgb(117, 117, 117);")
         self.p_label_3.setText("")
         self.p_label_3.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.p_label_3.setObjectName("p_label_3")

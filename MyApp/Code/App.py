@@ -166,18 +166,52 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
             self.p_d.clicked.connect(lambda: self.get_programmer('D'))
             self.p_e.clicked.connect(lambda: self.get_programmer('E'))
             self.p_f.clicked.connect(lambda: self.get_programmer('F'))
-            self.p_label_hex.mousePressEvent = self.change_value_hex
-            self.p_label_hex_val.mousePressEvent = self.change_value_hex
-            self.p_label_dec.mousePressEvent = self.change_value_dec
-            self.p_label_dec_val.mousePressEvent = self.change_value_dec
-            self.p_label_oct.mousePressEvent = self.change_value_oct
-            self.p_label_oct_val.mousePressEvent = self.change_value_oct
-            self.p_label_bin.mousePressEvent = self.change_value_bin
-            self.p_label_bin_val.mousePressEvent = self.change_value_bin
-            self.p_point.setEnabled(False)
-            self.p_point.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
-                                       "background-color: rgba(193, 193, 193, 27);\n"
+            # print('0')
+            # self.p_label_hex.mousePressEvent = self.change_value_hex
+            # print('1')
+            # self.p_label_hex_val.mousePressEvent = self.change_value_hex
+            # print('2')
+            # self.p_label_dec.mousePressEvent = self.change_value_dec
+            # print('3')
+            # self.p_label_dec_val.mousePressEvent = self.change_value_dec
+            # print('4')
+            # self.p_label_oct.mousePressEvent = self.change_value_oct
+            # print('5')
+            # self.p_label_oct_val.mousePressEvent = self.change_value_oct
+            # print('6')
+            # self.p_label_bin.mousePressEvent = self.change_value_bin
+            # print('7')
+            # self.p_label_bin_val.mousePressEvent = self.change_value_bin
+            # print('8')
+            # Disabling all button according to decimal conversion
+            self.p_a.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
                                        "border-radius: 22px;")
+            self.p_a.setEnabled(False)
+            self.p_b.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_b.setEnabled(False)
+            self.p_c.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_c.setEnabled(False)
+            self.p_d.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_d.setEnabled(False)
+            self.p_e.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_e.setEnabled(False)
+            self.p_f.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_f.setEnabled(False)
+            self.p_point.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_point.setEnabled(False)
 
             # linking Menu bar function
             self.link_menu_fnc()
@@ -277,6 +311,7 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
 
     def change_value_hex(self):
         try:
+            print('hex')
             self.p_a.setEnabled(True)
             self.p_b.setEnabled(True)
             self.p_c.setEnabled(True)
@@ -306,6 +341,8 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
 
     def change_value_dec(self):
         try:
+            print('dec')
+
             self.p_a.setEnabled(False)
             self.p_b.setEnabled(False)
             self.p_c.setEnabled(False)
@@ -335,6 +372,7 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
 
     def change_value_oct(self):
         try:
+            print('oct')
             self.p_a.setEnabled(False)
             self.p_b.setEnabled(False)
             self.p_c.setEnabled(False)
@@ -372,6 +410,7 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
 
     def change_value_bin(self):
         try:
+            print('bin')
             self.p_a.setEnabled(False)
             self.p_b.setEnabled(False)
             self.p_c.setEnabled(False)
@@ -431,6 +470,197 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
         except Exception as e:
             print(e)
 
+    def get_programmer(self, data):
+        try:
+            if self.p_label_2.text() != 'Error':
+                self.p_enable()
+            if self.p_label_2.text() == '0' and data not in ['+', '-', '*', '/', '=', '<', 'CE', '%', '+_-', '<<','>>', '(', ')']:
+                self.p_label_2.setText(data)
+                # converting value into hex, decimal, oct and bin
+                self.p_label_hex_val.setText(str(hex(int(self.p_label_2.text()))))
+                self.p_label_dec_val.setText(str(self.p_label_2.text()))
+                self.p_label_oct_val.setText(str(oct(int(self.p_label_2.text()))))
+                self.p_label_bin_val.setText(str(bin(int(self.p_label_2.text()))))
+            elif data in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']:
+                if self.p_label_2.text() == 'Error':
+                    self.p_label_2.clear()
+                    self.p_label_2.setText(self.p_label_2.text() + data)
+                elif len(self.p_label_2.text()) == 30:
+                    pass
+                else:
+                    self.p_label_2.setText(self.p_label_2.text() + data)
+                #converting value into hex, decimal, oct and bin
+                self.p_label_hex_val.setText(str(hex(int(self.p_label_2.text()))))
+                self.p_label_dec_val.setText(str(self.p_label_2.text()))
+                self.p_label_oct_val.setText(str(oct(int(self.p_label_2.text()))))
+                self.p_label_bin_val.setText(str(bin(int(self.p_label_2.text()))))
+            elif data in ['+', '-', '*', '/', '<<','>>', '%']:
+                if self.p_label_3.text() == '':
+                    self.p_label_3.setText(self.p_label_2.text() + data)
+                    self.p_label_2.clear()
+                elif self.p_label_2.text() != '' and list(self.p_label_3.text()).pop() not in ['+', '-', '*', '/', '<<','>>', '(', ')', '%']:
+                    self.p_label_3.setText(self.p_label_2.text() + data)
+                else:
+                    check_operator2 = list(self.p_label_3.text()).pop()
+                    if self.p_label_2.text() != '' and check_operator2 not in ['0', '1', '2', '3', '4', '5', '6', '7', '8',
+                                                                             '9']:
+                        self.p_label_3.setText(self.p_label_3.text() + self.p_label_2.text() + data)
+                    elif check_operator2 != data and check_operator2 not in ['0', '1', '2', '3', '4', '5', '6', '7', '8',
+                                                                             '9', '(', ')']:
+                        self.p_label_3.setText(self.p_label_3.text()[:-1] + data)  # change operator
+                    elif check_operator2 in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ')']:
+                        self.p_label_3.setText(self.p_label_3.text() + data + self.p_label_2.text())
+                self.p_label_2.clear()
+            elif data == '<':
+                if self.p_label_2.text() == 'E':
+                    self.p_enable()
+                if self.p_label_2.text() == '0':
+                    self.p_enable()
+                elif self.p_label_2.text() in ['-0', '-1', '-2', '-3', '-4', '-5', '-6', '-7', '-8', '-9']:
+                    self.p_label_2.setText('0')
+                elif len(self.p_label_2.text()) == 1:
+                    self.p_label_2.setText('0')
+                elif len(self.p_label_2.text()) > 0:
+                    changed_data = list(self.p_label_2.text())
+                    changed_data.pop()
+                    sums = ''
+                    for i in changed_data:
+                        sums += i
+                    self.p_label_2.setText(sums)
+                else:
+                    pass
+            elif data == '=':
+                if len([x for x in list(self.p_label_3.text()) if x == '(']) > 0 and (
+                        len([x for x in list(self.p_label_3.text()) if x == '(']) > len(
+                    [x for x in list(self.p_label_3.text()) if x == ')'])):
+                    difference = len([x for x in list(self.p_label_3.text()) if x == '(']) - len(
+                        [x for x in list(self.p_label_3.text()) if x == ')'])
+                    self.p_label_3.setText(self.p_label_3.text() + self.p_label_2.text())
+                    print("hbjsbjds")
+                    try:
+                        for i in range(difference):
+                            self.p_label_3.setText(self.p_label_3.text() + ')')
+                        self.p_label_2.clear()
+
+                    except Exception as e:
+                        print(e)
+                if self.p_label_3.text() == '':
+                    print('shjfs')
+                    self.p_label_2.setText(self.p_label_2.text())
+                elif self.p_label_3.text() != '':
+                    print('fsd')
+                    if list(self.p_label_3.text()).pop() in ['+', '-', '*', '/', '<','>', '%'] and self.p_label_2.text() == '':
+                        print("yess")
+                        string_without_sign = list(self.p_label_3.text())
+                        string_without_sign.pop()
+                        string_sum = ''
+                        for i in string_without_sign:
+                            string_sum += i
+                        result = self.p_calculations(string_sum)
+                        self.p_label_2.setText(str(result))
+                    elif list(self.p_label_3.text()).pop() in ['+', '-', '*', '/', '<','>', '%']:
+                        print("new_str")
+                        new_str = self.p_label_3.text() + self.p_label_2.text()
+                        self.p_label_3.setText(new_str)
+                        result = self.p_calculations(new_str)
+                        self.p_label_2.setText(str(result))
+                    elif self.p_label_3.text() != '' and self.p_label_2.text() == '':
+                        print("no")
+                        result = self.p_calculations(self.p_label_3.text())
+                        self.p_label_2.setText(str(result))
+                self.p_label_3.clear()
+                #     converting value into hex, decimal, oct and bin
+                self.p_label_hex_val.setText(str(hex(int(self.p_label_2.text()))))
+                self.p_label_dec_val.setText(str(self.p_label_2.text()))
+                self.p_label_oct_val.setText(str(oct(int(self.p_label_2.text()))))
+                self.p_label_bin_val.setText(str(bin(int(self.p_label_2.text()))))
+
+
+            elif data == '+_-':
+                if self.p_label_2.text() != '':
+                    if self.p_label_2.text() not in ['0', '0.0']:
+                        first_letter = list(self.p_label_2.text())[0]
+                        minus = '-'
+                        if first_letter != minus:
+                            self.p_label_2.setText(minus + self.p_label_2.text())
+                        elif first_letter == minus:
+                            self.p_label_2.setText(self.p_label_2.text()[1:])
+                    else:
+                        pass
+
+            elif data == 'CE':
+
+                if self.p_label_2.text() != '0':
+                    self.p_label_2.clear()
+                    self.p_label_2.setText('0')
+                    self.p_enable()
+                else:
+                    self.p_label_3.clear()
+            elif data == '(':
+                try:
+                    if self.p_label_3.text() == '':
+                        self.p_label_3.setText(data)
+                    else:
+                        if list(self.p_label_3.text()).pop() == ')':
+                            self.p_label_3.setText(data)
+                        if list(self.p_label_3.text()).pop() in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ')']:
+                            self.p_label_3.setText(self.p_label_3.text() + '*' + '(')
+                        else:
+                            self.p_label_3.setText(self.p_label_3.text() + data)
+
+                except Exception as e:
+                    print(e)
+
+            elif data == ')':
+                try:
+                    if self.p_label_3.text() != '':
+                        if len([x for x in list(self.p_label_3.text()) if x == '(']) != len(
+                                [x for x in list(self.p_label_3.text()) if x == ')']):
+                            self.p_label_3.setText(self.p_label_3.text() + self.p_label_2.text() + data)
+                            self.p_label_2.clear()
+
+                except Exception as e:
+                    print(e)
+            self.reduce_font(self.p_label_2, len(self.p_label_2.text()))
+
+
+        except Exception as e:
+            print(e)
+
+    def p_enable(self):
+        self.p_plus.setEnabled(True)
+        self.p_minus.setEnabled(True)
+        self.p_multiply.setEnabled(True)
+        self.p_divide.setEnabled(True)
+        self.p_point.setEnabled(True)
+        self.p_plus_minus.setEnabled(True)
+        self.p_per.setEnabled(True)
+        self.p_back.setEnabled(True)
+
+    def p_disable(self):
+        self.p_plus.setEnabled(False)
+        self.p_minus.setEnabled(False)
+        self.p_multiply.setEnabled(False)
+        self.p_divide.setEnabled(False)
+        self.p_point.setEnabled(False)
+        self.p_plus_minus.setEnabled(False)
+        self.p_per.setEnabled(False)
+        self.p_back.setEnabled(False)
+
+    def p_calculations(self, value):
+        try:
+            get = eval(value)
+            if type(1.1) == type(get):
+                return math.trunc(get)
+            else:
+                return get
+        except ZeroDivisionError as e:
+            self.p_label_3.clear()
+            self.disable()
+            return 'Error'
+        except Exception as e:
+            return 'Error'
+    # Scientific window functions
     def get_scientific(self, data):
         if self.s_label_2.text() != 'Error':
             self.s_enable()
