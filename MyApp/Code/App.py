@@ -228,6 +228,23 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
     def change_to_volume(self):
         MyMainWindow.winflag = 'vol'  # volume
         self.setupUiVolume(self)
+        # binding function
+        self.vol_zero.clicked.connect(lambda: self.get_volume('0'))
+        self.vol_one.clicked.connect(lambda: self.get_volume('1'))
+        self.vol_two.clicked.connect(lambda: self.get_volume('2'))
+        self.vol_three.clicked.connect(lambda: self.get_volume('3'))
+        self.vol_four.clicked.connect(lambda: self.get_volume('4'))
+        self.vol_five.clicked.connect(lambda: self.get_volume('5'))
+        self.vol_six.clicked.connect(lambda: self.get_volume('6'))
+        self.vol_seven.clicked.connect(lambda: self.get_volume('7'))
+        self.vol_eight.clicked.connect(lambda: self.get_volume('8'))
+        self.vol_nine.clicked.connect(lambda: self.get_volume('9'))
+        self.vol_back.clicked.connect(lambda: self.get_volume('<'))
+        self.vol_ce.clicked.connect(lambda: self.get_volume('CE'))
+        self.vol_point.clicked.connect(lambda: self.get_volume('.'))
+        self.vol_comboBox_1.activated[str].connect(lambda: self.vol_calculations(float(self.vol_label_1.text())))
+        self.vol_comboBox_2.activated[str].connect(lambda: self.vol_calculations(float(self.vol_label_1.text())))
+
 
         # linking Menu bar function
         self.link_menu_fnc()
@@ -470,6 +487,101 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
         except Exception as e:
             print(e)
 
+    # volume
+    def get_volume(self, data):
+        try:
+            if self.vol_label_1.text() == '0':
+                self.vol_label_1.setText(data)
+            elif data in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']:
+                if self.vol_label_1.text() == 'Error':
+                    self.vol_label_1.clear()
+                    self.vol_label_1.setText(self.vol_label_1.text() + data)
+                elif len(self.vol_label_1.text()) == 30:
+                    pass
+                else:
+                    self.vol_label_1.setText(self.vol_label_1.text() + data)
+                self.vol_calculations(float(self.vol_label_1.text()))
+            elif data == '<':
+                if self.vol_label_1.text() == '0':
+                    self.vol_enable()
+                elif len(self.vol_label_1.text()) == 1:
+                    self.vol_label_1.setText('0')
+                elif len(self.vol_label_1.text()) > 0:
+                    changed_data = list(self.vol_label_1.text())
+                    changed_data.pop()
+                    sums = ''
+                    for i in changed_data:
+                        sums += i
+                    self.vol_label_1.setText(sums)
+                else:
+                    pass
+
+            elif data == '.':
+                if '.' in self.vol_label_1.text():
+                    pass
+                elif self.vol_label_1.text() == '0' or self.vol_label_1.text() == '':
+                    self.vol_label_1.setText('0' + data)
+                else:
+                    self.vol_label_1.setText(self.vol_label_1.text() + data)
+
+            elif data == 'CE':
+                self.vol_label_1.clear()
+                self.vol_label_2.clear()
+            self.reduce_font_converter(self.vol_label_1, len(self.vol_label_1.text()))
+            self.reduce_font_converter(self.vol_label_2, len(self.vol_label_2.text()))
+
+        except Exception as e:
+            print(e)
+
+    def vol_enable(self):
+        self.vol_point.setEnabled(True)
+
+
+    def vol_disable(self):
+        self.vol_point.setEnabled(False)
+
+    def vol_calculations(self, value):
+        try:
+            self.combo_option1 = self.vol_comboBox_1.currentText()
+            self.combo_option2 = self.vol_comboBox_2.currentText()
+            get = 0
+            if self.combo_option1 == 'Mililiters':
+                if self.combo_option2 == 'Mililiters':
+                    get = value
+                elif self.combo_option2 == 'Liters':
+                    get = value / 1000
+                elif self.combo_option2 == 'Cubic meters':
+                    get = value / 1000000
+            elif self.combo_option1 == 'Liters':
+                if self.combo_option2 == 'Mililiters':
+                    get = value * 1000
+                elif self.combo_option2 == 'Liters':
+                    get = value
+                elif self.combo_option2 == 'Cubic meters':
+                    get = value / 1000
+            elif self.combo_option1 == 'Cubic meters':
+                if self.combo_option2 == 'Mililiters':
+                    get = value * 1000000
+                elif self.combo_option2 == 'Liters':
+                    get = value * 1000
+                elif self.combo_option2 == 'Cubic meters':
+                    get = value
+            if type(1.1) == type(get):
+                count = 0
+                for i in list(str(get)):
+                    count += 1
+                    if i == '.':
+                        count = 0
+                if count > 10:
+                    return round(get, 10)
+                else:
+                    self.vol_label_2.setText(str(get))
+            else:
+                self.vol_label_2.setText(str(get))
+        except Exception as e:
+            self.vol_label_2.setText("Error")
+
+    # programmer
     def get_programmer(self, data):
         try:
             if self.p_label_2.text() != 'Error':
@@ -892,6 +1004,20 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
 
         self.reduce_font(self.s_label_2, len(self.s_label_2.text()))
 
+    # font changing functions
+    def reduce_font_converter(self, obj, label_length):
+        font = QtGui.QFont()
+        if label_length < 9:
+            font.setPointSize(15)
+            obj.setFont(font)
+        elif label_length>21 and label_length<=35:
+            font.setPointSize(10)
+            obj.setFont(font)
+        elif label_length>35:
+            result = obj.text()
+            result = '%.2E' % Decimal(result)
+            obj.clear()
+            obj.setText(result)
 
     def reduce_font(self, obj, label_length):
         font = QtGui.QFont()
