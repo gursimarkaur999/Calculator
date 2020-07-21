@@ -296,7 +296,21 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
     def change_to_temperature(self):
         MyMainWindow.winflag = 'temp'  # temperature
         self.setupUiTemperature(self)
-
+        self.temp_zero.clicked.connect(lambda: self.get_temperature('0'))
+        self.temp_one.clicked.connect(lambda: self.get_temperature('1'))
+        self.temp_two.clicked.connect(lambda: self.get_temperature('2'))
+        self.temp_three.clicked.connect(lambda: self.get_temperature('3'))
+        self.temp_four.clicked.connect(lambda: self.get_temperature('4'))
+        self.temp_five.clicked.connect(lambda: self.get_temperature('5'))
+        self.temp_six.clicked.connect(lambda: self.get_temperature('6'))
+        self.temp_seven.clicked.connect(lambda: self.get_temperature('7'))
+        self.temp_eight.clicked.connect(lambda: self.get_temperature('8'))
+        self.temp_nine.clicked.connect(lambda: self.get_temperature('9'))
+        self.temp_back.clicked.connect(lambda: self.get_temperature('<'))
+        self.temp_ce.clicked.connect(lambda: self.get_temperature('CE'))
+        self.temp_point.clicked.connect(lambda: self.get_temperature('.'))
+        self.temp_comboBox_1.activated[str].connect(lambda: self.temp_calculations(float(self.temp_label_1.text())))
+        self.temp_comboBox_2.activated[str].connect(lambda: self.temp_calculations(float(self.temp_label_1.text())))
         # linking Menu bar function
         self.link_menu_fnc()
 
@@ -516,6 +530,99 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
                                      "border-radius: 22px;")
         except Exception as e:
             print(e)
+
+        # weight and mass
+    def get_temperature(self, data):
+        try:
+            if self.temp_label_1.text() == '0':
+                self.temp_label_1.setText(data)
+            elif data in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']:
+                if self.temp_label_1.text() == 'Error':
+                    self.temp_label_1.clear()
+                    self.temp_label_1.setText(self.temp_label_1.text() + data)
+                elif len(self.temp_label_1.text()) == 30:
+                    pass
+                else:
+                    self.temp_label_1.setText(self.temp_label_1.text() + data)
+                self.temp_calculations(float(self.temp_label_1.text()))
+            elif data == '<':
+                if self.temp_label_1.text() == '0':
+                    self.temp_enable()
+                elif len(self.temp_label_1.text()) == 1:
+                    self.temp_label_1.setText('0')
+                elif len(self.temp_label_1.text()) > 0:
+                    changed_data = list(self.temp_label_1.text())
+                    changed_data.pop()
+                    sums = ''
+                    for i in changed_data:
+                        sums += i
+                    self.temp_label_1.setText(sums)
+                else:
+                    pass
+
+            elif data == '.':
+                if '.' in self.temp_label_1.text():
+                    pass
+                elif self.temp_label_1.text() == '0' or self.temp_label_1.text() == '':
+                    self.temp_label_1.setText('0' + data)
+                else:
+                    self.temp_label_1.setText(self.temp_label_1.text() + data)
+
+            elif data == 'CE':
+                self.temp_label_1.clear()
+                self.temp_label_2.clear()
+            self.reduce_font_converter(self.temp_label_1, len(self.temp_label_1.text()))
+            self.reduce_font_converter(self.temp_label_2, len(self.temp_label_2.text()))
+
+        except Exception as e:
+            print(e)
+
+    def temp_enable(self):
+        self.temp_point.setEnabled(True)
+
+    def temp_disable(self):
+        self.temp_point.setEnabled(False)
+
+    def temp_calculations(self, value):
+        try:
+            self.combo_option1 = self.temp_comboBox_1.currentText()
+            self.combo_option2 = self.temp_comboBox_2.currentText()
+            get = 0
+            if self.combo_option1 == 'Celsius':
+                if self.combo_option2 == 'Celsius':
+                    get = value
+                elif self.combo_option2 == 'Fahrenheit':
+                    get = value * 1.8 + 32
+                elif self.combo_option2 == 'Kelvin':
+                    get = value + 273.15
+            elif self.combo_option1 == 'Fahrenheit':
+                if self.combo_option2 == 'Celsius':
+                    get = (value - 32) /1.8
+                elif self.combo_option2 == 'Fahrenheit':
+                    get = value
+                elif self.combo_option2 == 'Kelvin':
+                    get = (value + 459.67) * 5/9
+            elif self.combo_option1 == 'Kelvin':
+                if self.combo_option2 == 'Celsius':
+                    get = value - 273.15
+                elif self.combo_option2 == 'Fahrenheit':
+                    get = value * 9/5 - 459.67
+                elif self.combo_option2 == 'Kelvin':
+                    get = value
+            if type(1.1) == type(get):
+                count = 0
+                for i in list(str(get)):
+                    count += 1
+                    if i == '.':
+                        count = 0
+                if count > 10:
+                    return round(get, 10)
+                else:
+                    self.temp_label_2.setText(str(get))
+            else:
+                self.temp_label_2.setText(str(get))
+        except Exception as e:
+            self.temp_label_2.setText("Error")
 
     # weight and mass
     def get_weightmass(self, data):
