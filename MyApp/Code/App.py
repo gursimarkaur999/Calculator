@@ -275,7 +275,21 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
     def change_to_weightmass(self):
         MyMainWindow.winflag = 'wm'  # weight and mass
         self.setupUiWeightMass(self)
-
+        self.wm_zero.clicked.connect(lambda: self.get_weightmass('0'))
+        self.wm_one.clicked.connect(lambda: self.get_weightmass('1'))
+        self.wm_two.clicked.connect(lambda: self.get_weightmass('2'))
+        self.wm_three.clicked.connect(lambda: self.get_weightmass('3'))
+        self.wm_four.clicked.connect(lambda: self.get_weightmass('4'))
+        self.wm_five.clicked.connect(lambda: self.get_weightmass('5'))
+        self.wm_six.clicked.connect(lambda: self.get_weightmass('6'))
+        self.wm_seven.clicked.connect(lambda: self.get_weightmass('7'))
+        self.wm_eight.clicked.connect(lambda: self.get_weightmass('8'))
+        self.wm_nine.clicked.connect(lambda: self.get_weightmass('9'))
+        self.wm_back.clicked.connect(lambda: self.get_weightmass('<'))
+        self.wm_ce.clicked.connect(lambda: self.get_weightmass('CE'))
+        self.wm_point.clicked.connect(lambda: self.get_weightmass('.'))
+        self.wm_comboBox_1.activated[str].connect(lambda: self.wm_calculations(float(self.wm_label_1.text())))
+        self.wm_comboBox_2.activated[str].connect(lambda: self.wm_calculations(float(self.wm_label_1.text())))
         # linking Menu bar function
         self.link_menu_fnc()
 
@@ -503,7 +517,100 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
         except Exception as e:
             print(e)
 
-      # volume
+    # weight and mass
+    def get_weightmass(self, data):
+        try:
+            if self.wm_label_1.text() == '0':
+                self.wm_label_1.setText(data)
+            elif data in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']:
+                if self.wm_label_1.text() == 'Error':
+                    self.wm_label_1.clear()
+                    self.wm_label_1.setText(self.wm_label_1.text() + data)
+                elif len(self.wm_label_1.text()) == 30:
+                    pass
+                else:
+                    self.wm_label_1.setText(self.wm_label_1.text() + data)
+                self.wm_calculations(float(self.wm_label_1.text()))
+            elif data == '<':
+                if self.wm_label_1.text() == '0':
+                    self.wm_enable()
+                elif len(self.wm_label_1.text()) == 1:
+                    self.wm_label_1.setText('0')
+                elif len(self.wm_label_1.text()) > 0:
+                    changed_data = list(self.wm_label_1.text())
+                    changed_data.pop()
+                    sums = ''
+                    for i in changed_data:
+                        sums += i
+                    self.wm_label_1.setText(sums)
+                else:
+                    pass
+
+            elif data == '.':
+                if '.' in self.wm_label_1.text():
+                    pass
+                elif self.wm_label_1.text() == '0' or self.wm_label_1.text() == '':
+                    self.wm_label_1.setText('0' + data)
+                else:
+                    self.wm_label_1.setText(self.wm_label_1.text() + data)
+
+            elif data == 'CE':
+                self.wm_label_1.clear()
+                self.wm_label_2.clear()
+            self.reduce_font_converter(self.wm_label_1, len(self.wm_label_1.text()))
+            self.reduce_font_converter(self.wm_label_2, len(self.wm_label_2.text()))
+
+        except Exception as e:
+            print(e)
+
+    def wm_enable(self):
+        self.wm_point.setEnabled(True)
+
+    def wm_disable(self):
+        self.wm_point.setEnabled(False)
+
+    def wm_calculations(self, value):
+        try:
+            self.combo_option1 = self.wm_comboBox_1.currentText()
+            self.combo_option2 = self.wm_comboBox_2.currentText()
+            get = 0
+            if self.combo_option1 == 'Grams':
+                if self.combo_option2 == 'Grams':
+                    get = value
+                elif self.combo_option2 == 'Kilograms':
+                    get = value / 1000
+                elif self.combo_option2 == 'Pounds':
+                    get = value * 0.0022046226
+            elif self.combo_option1 == 'Kilograms':
+                if self.combo_option2 == 'Grams':
+                    get = value * 1000
+                elif self.combo_option2 == 'Kilograms':
+                    get = value
+                elif self.combo_option2 == 'Pounds':
+                    get = value * 2.2046226218
+            elif self.combo_option1 == 'Pounds':
+                if self.combo_option2 == 'Grams':
+                    get = value * 453.59237
+                elif self.combo_option2 == 'Kilograms':
+                    get = value * 0.45359237
+                elif self.combo_option2 == 'Pounds':
+                    get = value
+            if type(1.1) == type(get):
+                count = 0
+                for i in list(str(get)):
+                    count += 1
+                    if i == '.':
+                        count = 0
+                if count > 10:
+                    return round(get, 10)
+                else:
+                    self.wm_label_2.setText(str(get))
+            else:
+                self.wm_label_2.setText(str(get))
+        except Exception as e:
+            self.wm_label_2.setText("Error")
+
+    # volume
     def get_length(self, data):
         try:
             if self.len_label_1.text() == '0':
