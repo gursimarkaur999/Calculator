@@ -253,6 +253,22 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
     def change_to_length(self):
         MyMainWindow.winflag = 'len'  # length
         self.setupUiLength(self)
+        self.len_zero.clicked.connect(lambda: self.get_length('0'))
+        self.len_one.clicked.connect(lambda: self.get_length('1'))
+        self.len_two.clicked.connect(lambda: self.get_length('2'))
+        self.len_three.clicked.connect(lambda: self.get_length('3'))
+        self.len_four.clicked.connect(lambda: self.get_length('4'))
+        self.len_five.clicked.connect(lambda: self.get_length('5'))
+        self.len_six.clicked.connect(lambda: self.get_length('6'))
+        self.len_seven.clicked.connect(lambda: self.get_length('7'))
+        self.len_eight.clicked.connect(lambda: self.get_length('8'))
+        self.len_nine.clicked.connect(lambda: self.get_length('9'))
+        self.len_back.clicked.connect(lambda: self.get_length('<'))
+        self.len_ce.clicked.connect(lambda: self.get_length('CE'))
+        self.len_point.clicked.connect(lambda: self.get_length('.'))
+        self.len_comboBox_1.activated[str].connect(lambda: self.len_calculations(float(self.len_label_1.text())))
+        self.len_comboBox_2.activated[str].connect(lambda: self.len_calculations(float(self.len_label_1.text())))
+
         # linking Menu bar function
         self.link_menu_fnc()
 
@@ -487,7 +503,135 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
         except Exception as e:
             print(e)
 
-    # volume
+      # volume
+    def get_length(self, data):
+        try:
+            if self.len_label_1.text() == '0':
+                self.len_label_1.setText(data)
+            elif data in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']:
+                if self.len_label_1.text() == 'Error':
+                    self.len_label_1.clear()
+                    self.len_label_1.setText(self.len_label_1.text() + data)
+                elif len(self.len_label_1.text()) == 30:
+                    pass
+                else:
+                    self.len_label_1.setText(self.len_label_1.text() + data)
+                self.len_calculations(float(self.len_label_1.text()))
+            elif data == '<':
+                if self.len_label_1.text() == '0':
+                    self.len_enable()
+                elif len(self.len_label_1.text()) == 1:
+                    self.len_label_1.setText('0')
+                elif len(self.len_label_1.text()) > 0:
+                    changed_data = list(self.len_label_1.text())
+                    changed_data.pop()
+                    sums = ''
+                    for i in changed_data:
+                        sums += i
+                    self.len_label_1.setText(sums)
+                else:
+                    pass
+
+            elif data == '.':
+                if '.' in self.len_label_1.text():
+                    pass
+                elif self.len_label_1.text() == '0' or self.len_label_1.text() == '':
+                    self.len_label_1.setText('0' + data)
+                else:
+                    self.len_label_1.setText(self.len_label_1.text() + data)
+
+            elif data == 'CE':
+                self.len_label_1.clear()
+                self.len_label_2.clear()
+            self.reduce_font_converter(self.len_label_1, len(self.len_label_1.text()))
+            self.reduce_font_converter(self.len_label_2, len(self.len_label_2.text()))
+
+        except Exception as e:
+            print(e)
+
+    def len_enable(self):
+        self.len_point.setEnabled(True)
+
+    def len_disable(self):
+        self.len_point.setEnabled(False)
+
+    def len_calculations(self, value):
+        try:
+            self.combo_option1 = self.len_comboBox_1.currentText()
+            self.combo_option2 = self.len_comboBox_2.currentText()
+            get = 0
+            if self.combo_option1 == 'Nanometers':
+                if self.combo_option2 == 'Nanometers':
+                    get = value
+                elif self.combo_option2 == 'Millimeters':
+                    get = value / 1000000
+                elif self.combo_option2 == 'Centimeters':
+                    get = value / 10000000
+                elif self.combo_option2 == 'Meters':
+                    get = value / 1000000000
+                elif self.combo_option2 == 'Kilometers':
+                    get = value / 1000000000000
+
+            elif self.combo_option1 == 'Millimeters':
+                if self.combo_option2 == 'Nanometers':
+                    get = value * 1000000
+                elif self.combo_option2 == 'Millimeters':
+                    get = value
+                elif self.combo_option2 == 'Centimeters':
+                    get = value / 10
+                elif self.combo_option2 == 'Meters':
+                    get = value / 1000
+                elif self.combo_option2 == 'Kilometers':
+                    get = value / 1000000
+            elif self.combo_option1 == 'Centimeters':
+                if self.combo_option2 == 'Nanometers':
+                    get = value * 10000000
+                elif self.combo_option2 == 'Millimeters':
+                    get = value * 10
+                elif self.combo_option2 == 'Centimeters':
+                    get = value
+                elif self.combo_option2 == 'Meters':
+                    get = value / 100
+                elif self.combo_option2 == 'Kilometers':
+                    get = value / 100000
+            elif self.combo_option1 == 'Meters':
+                if self.combo_option2 == 'Nanometers':
+                    get = value * 1000000000
+                elif self.combo_option2 == 'Millimeters':
+                    get = value * 1000
+                elif self.combo_option2 == 'Centimeters':
+                    get = value * 100
+                elif self.combo_option2 == 'Meters':
+                    get = value
+                elif self.combo_option2 == 'Kilometers':
+                    get = value / 1000
+            elif self.combo_option1 == 'Kilometers':
+                if self.combo_option2 == 'Nanometers':
+                    get = value * 1000000000000
+                elif self.combo_option2 == 'Millimeters':
+                    get = value * 1000000
+                elif self.combo_option2 == 'Centimeters':
+                    get = value * 100000
+                elif self.combo_option2 == 'Meters':
+                    get = value * 1000
+                elif self.combo_option2 == 'Kilometers':
+                    get = value
+
+            if type(1.1) == type(get):
+                count = 0
+                for i in list(str(get)):
+                    count += 1
+                    if i == '.':
+                        count = 0
+                if count > 15:
+                    return round(get, 10)
+                else:
+                    self.len_label_2.setText(str(get))
+            else:
+                self.len_label_2.setText(str(get))
+        except Exception as e:
+            self.len_label_2.setText("Error")
+
     def get_volume(self, data):
         try:
             if self.vol_label_1.text() == '0':
