@@ -317,14 +317,42 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
     def change_to_energy(self):
         MyMainWindow.winflag = 'ener'  # energy
         self.setupUiEnergy(self)
-
+        self.ener_zero.clicked.connect(lambda: self.get_energy('0'))
+        self.ener_one.clicked.connect(lambda: self.get_energy('1'))
+        self.ener_two.clicked.connect(lambda: self.get_energy('2'))
+        self.ener_three.clicked.connect(lambda: self.get_energy('3'))
+        self.ener_four.clicked.connect(lambda: self.get_energy('4'))
+        self.ener_five.clicked.connect(lambda: self.get_energy('5'))
+        self.ener_six.clicked.connect(lambda: self.get_energy('6'))
+        self.ener_seven.clicked.connect(lambda: self.get_energy('7'))
+        self.ener_eight.clicked.connect(lambda: self.get_energy('8'))
+        self.ener_nine.clicked.connect(lambda: self.get_energy('9'))
+        self.ener_back.clicked.connect(lambda: self.get_energy('<'))
+        self.ener_ce.clicked.connect(lambda: self.get_energy('CE'))
+        self.ener_point.clicked.connect(lambda: self.get_energy('.'))
+        self.ener_comboBox_1.activated[str].connect(lambda: self.ener_calculations(float(self.ener_label_1.text())))
+        self.ener_comboBox_2.activated[str].connect(lambda: self.ener_calculations(float(self.ener_label_1.text())))
         # linking Menu bar function
         self.link_menu_fnc()
 
     def change_to_area(self):
         MyMainWindow.winflag = 'area'  # area
         self.setupUiArea(self)
-
+        self.area_zero.clicked.connect(lambda: self.get_area('0'))
+        self.area_one.clicked.connect(lambda: self.get_area('1'))
+        self.area_two.clicked.connect(lambda: self.get_area('2'))
+        self.area_three.clicked.connect(lambda: self.get_area('3'))
+        self.area_four.clicked.connect(lambda: self.get_area('4'))
+        self.area_five.clicked.connect(lambda: self.get_area('5'))
+        self.area_six.clicked.connect(lambda: self.get_area('6'))
+        self.area_seven.clicked.connect(lambda: self.get_area('7'))
+        self.area_eight.clicked.connect(lambda: self.get_area('8'))
+        self.area_nine.clicked.connect(lambda: self.get_area('9'))
+        self.area_back.clicked.connect(lambda: self.get_area('<'))
+        self.area_ce.clicked.connect(lambda: self.get_area('CE'))
+        self.area_point.clicked.connect(lambda: self.get_area('.'))
+        self.area_comboBox_1.activated[str].connect(lambda: self.area_calculations(float(self.area_label_1.text())))
+        self.area_comboBox_2.activated[str].connect(lambda: self.area_calculations(float(self.area_label_1.text())))
         # linking Menu bar function
         self.link_menu_fnc()
 
@@ -531,7 +559,179 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
         except Exception as e:
             print(e)
 
-        # weight and mass
+    # area
+    def get_area(self, data):
+        try:
+            if self.area_label_1.text() == '0':
+                self.area_label_1.setText(data)
+            elif data in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']:
+                if self.area_label_1.text() == 'Error':
+                    self.area_label_1.clear()
+                    self.area_label_1.setText(self.area_label_1.text() + data)
+                elif len(self.area_label_1.text()) == 30:
+                    pass
+                else:
+                    self.area_label_1.setText(self.area_label_1.text() + data)
+            elif data == '<':
+                if self.area_label_1.text() == '0':
+                    self.area_enable()
+                elif len(self.area_label_1.text()) == 1:
+                    self.area_label_1.setText('0')
+                elif len(self.area_label_1.text()) > 0:
+                    changed_data = list(self.area_label_1.text())
+                    changed_data.pop()
+                    sums = ''
+                    for i in changed_data:
+                        sums += i
+                    self.area_label_1.setText(sums)
+                else:
+                    pass
+
+            elif data == '.':
+                if '.' in self.area_label_1.text():
+                    pass
+                elif self.area_label_1.text() == '0' or self.area_label_1.text() == '':
+                    self.area_label_1.setText('0' + data)
+                else:
+                    self.area_label_1.setText(self.area_label_1.text() + data)
+
+            elif data == 'CE':
+                self.area_label_1.clear()
+                self.area_label_2.clear()
+            self.area_calculations(float(self.area_label_1.text()))
+            self.reduce_font_converter(self.area_label_1, len(self.area_label_1.text()))
+            self.reduce_font_converter(self.area_label_2, len(self.area_label_2.text()))
+
+        except Exception as e:
+            print(e)
+
+    def area_enable(self):
+        self.area_point.setEnabled(True)
+
+    def area_disable(self):
+        self.area_point.setEnabled(False)
+
+    def area_calculations(self, value):
+        try:
+            self.combo_option1 = self.area_comboBox_1.currentText()
+            self.combo_option2 = self.area_comboBox_2.currentText()
+            get = 0
+            if self.combo_option1 == 'Square millimeters':
+                if self.combo_option2 == 'Square millimeters':
+                    get = value
+                elif self.combo_option2 == 'Square centimeters':
+                    get = value / 100
+                elif self.combo_option2 == 'Square meters':
+                    get = value / 1000000
+                elif self.combo_option2 == 'Square Kilometers':
+                    get = value / 1000000000000
+            elif self.combo_option1 == 'Square centimeters':
+                if self.combo_option2 == 'Square millimeters':
+                    get = value * 100
+                elif self.combo_option2 == 'Square centimeters':
+                    get = value
+                elif self.combo_option2 == 'Square meters':
+                    get = value / 10000
+                elif self.combo_option2 == 'Square Kilometers':
+                    get = value / 10000000000
+            elif self.combo_option1 == 'Square meters':
+                if self.combo_option2 == 'Square millimeters':
+                    get = value * 1000000
+                elif self.combo_option2 == 'Square centimeters':
+                    get = value * 10000
+                elif self.combo_option2 == 'Square meters':
+                    get = value
+                elif self.combo_option2 == 'Square Kilometers':
+                    get = value / 1000000
+
+            self.area_label_2.setText(str(get))
+        except Exception as e:
+            self.area_label_2.setText("Error")
+
+    # Energy
+    def get_energy(self, data):
+        try:
+            if self.ener_label_1.text() == '0':
+                self.ener_label_1.setText(data)
+            elif data in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']:
+                if self.ener_label_1.text() == 'Error':
+                    self.ener_label_1.clear()
+                    self.ener_label_1.setText(self.ener_label_1.text() + data)
+                elif len(self.ener_label_1.text()) == 30:
+                    pass
+                else:
+                    self.ener_label_1.setText(self.ener_label_1.text() + data)
+            elif data == '<':
+                if self.ener_label_1.text() == '0':
+                    self.ener_enable()
+                elif len(self.ener_label_1.text()) == 1:
+                    self.ener_label_1.setText('0')
+                elif len(self.ener_label_1.text()) > 0:
+                    changed_data = list(self.ener_label_1.text())
+                    changed_data.pop()
+                    sums = ''
+                    for i in changed_data:
+                        sums += i
+                    self.ener_label_1.setText(sums)
+                else:
+                    pass
+
+            elif data == '.':
+                if '.' in self.ener_label_1.text():
+                    pass
+                elif self.ener_label_1.text() == '0' or self.ener_label_1.text() == '':
+                    self.ener_label_1.setText('0' + data)
+                else:
+                    self.ener_label_1.setText(self.ener_label_1.text() + data)
+
+            elif data == 'CE':
+                self.ener_label_1.clear()
+                self.ener_label_2.clear()
+            self.ener_calculations(float(self.ener_label_1.text()))
+            self.reduce_font_converter(self.ener_label_1, len(self.ener_label_1.text()))
+            self.reduce_font_converter(self.ener_label_2, len(self.ener_label_2.text()))
+
+        except Exception as e:
+            print(e)
+
+    def ener_enable(self):
+        self.ener_point.setEnabled(True)
+
+    def ener_disable(self):
+        self.ener_point.setEnabled(False)
+
+    def ener_calculations(self, value):
+        try:
+            self.combo_option1 = self.ener_comboBox_1.currentText()
+            self.combo_option2 = self.ener_comboBox_2.currentText()
+            get = 0
+            if self.combo_option1 == 'Electron volts':
+                if self.combo_option2 == 'Electron volts':
+                    get = value
+                elif self.combo_option2 == 'Joules':
+                    get = eval(str(value) + '* 1.602177e-19')
+                elif self.combo_option2 == 'Kilojoules':
+                    get = eval(str(value) + '* 1.602177e-22')
+            elif self.combo_option1 == 'Joules':
+                if self.combo_option2 == 'Electron volts':
+                    get = eval(str(value) + '* 6.241509e+18')
+                elif self.combo_option2 == 'Joules':
+                    get = value
+                elif self.combo_option2 == 'Kilojoules':
+                    get = value / 1000
+            elif self.combo_option1 == 'Kilojoules':
+                if self.combo_option2 == 'Electron volts':
+                    get = eval(str(value) + '* 6.241509e+21')
+                elif self.combo_option2 == 'Joules':
+                    get = value * 1000
+                elif self.combo_option2 == 'Kilojoules':
+                    get = value
+
+            self.ener_label_2.setText(str(get))
+        except Exception as e:
+            self.ener_label_2.setText("Error")
+
+    # temperature
     def get_temperature(self, data):
         try:
             if self.temp_label_1.text() == '0':
@@ -544,7 +744,6 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
                     pass
                 else:
                     self.temp_label_1.setText(self.temp_label_1.text() + data)
-                self.temp_calculations(float(self.temp_label_1.text()))
             elif data == '<':
                 if self.temp_label_1.text() == '0':
                     self.temp_enable()
@@ -571,6 +770,7 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
             elif data == 'CE':
                 self.temp_label_1.clear()
                 self.temp_label_2.clear()
+            self.temp_calculations(float(self.temp_label_1.text()))
             self.reduce_font_converter(self.temp_label_1, len(self.temp_label_1.text()))
             self.reduce_font_converter(self.temp_label_2, len(self.temp_label_2.text()))
 
@@ -637,7 +837,6 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
                     pass
                 else:
                     self.wm_label_1.setText(self.wm_label_1.text() + data)
-                self.wm_calculations(float(self.wm_label_1.text()))
             elif data == '<':
                 if self.wm_label_1.text() == '0':
                     self.wm_enable()
@@ -664,6 +863,7 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
             elif data == 'CE':
                 self.wm_label_1.clear()
                 self.wm_label_2.clear()
+            self.wm_calculations(float(self.wm_label_1.text()))
             self.reduce_font_converter(self.wm_label_1, len(self.wm_label_1.text()))
             self.reduce_font_converter(self.wm_label_2, len(self.wm_label_2.text()))
 
@@ -730,7 +930,6 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
                     pass
                 else:
                     self.len_label_1.setText(self.len_label_1.text() + data)
-                self.len_calculations(float(self.len_label_1.text()))
             elif data == '<':
                 if self.len_label_1.text() == '0':
                     self.len_enable()
@@ -757,6 +956,7 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
             elif data == 'CE':
                 self.len_label_1.clear()
                 self.len_label_2.clear()
+            self.len_calculations(float(self.len_label_1.text()))
             self.reduce_font_converter(self.len_label_1, len(self.len_label_1.text()))
             self.reduce_font_converter(self.len_label_2, len(self.len_label_2.text()))
 
@@ -858,7 +1058,6 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
                     pass
                 else:
                     self.vol_label_1.setText(self.vol_label_1.text() + data)
-                self.vol_calculations(float(self.vol_label_1.text()))
             elif data == '<':
                 if self.vol_label_1.text() == '0':
                     self.vol_enable()
@@ -885,6 +1084,7 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
             elif data == 'CE':
                 self.vol_label_1.clear()
                 self.vol_label_2.clear()
+            self.vol_calculations(float(self.vol_label_1.text()))
             self.reduce_font_converter(self.vol_label_1, len(self.vol_label_1.text()))
             self.reduce_font_converter(self.vol_label_2, len(self.vol_label_2.text()))
 
