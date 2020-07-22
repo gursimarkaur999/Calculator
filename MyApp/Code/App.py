@@ -359,13 +359,42 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
     def change_to_speed(self):
         MyMainWindow.winflag = 'sp'  # speed
         self.setupUiSpeed(self)
-
+        self.sp_zero.clicked.connect(lambda: self.get_speed('0'))
+        self.sp_one.clicked.connect(lambda: self.get_speed('1'))
+        self.sp_two.clicked.connect(lambda: self.get_speed('2'))
+        self.sp_three.clicked.connect(lambda: self.get_speed('3'))
+        self.sp_four.clicked.connect(lambda: self.get_speed('4'))
+        self.sp_five.clicked.connect(lambda: self.get_speed('5'))
+        self.sp_six.clicked.connect(lambda: self.get_speed('6'))
+        self.sp_seven.clicked.connect(lambda: self.get_speed('7'))
+        self.sp_eight.clicked.connect(lambda: self.get_speed('8'))
+        self.sp_nine.clicked.connect(lambda: self.get_speed('9'))
+        self.sp_back.clicked.connect(lambda: self.get_speed('<'))
+        self.sp_ce.clicked.connect(lambda: self.get_speed('CE'))
+        self.sp_point.clicked.connect(lambda: self.get_speed('.'))
+        self.sp_comboBox_1.activated[str].connect(lambda: self.sp_calculations(float(self.sp_label_1.text())))
+        self.sp_comboBox_2.activated[str].connect(lambda: self.sp_calculations(float(self.sp_label_1.text())))
         # linking Menu bar function
         self.link_menu_fnc()
 
     def change_to_time(self):
         MyMainWindow.winflag = 't'  # programmer
         self.setupUiTime(self)
+        self.t_zero.clicked.connect(lambda: self.get_time('0'))
+        self.t_one.clicked.connect(lambda: self.get_time('1'))
+        self.t_two.clicked.connect(lambda: self.get_time('2'))
+        self.t_three.clicked.connect(lambda: self.get_time('3'))
+        self.t_four.clicked.connect(lambda: self.get_time('4'))
+        self.t_five.clicked.connect(lambda: self.get_time('5'))
+        self.t_six.clicked.connect(lambda: self.get_time('6'))
+        self.t_seven.clicked.connect(lambda: self.get_time('7'))
+        self.t_eight.clicked.connect(lambda: self.get_time('8'))
+        self.t_nine.clicked.connect(lambda: self.get_time('9'))
+        self.t_back.clicked.connect(lambda: self.get_time('<'))
+        self.t_ce.clicked.connect(lambda: self.get_time('CE'))
+        self.t_point.clicked.connect(lambda: self.get_time('.'))
+        self.t_comboBox_1.activated[str].connect(lambda: self.t_calculations(float(self.t_label_1.text())))
+        self.t_comboBox_2.activated[str].connect(lambda: self.t_calculations(float(self.t_label_1.text())))
 
         # linking Menu bar function
         self.link_menu_fnc()
@@ -373,6 +402,21 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
     def change_to_power(self):
         MyMainWindow.winflag = 'pow'  # power
         self.setupUiPower(self)
+        self.pow_zero.clicked.connect(lambda: self.get_power('0'))
+        self.pow_one.clicked.connect(lambda: self.get_power('1'))
+        self.pow_two.clicked.connect(lambda: self.get_power('2'))
+        self.pow_three.clicked.connect(lambda: self.get_power('3'))
+        self.pow_four.clicked.connect(lambda: self.get_power('4'))
+        self.pow_five.clicked.connect(lambda: self.get_power('5'))
+        self.pow_six.clicked.connect(lambda: self.get_power('6'))
+        self.pow_seven.clicked.connect(lambda: self.get_power('7'))
+        self.pow_eight.clicked.connect(lambda: self.get_power('8'))
+        self.pow_nine.clicked.connect(lambda: self.get_power('9'))
+        self.pow_back.clicked.connect(lambda: self.get_power('<'))
+        self.pow_ce.clicked.connect(lambda: self.get_power('CE'))
+        self.pow_point.clicked.connect(lambda: self.get_power('.'))
+        self.pow_comboBox_1.activated[str].connect(lambda: self.pow_calculations(float(self.pow_label_1.text())))
+        self.pow_comboBox_2.activated[str].connect(lambda: self.pow_calculations(float(self.pow_label_1.text())))
 
         # linking Menu bar function
         self.link_menu_fnc()
@@ -380,6 +424,21 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
     def change_to_data(self):
         MyMainWindow.winflag = 'da'  # data
         self.setupUiData(self)
+        self.da_zero.clicked.connect(lambda: self.get_data('0'))
+        self.da_one.clicked.connect(lambda: self.get_data('1'))
+        self.da_two.clicked.connect(lambda: self.get_data('2'))
+        self.da_three.clicked.connect(lambda: self.get_data('3'))
+        self.da_four.clicked.connect(lambda: self.get_data('4'))
+        self.da_five.clicked.connect(lambda: self.get_data('5'))
+        self.da_six.clicked.connect(lambda: self.get_data('6'))
+        self.da_seven.clicked.connect(lambda: self.get_data('7'))
+        self.da_eight.clicked.connect(lambda: self.get_data('8'))
+        self.da_nine.clicked.connect(lambda: self.get_data('9'))
+        self.da_back.clicked.connect(lambda: self.get_data('<'))
+        self.da_ce.clicked.connect(lambda: self.get_data('CE'))
+        self.da_point.clicked.connect(lambda: self.get_data('.'))
+        self.da_comboBox_1.activated[str].connect(lambda: self.da_calculations(float(self.da_label_1.text())))
+        self.da_comboBox_2.activated[str].connect(lambda: self.da_calculations(float(self.da_label_1.text())))
 
         # linking Menu bar function
         self.link_menu_fnc()
@@ -387,6 +446,21 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
     def change_to_pressure(self):
         MyMainWindow.winflag = 'pr'  # pressure
         self.setupUiPressure(self)
+        self.pr_zero.clicked.connect(lambda: self.get_pressure('0'))
+        self.pr_one.clicked.connect(lambda: self.get_pressure('1'))
+        self.pr_two.clicked.connect(lambda: self.get_pressure('2'))
+        self.pr_three.clicked.connect(lambda: self.get_pressure('3'))
+        self.pr_four.clicked.connect(lambda: self.get_pressure('4'))
+        self.pr_five.clicked.connect(lambda: self.get_pressure('5'))
+        self.pr_six.clicked.connect(lambda: self.get_pressure('6'))
+        self.pr_seven.clicked.connect(lambda: self.get_pressure('7'))
+        self.pr_eight.clicked.connect(lambda: self.get_pressure('8'))
+        self.pr_nine.clicked.connect(lambda: self.get_pressure('9'))
+        self.pr_back.clicked.connect(lambda: self.get_pressure('<'))
+        self.pr_ce.clicked.connect(lambda: self.get_pressure('CE'))
+        self.pr_point.clicked.connect(lambda: self.get_pressure('.'))
+        self.pr_comboBox_1.activated[str].connect(lambda: self.pressure_calculations(float(self.pr_label_1.text())))
+        self.pr_comboBox_2.activated[str].connect(lambda: self.pressure_calculations(float(self.pr_label_1.text())))
 
         # linking Menu bar function
         self.link_menu_fnc()
@@ -394,6 +468,21 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
     def change_to_angle(self):
         MyMainWindow.winflag = 'a'  # angle
         self.setupUiAngle(self)
+        self.a_zero.clicked.connect(lambda: self.get_angle('0'))
+        self.a_one.clicked.connect(lambda: self.get_angle('1'))
+        self.a_two.clicked.connect(lambda: self.get_angle('2'))
+        self.a_three.clicked.connect(lambda: self.get_angle('3'))
+        self.a_four.clicked.connect(lambda: self.get_angle('4'))
+        self.a_five.clicked.connect(lambda: self.get_angle('5'))
+        self.a_six.clicked.connect(lambda: self.get_angle('6'))
+        self.a_seven.clicked.connect(lambda: self.get_angle('7'))
+        self.a_eight.clicked.connect(lambda: self.get_angle('8'))
+        self.a_nine.clicked.connect(lambda: self.get_angle('9'))
+        self.a_back.clicked.connect(lambda: self.get_angle('<'))
+        self.a_ce.clicked.connect(lambda: self.get_angle('CE'))
+        self.a_point.clicked.connect(lambda: self.get_angle('.'))
+        self.a_comboBox_1.activated[str].connect(lambda: self.angle_calculations(float(self.a_label_1.text())))
+        self.a_comboBox_2.activated[str].connect(lambda: self.angle_calculations(float(self.a_label_1.text())))
 
         # linking Menu bar function
         self.link_menu_fnc()
@@ -558,6 +647,779 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
                                      "border-radius: 22px;")
         except Exception as e:
             print(e)
+
+    # angle
+    def get_angle(self, data):
+        try:
+            if self.a_label_1.text() == '0':
+                self.a_label_1.setText(data)
+            elif data in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']:
+                if self.a_label_1.text() == 'Error':
+                    self.a_label_1.clear()
+                    self.a_label_1.setText(self.a_label_1.text() + data)
+                elif len(self.a_label_1.text()) == 30:
+                    pass
+                else:
+                    self.a_label_1.setText(self.a_label_1.text() + data)
+            elif data == '<':
+                if self.a_label_1.text() == '0':
+                    self.a_enable()
+                elif len(self.a_label_1.text()) == 1:
+                    self.a_label_1.setText('0')
+                elif len(self.a_label_1.text()) > 0:
+                    changed_data = list(self.a_label_1.text())
+                    changed_data.pop()
+                    sums = ''
+                    for i in changed_data:
+                        sums += i
+                    self.a_label_1.setText(sums)
+                else:
+                    pass
+
+            elif data == '.':
+                if '.' in self.a_label_1.text():
+                    pass
+                elif self.a_label_1.text() == '0' or self.a_label_1.text() == '':
+                    self.a_label_1.setText('0' + data)
+                else:
+                    self.a_label_1.setText(self.a_label_1.text() + data)
+
+            elif data == 'CE':
+                self.a_label_1.clear()
+                self.a_label_2.clear()
+            self.a_calculations(float(self.a_label_1.text()))
+            self.reduce_font_converter(self.a_label_1, len(self.a_label_1.text()))
+            self.reduce_font_converter(self.a_label_2, len(self.a_label_2.text()))
+
+        except Exception as e:
+            print(e)
+
+    def a_enable(self):
+        self.a_point.setEnabled(True)
+
+    def a_disable(self):
+        self.a_point.setEnabled(False)
+
+    def a_calculations(self, value):
+        try:
+            self.combo_option1 = self.a_comboBox_1.currentText()
+            self.combo_option2 = self.a_comboBox_2.currentText()
+            get = 0
+            if self.combo_option1 == 'Degrees':
+                if self.combo_option2 == 'Degrees':
+                    get = value
+                elif self.combo_option2 == 'Radians':
+                    get = value * 0.017453
+                elif self.combo_option2 == 'Gradians':
+                    get = value * 1.111111
+
+            elif self.combo_option1 == 'Radians':
+                if self.combo_option2 == 'Degrees':
+                    get = value * 57.29578
+                elif self.combo_option2 == 'Radians':
+                    get = value
+                elif self.combo_option2 == 'Gradians':
+                    get = value * 63.66198
+
+            elif self.combo_option1 == 'Gradians':
+                if self.combo_option2 == 'Degrees':
+                    get = value * 0.9
+                elif self.combo_option2 == 'Radians':
+                    get = value * 0.015708
+                elif self.combo_option2 == 'Gradians':
+                    get = value
+
+
+            self.a_label_2.setText(str(get))
+        except Exception as e:
+            self.a_label_2.setText("Error")
+
+    # pressure
+    def get_pressure(self, data):
+        try:
+            if self.pr_label_1.text() == '0':
+                self.pr_label_1.setText(data)
+            elif data in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']:
+                if self.pr_label_1.text() == 'Error':
+                    self.pr_label_1.clear()
+                    self.pr_label_1.setText(self.pr_label_1.text() + data)
+                elif len(self.pr_label_1.text()) == 30:
+                    pass
+                else:
+                    self.pr_label_1.setText(self.pr_label_1.text() + data)
+            elif data == '<':
+                if self.pr_label_1.text() == '0':
+                    self.pr_enable()
+                elif len(self.pr_label_1.text()) == 1:
+                    self.pr_label_1.setText('0')
+                elif len(self.pr_label_1.text()) > 0:
+                    changed_data = list(self.pr_label_1.text())
+                    changed_data.pop()
+                    sums = ''
+                    for i in changed_data:
+                        sums += i
+                    self.pr_label_1.setText(sums)
+                else:
+                    pass
+
+            elif data == '.':
+                if '.' in self.pr_label_1.text():
+                    pass
+                elif self.pr_label_1.text() == '0' or self.pr_label_1.text() == '':
+                    self.pr_label_1.setText('0' + data)
+                else:
+                    self.pr_label_1.setText(self.pr_label_1.text() + data)
+
+            elif data == 'CE':
+                self.pr_label_1.clear()
+                self.pr_label_2.clear()
+            self.pr_calculations(float(self.pr_label_1.text()))
+            self.reduce_font_converter(self.pr_label_1, len(self.pr_label_1.text()))
+            self.reduce_font_converter(self.pr_label_2, len(self.pr_label_2.text()))
+
+        except Exception as e:
+            print(e)
+
+    def pr_enable(self):
+        self.pr_point.setEnabled(True)
+
+    def pr_disable(self):
+        self.pr_point.setEnabled(False)
+
+    def pr_calculations(self, value):
+        try:
+            self.combo_option1 = self.pr_comboBox_1.currentText()
+            self.combo_option2 = self.pr_comboBox_2.currentText()
+            get = 0
+            if self.combo_option1 == 'Atmosphere':
+                if self.combo_option2 == 'Atmosphere':
+                    get = value
+                elif self.combo_option2 == 'Bars':
+                    get = value * 1.01325
+                elif self.combo_option2 == 'Kilopascals':
+                    get = value * 101.325
+                elif self.combo_option2 == 'Millimeters of mercury':
+                    get = value * 760.1275
+                elif self.combo_option2 == 'Pascals':
+                    get = value * 101325
+                elif self.combo_option2 == 'Pounds per square inch':
+                    get = value * 14.69595
+            elif self.combo_option1 == 'Bars':
+                if self.combo_option2 == 'Atmosphere':
+                    get = value * 0.986923
+                elif self.combo_option2 == 'Bars':
+                    get = value
+                elif self.combo_option2 == 'Kilopascals':
+                    get = value * 100
+                elif self.combo_option2 == 'Millimeters of mercury':
+                    get = value * 750.1875
+                elif self.combo_option2 == 'Pascals':
+                    get = value * 100000
+                elif self.combo_option2 == 'Pounds per square inch':
+                    get = value * 14.50377
+            elif self.combo_option1 == 'Kilopascals':
+                if self.combo_option2 == 'Atmosphere':
+                    get = value * 0.009869
+                elif self.combo_option2 == 'Bars':
+                    get = value / 100
+                elif self.combo_option2 == 'Kilopascals':
+                    get = value
+                elif self.combo_option2 == 'Millimeters of mercury':
+                    get = value * 7.501875
+                elif self.combo_option2 == 'Pascals':
+                    get = value * 1000
+                elif self.combo_option2 == 'Pounds per square inch':
+                    get = value * 0.145038
+            elif self.combo_option1 == 'Millimeters of mercury':
+                if self.combo_option2 == 'Atmosphere':
+                    get = value * 0.001316
+                elif self.combo_option2 == 'Bars':
+                    get = value * 0.001333
+                elif self.combo_option2 == 'Kilopascals':
+                    get = value * 0.1333
+                elif self.combo_option2 == 'Millimeters of mercury':
+                    get = value
+                elif self.combo_option2 == 'Pascals':
+                    get = value * 133.3
+                elif self.combo_option2 == 'Pounds per square inch':
+                    get = value * 0.019334
+            elif self.combo_option1 == 'Pascals':
+                if self.combo_option2 == 'Atmosphere':
+                    get = value * 0.00001
+                elif self.combo_option2 == 'Bars':
+                    get = value * 0.00001
+                elif self.combo_option2 == 'Kilopascals':
+                    get = value * 0.001
+                elif self.combo_option2 == 'Millimeters of mercury':
+                    get = value * 0.007502
+                elif self.combo_option2 == 'Pascals':
+                    get = value
+                elif self.combo_option2 == 'Pounds per square inch':
+                    get = value * 0.000145
+            elif self.combo_option1 == 'Pounds per square inch':
+                if self.combo_option2 == 'Atmosphere':
+                    get = value * 0.068046
+                elif self.combo_option2 == 'Bars':
+                    get = value * 0.068948
+                elif self.combo_option2 == 'Kilopascals':
+                    get = value * 6.894757
+                elif self.combo_option2 == 'Millimeters of mercury':
+                    get = value * 51.72361
+                elif self.combo_option2 == 'Pascals':
+                    get = value* 6894.757
+                elif self.combo_option2 == 'Pounds per square inch':
+                    get = value
+
+            self.pr_label_2.setText(str(get))
+        except Exception as e:
+            self.pr_label_2.setText("Error")
+
+    # data
+    def get_data(self, data):
+            try:
+                if self.da_label_1.text() == '0':
+                    self.da_label_1.setText(data)
+                elif data in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']:
+                    if self.da_label_1.text() == 'Error':
+                        self.da_label_1.clear()
+                        self.da_label_1.setText(self.da_label_1.text() + data)
+                    elif len(self.da_label_1.text()) == 30:
+                        pass
+                    else:
+                        self.da_label_1.setText(self.da_label_1.text() + data)
+                elif data == '<':
+                    if self.da_label_1.text() == '0':
+                        self.da_enable()
+                    elif len(self.da_label_1.text()) == 1:
+                        self.da_label_1.setText('0')
+                    elif len(self.da_label_1.text()) > 0:
+                        changed_data = list(self.da_label_1.text())
+                        changed_data.pop()
+                        sums = ''
+                        for i in changed_data:
+                            sums += i
+                        self.da_label_1.setText(sums)
+                    else:
+                        pass
+
+                elif data == '.':
+                    if '.' in self.da_label_1.text():
+                        pass
+                    elif self.da_label_1.text() == '0' or self.da_label_1.text() == '':
+                        self.da_label_1.setText('0' + data)
+                    else:
+                        self.da_label_1.setText(self.da_label_1.text() + data)
+
+                elif data == 'CE':
+                    self.da_label_1.clear()
+                    self.da_label_2.clear()
+                self.da_calculations(float(self.da_label_1.text()))
+                self.reduce_font_converter(self.da_label_1, len(self.da_label_1.text()))
+                self.reduce_font_converter(self.da_label_2, len(self.da_label_2.text()))
+
+            except Exception as e:
+                print(e)
+
+    def da_enable(self):
+        self.da_point.setEnabled(True)
+
+    def da_disable(self):
+        self.da_point.setEnabled(False)
+
+    def da_calculations(self, value):
+        try:
+            self.combo_option1 = self.da_comboBox_1.currentText()
+            self.combo_option2 = self.da_comboBox_2.currentText()
+            get = 0
+            if self.combo_option1 == 'Bytes':
+                if self.combo_option2 == 'Bytes':
+                    get = value
+                elif self.combo_option2 == 'Kilobytes':
+                    get = value / 1000
+                elif self.combo_option2 == 'Megabytes':
+                    get = value / 1000000
+                elif self.combo_option2 == 'Gigabytes':
+                    get = value / 1000000000
+                elif self.combo_option2 == 'Terabytes':
+                    get = value / 1000000000000
+                elif self.combo_option2 == 'Petabytes':
+                    get = eval(str(value) + '* 1.000000e-15')
+                elif self.combo_option2 == 'Exabytes':
+                    get = eval(str(value) + '* 1.000000e-18')
+                elif self.combo_option2 == 'Zetabytes':
+                    get = eval(str(value) + '* 1.000000e-21')
+                elif self.combo_option2 == 'Yottabyte':
+                    get = eval(str(value) + '* 1.000000e-24')
+
+            elif self.combo_option1 == 'Kilobytes':
+                if self.combo_option2 == 'Bytes':
+                    get = value * 1000
+                elif self.combo_option2 == 'Kilobytes':
+                    get = value
+                elif self.combo_option2 == 'Megabytes':
+                    get = value / 1000
+                elif self.combo_option2 == 'Gigabytes':
+                    get = value / 1000000
+                elif self.combo_option2 == 'Terabytes':
+                    get = value / 1000000000
+                elif self.combo_option2 == 'Petabytes':
+                    get = value / 1000000000000
+                elif self.combo_option2 == 'Exabytes':
+                    get = eval(str(value) + '* 1.000000e-15')
+                elif self.combo_option2 == 'Zetabytes':
+                    get = eval(str(value) + '* 1.000000e-18')
+                elif self.combo_option2 == 'Yottabyte':
+                    get = eval(str(value) + '* 1.000000e-21')
+
+            elif self.combo_option1 == 'Megabytes':
+                if self.combo_option2 == 'Bytes':
+                    get = value * 1000000
+                elif self.combo_option2 == 'Kilobytes':
+                    get = value * 1000
+                elif self.combo_option2 == 'Megabytes':
+                    get = value
+                elif self.combo_option2 == 'Gigabytes':
+                    get = value / 1000
+                elif self.combo_option2 == 'Terabytes':
+                    get = value / 1000000
+                elif self.combo_option2 == 'Petabytes':
+                    get = value / 1000000000
+                elif self.combo_option2 == 'Exabytes':
+                    get = value / 1000000000000
+                elif self.combo_option2 == 'Zetabytes':
+                    get = eval(str(value) + '* 1.000000e-15')
+                elif self.combo_option2 == 'Yottabyte':
+                    get = eval(str(value) + '* 1.000000e-18')
+
+            elif self.combo_option1 == 'Gigabytes':
+                if self.combo_option2 == 'Bytes':
+                    get = value * 1000000000
+                elif self.combo_option2 == 'Kilobytes':
+                    get = value * 1000000
+                elif self.combo_option2 == 'Megabytes':
+                    get = value * 1000
+                elif self.combo_option2 == 'Gigabytes':
+                    get = value
+                elif self.combo_option2 == 'Terabytes':
+                    get = value / 1000
+                elif self.combo_option2 == 'Petabytes':
+                    get = value / 1000000
+                elif self.combo_option2 == 'Exabytes':
+                    get = value / 1000000000
+                elif self.combo_option2 == 'Zetabytes':
+                    get = value / 1000000000000
+                elif self.combo_option2 == 'Yottabyte':
+                    get = eval(str(value) + '* 1.000000e-15')
+
+            elif self.combo_option1 == 'Terabytes':
+                if self.combo_option2 == 'Bytes':
+                    get = value * 1000000000000
+                elif self.combo_option2 == 'Kilobytes':
+                    get = value * 1000000000
+                elif self.combo_option2 == 'Megabytes':
+                    get = value * 1000000
+                elif self.combo_option2 == 'Gigabytes':
+                    get = value * 1000
+                elif self.combo_option2 == 'Terabytes':
+                    get = value
+                elif self.combo_option2 == 'Petabytes':
+                    get = value / 1000
+                elif self.combo_option2 == 'Exabytes':
+                    get = value / 1000000
+                elif self.combo_option2 == 'Zetabytes':
+                    get = value / 1000000000
+                elif self.combo_option2 == 'Yottabyte':
+                    get = value / 1000000000000
+            elif self.combo_option1 == 'Petabytes':
+                if self.combo_option2 == 'Bytes':
+                    get = eval(str(value) + '* 1.000000e+15')
+                elif self.combo_option2 == 'Kilobytes':
+                    get = value * 1000000000000
+                elif self.combo_option2 == 'Megabytes':
+                    get = value * 1000000000
+                elif self.combo_option2 == 'Gigabytes':
+                    get = value * 1000000
+                elif self.combo_option2 == 'Terabytes':
+                    get = value * 1000
+                elif self.combo_option2 == 'Petabytes':
+                    get = value
+                elif self.combo_option2 == 'Exabytes':
+                    get = value / 1000
+                elif self.combo_option2 == 'Zetabytes':
+                    get = value / 1000000
+                elif self.combo_option2 == 'Yottabyte':
+                    get = value / 1000000000
+            elif self.combo_option1 == 'Exabytes':
+                if self.combo_option2 == 'Bytes':
+                    get = eval(str(value) + '* 1.000000e+18')
+                elif self.combo_option2 == 'Kilobytes':
+                    get = eval(str(value) + '* 1.000000e+15')
+                elif self.combo_option2 == 'Megabytes':
+                    get = value * 1000000000000
+                elif self.combo_option2 == 'Gigabytes':
+                    get = value * 1000000000
+                elif self.combo_option2 == 'Terabytes':
+                    get = value * 1000000
+                elif self.combo_option2 == 'Petabytes':
+                    get = value * 1000
+                elif self.combo_option2 == 'Exabytes':
+                    get = value
+                elif self.combo_option2 == 'Zetabytes':
+                    get = value / 1000
+                elif self.combo_option2 == 'Yottabyte':
+                    get = value / 1000000
+            elif self.combo_option1 == 'Zetabytes':
+                if self.combo_option2 == 'Bytes':
+                    get = eval(str(value) + '* 1.000000e+21')
+                elif self.combo_option2 == 'Kilobytes':
+                    get = eval(str(value) + '* 1.000000e+18')
+                elif self.combo_option2 == 'Megabytes':
+                    get = eval(str(value) + '* 1.000000e+15')
+                elif self.combo_option2 == 'Gigabytes':
+                    get = eval(str(value) + '* 1.000000e+12')
+                elif self.combo_option2 == 'Terabytes':
+                    get = eval(str(value) + '* 1.000000e+9')
+                elif self.combo_option2 == 'Petabytes':
+                    get = value * 1000000
+                elif self.combo_option2 == 'Exabytes':
+                    get = value * 1000
+                elif self.combo_option2 == 'Zetabytes':
+                    get = value
+                elif self.combo_option2 == 'Yottabyte':
+                    get = value / 1000
+            elif self.combo_option1 == 'Yottabyte':
+                if self.combo_option2 == 'Bytes':
+                    get = eval(str(value) + '* 1.000000e+24')
+                elif self.combo_option2 == 'Kilobytes':
+                    get = eval(str(value) + '* 1.000000e+21')
+                elif self.combo_option2 == 'Megabytes':
+                    get = eval(str(value) + '* 1.000000e+18')
+                elif self.combo_option2 == 'Gigabytes':
+                    get = eval(str(value) + '* 1.000000e+15')
+                elif self.combo_option2 == 'Terabytes':
+                    get = eval(str(value) + '* 1.000000e+12')
+                elif self.combo_option2 == 'Petabytes':
+                     get = eval(str(value) + '* 1.000000e+9')
+                elif self.combo_option2 == 'Exabytes':
+                    get = value * 1000000
+                elif self.combo_option2 == 'Zetabytes':
+                    get = value * 1000
+                elif self.combo_option2 == 'Yottabyte':
+                    get = value
+
+
+            self.da_label_2.setText(str(get))
+        except Exception as e:
+            self.da_label_2.setText("Error")
+
+    # power
+    def get_power(self, data):
+        try:
+            if self.pow_label_1.text() == '0':
+                self.pow_label_1.setText(data)
+            elif data in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']:
+                if self.pow_label_1.text() == 'Error':
+                    self.pow_label_1.clear()
+                    self.pow_label_1.setText(self.pow_label_1.text() + data)
+                elif len(self.pow_label_1.text()) == 30:
+                    pass
+                else:
+                    self.pow_label_1.setText(self.pow_label_1.text() + data)
+            elif data == '<':
+                if self.pow_label_1.text() == '0':
+                    self.pow_enable()
+                elif len(self.pow_label_1.text()) == 1:
+                    self.pow_label_1.setText('0')
+                elif len(self.pow_label_1.text()) > 0:
+                    changed_data = list(self.pow_label_1.text())
+                    changed_data.pop()
+                    sums = ''
+                    for i in changed_data:
+                        sums += i
+                    self.pow_label_1.setText(sums)
+                else:
+                    pass
+
+            elif data == '.':
+                if '.' in self.pow_label_1.text():
+                    pass
+                elif self.pow_label_1.text() == '0' or self.pow_label_1.text() == '':
+                    self.pow_label_1.setText('0' + data)
+                else:
+                    self.pow_label_1.setText(self.pow_label_1.text() + data)
+
+            elif data == 'CE':
+                self.pow_label_1.clear()
+                self.pow_label_2.clear()
+            self.pow_calculations(float(self.pow_label_1.text()))
+            self.reduce_font_converter(self.pow_label_1, len(self.pow_label_1.text()))
+            self.reduce_font_converter(self.pow_label_2, len(self.pow_label_2.text()))
+
+        except Exception as e:
+            print(e)
+
+    def pow_enable(self):
+        self.pow_point.setEnabled(True)
+
+    def pow_disable(self):
+        self.pow_point.setEnabled(False)
+
+    def pow_calculations(self, value):
+        try:
+            self.combo_option1 = self.pow_comboBox_1.currentText()
+            self.combo_option2 = self.pow_comboBox_2.currentText()
+            get = 0
+            if self.combo_option1 == 'Watts':
+                if self.combo_option2 == 'Watts':
+                    get = value
+                elif self.combo_option2 == 'Horsepower':
+                    get = value * 0.001341
+                elif self.combo_option2 == 'Kilowatts':
+                    get = value * 0.001
+
+            elif self.combo_option1 == 'Horsepower':
+                if self.combo_option2 == 'Watts':
+                    get = value * 745.6999
+                elif self.combo_option2 == 'Horsepower':
+                    get = value
+                elif self.combo_option2 == 'Kilowatts':
+                    get = value * 0.7457
+
+            elif self.combo_option1 == 'Kilowatts':
+                if self.combo_option2 == 'Watts':
+                    get = value * 1000
+                elif self.combo_option2 == 'Horsepower':
+                    get = value * 1.341022
+                elif self.combo_option2 == 'Kilowatts':
+                    get = value
+
+            self.pow_label_2.setText(str(get))
+        except Exception as e:
+            self.pow_label_2.setText("Error")
+
+    # time
+    def get_time(self, data):
+        try:
+            if self.t_label_1.text() == '0':
+                self.t_label_1.setText(data)
+            elif data in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']:
+                if self.t_label_1.text() == 'Error':
+                    self.t_label_1.clear()
+                    self.t_label_1.setText(self.t_label_1.text() + data)
+                elif len(self.t_label_1.text()) == 30:
+                    pass
+                else:
+                    self.t_label_1.setText(self.t_label_1.text() + data)
+            elif data == '<':
+                if self.t_label_1.text() == '0':
+                    self.t_enable()
+                elif len(self.t_label_1.text()) == 1:
+                    self.t_label_1.setText('0')
+                elif len(self.t_label_1.text()) > 0:
+                    changed_data = list(self.t_label_1.text())
+                    changed_data.pop()
+                    sums = ''
+                    for i in changed_data:
+                        sums += i
+                    self.t_label_1.setText(sums)
+                else:
+                    pass
+
+            elif data == '.':
+                if '.' in self.t_label_1.text():
+                    pass
+                elif self.t_label_1.text() == '0' or self.t_label_1.text() == '':
+                    self.t_label_1.setText('0' + data)
+                else:
+                    self.t_label_1.setText(self.t_label_1.text() + data)
+
+            elif data == 'CE':
+                self.t_label_1.clear()
+                self.t_label_2.clear()
+            self.t_calculations(float(self.t_label_1.text()))
+            self.reduce_font_converter(self.t_label_1, len(self.t_label_1.text()))
+            self.reduce_font_converter(self.t_label_2, len(self.t_label_2.text()))
+
+        except Exception as e:
+            print(e)
+
+    def t_enable(self):
+        self.t_point.setEnabled(True)
+
+    def t_disable(self):
+        self.t_point.setEnabled(False)
+
+    def t_calculations(self, value):
+        try:
+            self.combo_option1 = self.t_comboBox_1.currentText()
+            self.combo_option2 = self.t_comboBox_2.currentText()
+            get = 0
+            if self.combo_option1 == 'Seconds':
+                if self.combo_option2 == 'Seconds':
+                    get = value
+                elif self.combo_option2 == 'Minutes':
+                    get = value * 0.016667
+                elif self.combo_option2 == 'Hours':
+                    get = value * 0.000278
+                elif self.combo_option2 == 'Days':
+                    get = value * 0.000012
+                elif self.combo_option2 == 'Weeks':
+                    get = value * 0.000002
+                elif self.combo_option2 == 'Years':
+                    get = value * 0.000000031688088
+            elif self.combo_option1 == 'Minutes':
+                if self.combo_option2 == 'Seconds':
+                    get = value * 60
+                elif self.combo_option2 == 'Minutes':
+                    get = value
+                elif self.combo_option2 == 'Hours':
+                    get = value * 0.016667
+                elif self.combo_option2 == 'Days':
+                    get = value * 0.000694
+                elif self.combo_option2 == 'Weeks':
+                    get = value * 0.000099
+                elif self.combo_option2 == 'Years':
+                    get = value * 0.000002
+            elif self.combo_option1 == 'Hours':
+                if self.combo_option2 == 'Seconds':
+                    get = value * 3600
+                elif self.combo_option2 == 'Minutes':
+                    get = value * 60
+                elif self.combo_option2 == 'Hours':
+                    get = value
+                elif self.combo_option2 == 'Days':
+                    get = value * 0.041667
+                elif self.combo_option2 == 'Weeks':
+                    get = value * 0.005952
+                elif self.combo_option2 == 'Years':
+                    get = value * 0.000114
+            elif self.combo_option1 == 'Days':
+                if self.combo_option2 == 'Seconds':
+                    get = value * 86400
+                elif self.combo_option2 == 'Minutes':
+                    get = value * 1440
+                elif self.combo_option2 == 'Hours':
+                    get = value * 24
+                elif self.combo_option2 == 'Days':
+                    get = value
+                elif self.combo_option2 == 'Weeks':
+                    get = value * 0.142857
+                elif self.combo_option2 == 'Years':
+                    get = value * 0.002738
+            elif self.combo_option1 == 'Weeks':
+                if self.combo_option2 == 'Seconds':
+                    get = value * 604800
+                elif self.combo_option2 == 'Minutes':
+                    get = value * 10080
+                elif self.combo_option2 == 'Hours':
+                    get = value * 168
+                elif self.combo_option2 == 'Days':
+                    get = value * 7
+                elif self.combo_option2 == 'Weeks':
+                    get = value
+                elif self.combo_option2 == 'Years':
+                    get = value * 0.019165
+            elif self.combo_option1 == 'Years':
+                if self.combo_option2 == 'Seconds':
+                    get = value * 31557600
+                elif self.combo_option2 == 'Minutes':
+                    get = value * 525960
+                elif self.combo_option2 == 'Hours':
+                    get = value * 8766
+                elif self.combo_option2 == 'Days':
+                    get = value * 365.25
+                elif self.combo_option2 == 'Weeks':
+                    get = value * 52.17857
+                elif self.combo_option2 == 'Years':
+                    get = value
+            self.t_label_2.setText(str(get))
+        except Exception as e:
+            self.t_label_2.setText("Error")
+
+    # speed
+    def get_speed(self, data):
+        try:
+            if self.sp_label_1.text() == '0':
+                self.sp_label_1.setText(data)
+            elif data in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']:
+                if self.sp_label_1.text() == 'Error':
+                    self.sp_label_1.clear()
+                    self.sp_label_1.setText(self.sp_label_1.text() + data)
+                elif len(self.sp_label_1.text()) == 30:
+                    pass
+                else:
+                    self.sp_label_1.setText(self.sp_label_1.text() + data)
+            elif data == '<':
+                if self.sp_label_1.text() == '0':
+                    self.sp_enable()
+                elif len(self.sp_label_1.text()) == 1:
+                    self.sp_label_1.setText('0')
+                elif len(self.sp_label_1.text()) > 0:
+                    changed_data = list(self.sp_label_1.text())
+                    changed_data.pop()
+                    sums = ''
+                    for i in changed_data:
+                        sums += i
+                    self.sp_label_1.setText(sums)
+                else:
+                    pass
+
+            elif data == '.':
+                if '.' in self.sp_label_1.text():
+                    pass
+                elif self.sp_label_1.text() == '0' or self.sp_label_1.text() == '':
+                    self.sp_label_1.setText('0' + data)
+                else:
+                    self.sp_label_1.setText(self.sp_label_1.text() + data)
+
+            elif data == 'CE':
+                self.sp_label_1.clear()
+                self.sp_label_2.clear()
+            self.sp_calculations(float(self.sp_label_1.text()))
+            self.reduce_font_converter(self.sp_label_1, len(self.sp_label_1.text()))
+            self.reduce_font_converter(self.sp_label_2, len(self.sp_label_2.text()))
+
+        except Exception as e:
+            print(e)
+
+    def sp_enable(self):
+        self.sp_point.setEnabled(True)
+
+    def sp_disable(self):
+        self.sp_point.setEnabled(False)
+
+    def sp_calculations(self, value):
+        try:
+            self.combo_option1 = self.sp_comboBox_1.currentText()
+            self.combo_option2 = self.sp_comboBox_2.currentText()
+            get = 0
+            if self.combo_option1 == 'Centimeters per second':
+                if self.combo_option2 == 'Centimeters per second':
+                    get = value
+                elif self.combo_option2 == 'Meters per second':
+                    get = value / 100
+                elif self.combo_option2 == 'Kilometers per hour':
+                    get = value * 0.036
+
+            elif self.combo_option1 == 'Meters per second':
+                if self.combo_option2 == 'Centimeters per second':
+                    get = value * 100
+                elif self.combo_option2 == 'Meters per second':
+                    get = value
+                elif self.combo_option2 == 'Kilometers per hour':
+                    get = value * 3.6
+            elif self.combo_option1 == 'Kilometers per hour':
+                if self.combo_option2 == 'Centimeters per second':
+                    get = value * 27.77778
+                elif self.combo_option2 == 'Meters per second':
+                    get = value * 0.277778
+                elif self.combo_option2 == 'Kilometers per hour':
+                    get = value
+
+
+            self.sp_label_2.setText(str(get))
+        except Exception as e:
+            self.sp_label_2.setText("Error")
 
     # area
     def get_area(self, data):
