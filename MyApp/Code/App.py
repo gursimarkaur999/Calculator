@@ -1505,6 +1505,15 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
                     get = value
                 elif self.combo_option2 == 'Square Kilometers':
                     get = value / 1000000
+            elif self.combo_option1 == 'Square Kilometers':
+                if self.combo_option2 == 'Square millimeters':
+                    get = eval(str(value) + '* 1.0000e+12')
+                elif self.combo_option2 == 'Square centimeters':
+                    get = eval(str(value) + '* 1.000000e+10')
+                elif self.combo_option2 == 'Square meters':
+                    get = value * 1000000
+                elif self.combo_option2 == 'Square Kilometers':
+                    get = value
 
             self.area_label_2.setText(str(get))
         except Exception as e:
