@@ -1,6 +1,9 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import datetime
+
+from PyQt5.QtCore import QDate
 
 
 class Ui_MainWindow_Date(object):
@@ -11,7 +14,7 @@ class Ui_MainWindow_Date(object):
         MainWindow.setMaximumSize(QtCore.QSize(339, 565))
         MainWindow.setSizeIncrement(QtCore.QSize(0, 1))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../images/logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("../images/logo.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setToolTipDuration(-1)
         MainWindow.setLayoutDirection(QtCore.Qt.LeftToRight)
@@ -32,17 +35,14 @@ class Ui_MainWindow_Date(object):
         self.frame_calculations_display.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_calculations_display.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_calculations_display.setObjectName("frame_calculations_display")
-        self.dc_comboBox = QtWidgets.QComboBox(self.frame_calculations_display)
-        self.dc_comboBox.setGeometry(QtCore.QRect(0, 10, 261, 26))
+        self.dc_comboBox = QtWidgets.QLabel(self.frame_calculations_display)
         font = QtGui.QFont()
         font.setPointSize(12)
         self.dc_comboBox.setFont(font)
-        self.dc_comboBox.setStyleSheet("color: rgb(117, 117, 117);\n"
-)
-        self.dc_comboBox.setFrame(False)
+        self.dc_comboBox.setStyleSheet("color: rgb(117, 117, 117);")
         self.dc_comboBox.setObjectName("dc_comboBox")
-        self.dc_comboBox.addItem("")
-        self.dc_comboBox.addItem("")
+        self.dc_comboBox.setGeometry(QtCore.QRect(0, 10, 261, 26))
+
         self.label = QtWidgets.QLabel(self.frame)
         self.label.setGeometry(QtCore.QRect(20, 10, 311, 31))
         font = QtGui.QFont()
@@ -78,8 +78,13 @@ class Ui_MainWindow_Date(object):
         self.dc_diff.setFont(font)
         self.dc_diff.setStyleSheet("color: rgb(117, 117, 117);")
         self.dc_diff.setObjectName("dc_diff")
-        self.dc_from_date_btn = QtWidgets.QPushButton(self.frame)
+        self.dc_from_date_btn = QtWidgets.QDateEdit(self.frame)
         self.dc_from_date_btn.setEnabled(True)
+        currentDT = datetime.datetime.now()
+        d = QDate(currentDT.year, currentDT.month, currentDT.day)
+
+        # setting date to the date edit
+        self.dc_from_date_btn.setDate(d)
         self.dc_from_date_btn.setGeometry(QtCore.QRect(20, 170, 201, 31))
         font = QtGui.QFont()
         font.setPointSize(14)
@@ -88,28 +93,20 @@ class Ui_MainWindow_Date(object):
 "border-radius: 50px;\n"
 "background-color: rgb(232, 232, 232);\n"
 "")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("../images/calendar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.dc_from_date_btn.setIcon(icon1)
-        self.dc_from_date_btn.setAutoRepeat(False)
-        self.dc_from_date_btn.setAutoDefault(False)
-        self.dc_from_date_btn.setDefault(False)
-        self.dc_from_date_btn.setFlat(False)
+
         self.dc_from_date_btn.setObjectName("dc_from_date_btn")
-        self.dc_to_date_btn = QtWidgets.QPushButton(self.frame)
+        self.dc_to_date_btn = QtWidgets.QDateEdit(self.frame)
         self.dc_to_date_btn.setEnabled(True)
         self.dc_to_date_btn.setGeometry(QtCore.QRect(20, 250, 201, 31))
         font = QtGui.QFont()
         font.setPointSize(14)
         self.dc_to_date_btn.setFont(font)
+        self.dc_to_date_btn.setDate(d)
         self.dc_to_date_btn.setStyleSheet("color: rgb(117, 117, 117);\n"
 "border-radius: 50px;\n"
 "background-color: rgb(232, 232, 232);\n"
 "")
-        self.dc_to_date_btn.setIcon(icon1)
-        self.dc_to_date_btn.setAutoRepeat(False)
-        self.dc_to_date_btn.setDefault(False)
-        self.dc_to_date_btn.setFlat(True)
+
         self.dc_to_date_btn.setObjectName("dc_to_date_btn")
         self.dc_diff_val_2 = QtWidgets.QLabel(self.frame)
         self.dc_diff_val_2.setGeometry(QtCore.QRect(20, 370, 301, 31))
@@ -118,6 +115,7 @@ class Ui_MainWindow_Date(object):
         self.dc_diff_val_2.setFont(font)
         self.dc_diff_val_2.setStyleSheet("color: rgb(117, 117, 117);")
         self.dc_diff_val_2.setObjectName("dc_diff_val_2")
+        self.dc_diff_val_2.hide()
         MainWindow.setCentralWidget(self.centralwidget)
         self.menuBar = QtWidgets.QMenuBar(MainWindow)
         self.menuBar.setGeometry(QtCore.QRect(0, 0, 339, 26))
@@ -169,7 +167,7 @@ class Ui_MainWindow_Date(object):
         self.actionProgrammer.setIcon(icon8)
         self.actionProgrammer.setObjectName("actionProgrammer")
         self.actionDate_Calculation = QtWidgets.QAction(MainWindow)
-        self.actionDate_Calculation.setIcon(icon1)
+
         self.actionDate_Calculation.setObjectName("actionDate_Calculation")
         self.actionCurrency = QtWidgets.QAction(MainWindow)
         icon9 = QtGui.QIcon()
@@ -271,15 +269,12 @@ class Ui_MainWindow_Date(object):
     def dc_retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Calculator"))
-        self.dc_comboBox.setItemText(0, _translate("MainWindow", "Difference between dates"))
-        self.dc_comboBox.setItemText(1, _translate("MainWindow", "Add or Subtract Days"))
+        self.dc_comboBox.setText(_translate("MainWindow", "Difference between dates"))
         self.label.setText(_translate("MainWindow", "Date Calculation"))
         self.dc_from.setText(_translate("MainWindow", "From"))
-        self.dc_diff_val.setText(_translate("MainWindow", "0"))
+        self.dc_diff_val.setText(_translate("MainWindow", "Same Dates"))
         self.dc_to.setText(_translate("MainWindow", "To"))
         self.dc_diff.setText(_translate("MainWindow", "Difference"))
-        self.dc_from_date_btn.setText(_translate("MainWindow", "Date"))
-        self.dc_to_date_btn.setText(_translate("MainWindow", "Date"))
         self.dc_diff_val_2.setText(_translate("MainWindow", "0"))
         self.menuCalculator.setTitle(_translate("MainWindow", "Calculator"))
         self.menuConverter.setTitle(_translate("MainWindow", "Converter"))

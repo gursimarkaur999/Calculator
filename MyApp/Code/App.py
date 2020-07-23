@@ -17,7 +17,6 @@ from MyApp.PythonUIfiles.light_theme_Power import Ui_MainWindow_Power
 from MyApp.PythonUIfiles.light_theme_Data import Ui_MainWindow_Data
 from MyApp.PythonUIfiles.light_theme_Pressure import Ui_MainWindow_Pressure
 from MyApp.PythonUIfiles.light_theme_Angle import Ui_MainWindow_Angle
-
 import math
 from decimal import Decimal
 
@@ -166,23 +165,15 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
             self.p_d.clicked.connect(lambda: self.get_programmer('D'))
             self.p_e.clicked.connect(lambda: self.get_programmer('E'))
             self.p_f.clicked.connect(lambda: self.get_programmer('F'))
-            # print('0')
-            # self.p_label_hex.mousePressEvent = self.change_value_hex
-            # print('1')
-            # self.p_label_hex_val.mousePressEvent = self.change_value_hex
-            # print('2')
-            # self.p_label_dec.mousePressEvent = self.change_value_dec
-            # print('3')
-            # self.p_label_dec_val.mousePressEvent = self.change_value_dec
-            # print('4')
-            # self.p_label_oct.mousePressEvent = self.change_value_oct
-            # print('5')
-            # self.p_label_oct_val.mousePressEvent = self.change_value_oct
-            # print('6')
-            # self.p_label_bin.mousePressEvent = self.change_value_bin
-            # print('7')
-            # self.p_label_bin_val.mousePressEvent = self.change_value_bin
-            # print('8')
+
+            self.p_label_hex.mousePressEvent = self.change_value_hex
+            self.p_label_hex_val.mousePressEvent = self.change_value_hex
+            self.p_label_dec.mousePressEvent = self.change_value_dec
+            self.p_label_dec_val.mousePressEvent = self.change_value_dec
+            self.p_label_oct.mousePressEvent = self.change_value_oct
+            self.p_label_oct_val.mousePressEvent = self.change_value_oct
+            self.p_label_bin.mousePressEvent = self.change_value_bin
+            self.p_label_bin_val.mousePressEvent = self.change_value_bin
             # Disabling all button according to decimal conversion
             self.p_a.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
                                        "background-color: rgba(193, 193, 193, 70);\n"
@@ -221,9 +212,9 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
     def change_to_date(self):
         MyMainWindow.winflag = 'dc'  # date cal
         self.setupUiDate(self)
-
         # linking Menu bar function
         self.link_menu_fnc()
+
 
     def change_to_volume(self):
         MyMainWindow.winflag = 'vol'  # volume
@@ -487,15 +478,55 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
         # linking Menu bar function
         self.link_menu_fnc()
 
-    def change_value_hex(self):
+    def change_value_hex(self, event): # hex in programmer window
         try:
-            print('hex')
+
+            self.p_zero.setEnabled(True)
+            self.p_one.setEnabled(True)
+            self.p_two.setEnabled(True)
+            self.p_three.setEnabled(True)
+            self.p_four.setEnabled(True)
+            self.p_five.setEnabled(True)
+            self.p_six.setEnabled(True)
+            self.p_seven.setEnabled(True)
+            self.p_eight.setEnabled(True)
+            self.p_nine.setEnabled(True)
             self.p_a.setEnabled(True)
             self.p_b.setEnabled(True)
             self.p_c.setEnabled(True)
             self.p_d.setEnabled(True)
             self.p_e.setEnabled(True)
             self.p_f.setEnabled(True)
+            self.p_zero.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                   "background-color: rgb(193, 193, 193);\n"
+                                   "border-radius: 22px;")
+            self.p_one.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                  "background-color: rgb(193, 193, 193);\n"
+                                   "border-radius: 22px;")
+            self.p_two.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                   "background-color: rgb(193, 193, 193);\n"
+                                   "border-radius: 22px;")
+            self.p_three.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                   "background-color: rgb(193, 193, 193);\n"
+                                   "border-radius: 22px;")
+            self.p_four.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                   "background-color: rgb(193, 193, 193);\n"
+                                   "border-radius: 22px;")
+            self.p_five.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                   "background-color: rgb(193, 193, 193);\n"
+                                   "border-radius: 22px;")
+            self.p_six.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                   "background-color: rgb(193, 193, 193);\n"
+                                   "border-radius: 22px;")
+            self.p_seven.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                   "background-color: rgb(193, 193, 193);\n"
+                                   "border-radius: 22px;")
+            self.p_eight.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                   "background-color: rgb(193, 193, 193);\n"
+                                   "border-radius: 22px;")
+            self.p_nine.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                   "background-color: rgb(193, 193, 193);\n"
+                                   "border-radius: 22px;")
             self.p_a.setStyleSheet("color: rgb(120, 120, 120);\n"
                                    "background-color: rgb(232, 232, 232);\n"
                                    "border-radius: 22px;")
@@ -514,43 +545,96 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
             self.p_f.setStyleSheet("color: rgb(120, 120, 120);\n"
                                    "background-color: rgb(232, 232, 232);\n"
                                    "border-radius: 22px;")
+            self.p_label_2.setText(self.p_label_hex_val.text()[2:])
+            self.reduce_font_converter(self.p_label_3, len(self.p_label_3.text()))
+            self.reduce_font_converter(self.p_label_2, len(self.p_label_2.text()))
         except Exception as e:
             print(e)
 
-    def change_value_dec(self):
+    def change_value_dec(self, event): # dec in programmer window
         try:
-            print('dec')
 
+            self.p_zero.setEnabled(True)
+            self.p_one.setEnabled(True)
+            self.p_two.setEnabled(True)
+            self.p_three.setEnabled(True)
+            self.p_four.setEnabled(True)
+            self.p_five.setEnabled(True)
+            self.p_six.setEnabled(True)
+            self.p_seven.setEnabled(True)
+            self.p_eight.setEnabled(True)
+            self.p_nine.setEnabled(True)
             self.p_a.setEnabled(False)
             self.p_b.setEnabled(False)
             self.p_c.setEnabled(False)
             self.p_d.setEnabled(False)
             self.p_e.setEnabled(False)
             self.p_f.setEnabled(False)
-            self.p_a.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
-                                   "background-color: rgba(193, 193, 193, 27);\n"
-                                   "border-radius: 22px;")
-            self.p_b.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
-                                   "background-color: rgba(193, 193, 193, 27);\n"
-                                   "border-radius: 22px;")
-            self.p_c.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
-                                   "background-color: rgba(193, 193, 193, 27);\n"
-                                   "border-radius: 22px;")
-            self.p_d.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
-                                   "background-color: rgba(193, 193, 193, 27);\n"
-                                   "border-radius: 22px;")
-            self.p_e.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
-                                   "background-color: rgba(193, 193, 193, 27);\n"
-                                   "border-radius: 22px;")
-            self.p_f.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
-                                   "background-color: rgba(193, 193, 193, 27);\n"
-                                   "border-radius: 22px;")
+            self.p_zero.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                    "background-color: rgb(193, 193, 193);\n"
+                                    "border-radius: 22px;")
+            self.p_one.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                     "background-color: rgb(193, 193, 193);\n"
+                                     "border-radius: 22px;")
+            self.p_two.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                     "background-color: rgb(193, 193, 193);\n"
+                                     "border-radius: 22px;")
+            self.p_three.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                       "background-color: rgb(193, 193, 193);\n"
+                                       "border-radius: 22px;")
+            self.p_four.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                      "background-color: rgb(193, 193, 193);\n"
+                                      "border-radius: 22px;")
+            self.p_five.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                      "background-color: rgb(193, 193, 193);\n"
+                                      "border-radius: 22px;")
+            self.p_six.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                     "background-color: rgb(193, 193, 193);\n"
+                                     "border-radius: 22px;")
+            self.p_seven.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                       "background-color: rgb(193, 193, 193);\n"
+                                       "border-radius: 22px;")
+            self.p_eight.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                      "background-color: rgb(193, 193, 193);\n"
+                                       "border-radius: 22px;")
+            self.p_nine.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                      "background-color: rgb(193, 193, 193);\n"
+                                      "border-radius: 22px;")
+            self.p_a.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_b.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_c.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_d.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_e.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_f.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_label_2.setText(self.p_label_dec_val.text())
+            self.reduce_font_converter(self.p_label_3, len(self.p_label_3.text()))
+            self.reduce_font_converter(self.p_label_2, len(self.p_label_2.text()))
         except Exception as e:
             print(e)
 
-    def change_value_oct(self):
+    def change_value_oct(self, event): # oct in programmer window
         try:
-            print('oct')
+
+            self.p_zero.setEnabled(True)
+            self.p_one.setEnabled(True)
+            self.p_two.setEnabled(True)
+            self.p_three.setEnabled(True)
+            self.p_four.setEnabled(True)
+            self.p_five.setEnabled(True)
+            self.p_six.setEnabled(True)
+            self.p_seven.setEnabled(True)
             self.p_a.setEnabled(False)
             self.p_b.setEnabled(False)
             self.p_c.setEnabled(False)
@@ -559,36 +643,63 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
             self.p_f.setEnabled(False)
             self.p_eight.setEnabled(False)
             self.p_nine.setEnabled(False)
-            self.p_a.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
-                                   "background-color: rgba(193, 193, 193, 27);\n"
-                                   "border-radius: 22px;")
-            self.p_b.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
-                                   "background-color: rgba(193, 193, 193, 27);\n"
-                                   "border-radius: 22px;")
-            self.p_c.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
-                                   "background-color: rgba(193, 193, 193, 27);\n"
-                                   "border-radius: 22px;")
-            self.p_d.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
-                                   "background-color: rgba(193, 193, 193, 27);\n"
-                                   "border-radius: 22px;")
-            self.p_e.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
-                                   "background-color: rgba(193, 193, 193, 27);\n"
-                                   "border-radius: 22px;")
-            self.p_f.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
-                                   "background-color: rgba(193, 193, 193, 27);\n"
-                                   "border-radius: 22px;")
-            self.p_eight.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
-                                       "background-color: rgba(193, 193, 193, 27);\n"
-                                       "border-radius: 22px;")
-            self.p_nine.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
-                                      "background-color: rgba(193, 193, 193, 27);\n"
+            self.p_zero.setStyleSheet("color: rgb(120, 120, 120);\n"
+                            "background-color: rgb(193, 193, 193);\n"
                                       "border-radius: 22px;")
+            self.p_one.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                     "background-color: rgb(193, 193, 193);\n"
+                                     "border-radius: 22px;")
+            self.p_two.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                    "background-color: rgb(193, 193, 193);\n"                                   
+                                     "border-radius: 22px;")
+            self.p_three.setStyleSheet("color: rgb(120, 120, 120);\n"
+                            "background-color: rgb(193, 193, 193);\n"
+                                       "border-radius: 22px;")
+            self.p_four.setStyleSheet("color: rgb(120, 120, 120);\n"
+                            "background-color: rgb(193, 193, 193);\n"
+                                      "border-radius: 22px;")
+            self.p_five.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                    "background-color: rgb(193, 193, 193);\n"                                    
+                                      "border-radius: 22px;")
+            self.p_six.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                    "background-color: rgb(193, 193, 193);\n"                                    
+                                     "border-radius: 22px;")
+            self.p_seven.setStyleSheet("color: rgb(120, 120, 120);\n"
+                            "background-color: rgb(193, 193, 193);\n"
+                                       "border-radius: 22px;")
+            self.p_a.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_b.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_c.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_d.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_e.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_f.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_eight.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_nine.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_label_2.setText(self.p_label_oct_val.text()[2:])
+            self.reduce_font_converter(self.p_label_3, len(self.p_label_3.text()))
+            self.reduce_font_converter(self.p_label_2, len(self.p_label_2.text()))
         except Exception as e:
             print(e)
 
-    def change_value_bin(self):
+    def change_value_bin(self, event): # bin in programmer window
         try:
-            print('bin')
+
             self.p_a.setEnabled(False)
             self.p_b.setEnabled(False)
             self.p_c.setEnabled(False)
@@ -603,52 +714,78 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
             self.p_four.setEnabled(False)
             self.p_three.setEnabled(False)
             self.p_two.setEnabled(False)
-            self.p_a.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
-                                   "background-color: rgba(193, 193, 193, 27);\n"
-                                   "border-radius: 22px;")
-            self.p_b.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
-                                   "background-color: rgba(193, 193, 193, 27);\n"
-                                   "border-radius: 22px;")
-            self.p_c.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
-                                   "background-color: rgba(193, 193, 193, 27);\n"
-                                   "border-radius: 22px;")
-            self.p_d.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
-                                   "background-color: rgba(193, 193, 193, 27);\n"
-                                   "border-radius: 22px;")
-            self.p_e.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
-                                   "background-color: rgba(193, 193, 193, 27);\n"
-                                   "border-radius: 22px;")
-            self.p_f.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
-                                   "background-color: rgba(193, 193, 193, 27);\n"
-                                   "border-radius: 22px;")
-            self.p_eight.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
-                                       "background-color: rgba(193, 193, 193, 27);\n"
-                                       "border-radius: 22px;")
-            self.p_nine.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
-                                      "background-color: rgba(193, 193, 193, 27);\n"
+            self.p_one.setEnabled(True)
+            self.p_zero.setEnabled(True)
+            self.p_zero.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                      "background-color: rgb(193, 193, 193);\n"
                                       "border-radius: 22px;")
-            self.p_seven.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
-                                       "background-color: rgba(193, 193, 193, 27);\n"
-                                       "border-radius: 22px;")
-            self.p_six.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
-                                     "background-color: rgba(193, 193, 193, 27);\n"
+            self.p_one.setStyleSheet("color: rgb(120, 120, 120);\n"
+                                     "background-color: rgb(193, 193, 193);\n"
                                      "border-radius: 22px;")
-            self.p_five.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
-                                      "background-color: rgba(193, 193, 193, 27);\n"
-                                      "border-radius: 22px;")
-            self.p_four.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
-                                      "background-color: rgba(193, 193, 193, 27);\n"
-                                      "border-radius: 22px;")
-            self.p_three.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
-                                       "background-color: rgba(193, 193, 193, 27);\n"
+            self.p_a.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
                                        "border-radius: 22px;")
-            self.p_two.setStyleSheet("color: rgb(120, 120, 120, 27);\n"
-                                     "background-color: rgba(193, 193, 193, 27);\n"
-                                     "border-radius: 22px;")
+            self.p_b.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_c.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_d.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_e.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_f.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_eight.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_nine.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_seven.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_six.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_five.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_four.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_three.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_two.setStyleSheet("color: rgb(120, 120, 120, 90);\n"
+                                       "background-color: rgba(193, 193, 193, 70);\n"
+                                       "border-radius: 22px;")
+            self.p_label_2.setText(self.p_label_bin_val.text()[2:])
+            self.reduce_font_converter(self.p_label_3, len(self.p_label_3.text()))
+            self.reduce_font_converter(self.p_label_2, len(self.p_label_2.text()))
         except Exception as e:
             print(e)
 
-    # angle
+    #date cal
+    def finddays(self):
+        print("hello")
+        # DAYS_IN_WEEK = 7
+        # value = self.dc_to_date_btn.date()
+        # value1 = self.dc_from_date_btn.date()
+        # number_of_days = abs(value1-value)
+        # # Assume that years is
+        # # of 365 days
+        # year = int(number_of_days / 365)
+        # week = int((number_of_days % 365) /DAYS_IN_WEEK)
+        # days = (number_of_days % 365) % DAYS_IN_WEEK
+        # self.dc_diff_val_2.setText(number_of_days)
+        # self.dc_diff_val.setText(str(year) + "years" + str(week) + "weeks" + str(days) + "days")
+
+        # angle
     def get_angle(self, data):
         try:
             if self.a_label_1.text() == '0':
@@ -2017,11 +2154,8 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
                 self.p_enable()
             if self.p_label_2.text() == '0' and data not in ['+', '-', '*', '/', '=', '<', 'CE', '%', '+_-', '<<','>>', '(', ')']:
                 self.p_label_2.setText(data)
-                # converting value into hex, decimal, oct and bin
-                self.p_label_hex_val.setText(str(hex(int(self.p_label_2.text()))))
-                self.p_label_dec_val.setText(str(self.p_label_2.text()))
-                self.p_label_oct_val.setText(str(oct(int(self.p_label_2.text()))))
-                self.p_label_bin_val.setText(str(bin(int(self.p_label_2.text()))))
+
+
             elif data in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']:
                 if self.p_label_2.text() == 'Error':
                     self.p_label_2.clear()
@@ -2030,11 +2164,7 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
                     pass
                 else:
                     self.p_label_2.setText(self.p_label_2.text() + data)
-                #converting value into hex, decimal, oct and bin
-                self.p_label_hex_val.setText(str(hex(int(self.p_label_2.text()))))
-                self.p_label_dec_val.setText(str(self.p_label_2.text()))
-                self.p_label_oct_val.setText(str(oct(int(self.p_label_2.text()))))
-                self.p_label_bin_val.setText(str(bin(int(self.p_label_2.text()))))
+
             elif data in ['+', '-', '*', '/', '<<','>>', '%']:
                 if self.p_label_3.text() == '':
                     self.p_label_3.setText(self.p_label_2.text() + data)
@@ -2077,7 +2207,7 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
                     difference = len([x for x in list(self.p_label_3.text()) if x == '(']) - len(
                         [x for x in list(self.p_label_3.text()) if x == ')'])
                     self.p_label_3.setText(self.p_label_3.text() + self.p_label_2.text())
-                    print("hbjsbjds")
+
                     try:
                         for i in range(difference):
                             self.p_label_3.setText(self.p_label_3.text() + ')')
@@ -2085,36 +2215,35 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
 
                     except Exception as e:
                         print(e)
+
                 if self.p_label_3.text() == '':
-                    print('shjfs')
+
                     self.p_label_2.setText(self.p_label_2.text())
                 elif self.p_label_3.text() != '':
-                    print('fsd')
+
                     if list(self.p_label_3.text()).pop() in ['+', '-', '*', '/', '<','>', '%'] and self.p_label_2.text() == '':
-                        print("yess")
+
                         string_without_sign = list(self.p_label_3.text())
                         string_without_sign.pop()
                         string_sum = ''
                         for i in string_without_sign:
                             string_sum += i
+
                         result = self.p_calculations(string_sum)
                         self.p_label_2.setText(str(result))
                     elif list(self.p_label_3.text()).pop() in ['+', '-', '*', '/', '<','>', '%']:
-                        print("new_str")
+
                         new_str = self.p_label_3.text() + self.p_label_2.text()
                         self.p_label_3.setText(new_str)
+
                         result = self.p_calculations(new_str)
                         self.p_label_2.setText(str(result))
                     elif self.p_label_3.text() != '' and self.p_label_2.text() == '':
-                        print("no")
+
                         result = self.p_calculations(self.p_label_3.text())
                         self.p_label_2.setText(str(result))
                 self.p_label_3.clear()
-                #     converting value into hex, decimal, oct and bin
-                self.p_label_hex_val.setText(str(hex(int(self.p_label_2.text()))))
-                self.p_label_dec_val.setText(str(self.p_label_2.text()))
-                self.p_label_oct_val.setText(str(oct(int(self.p_label_2.text()))))
-                self.p_label_bin_val.setText(str(bin(int(self.p_label_2.text()))))
+
 
 
             elif data == '+_-':
@@ -2162,6 +2291,29 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
 
                 except Exception as e:
                     print(e)
+
+            # converting value into hex, decimal, oct and bin
+            # Checking which one is selected
+            if (self.p_a.isEnabled() == False) and (self.p_nine.isEnabled() == True):  # dec
+                self.p_label_hex_val.setText(str(hex(int(self.p_label_2.text()))))
+                self.p_label_dec_val.setText(str(self.p_label_2.text()))
+                self.p_label_oct_val.setText(str(oct(int(self.p_label_2.text()))))
+                self.p_label_bin_val.setText(str(bin(int(self.p_label_2.text()))))
+            elif (self.p_a.isEnabled() == True) and (self.p_nine.isEnabled() == True):  # hex
+                self.p_label_hex_val.setText(str('0x' + self.p_label_2.text()))
+                self.p_label_dec_val.setText(str(int(self.p_label_2.text(), 16)))
+                self.p_label_oct_val.setText(str(oct(int(self.p_label_2.text(), 16))))
+                self.p_label_bin_val.setText(str(bin(int(self.p_label_2.text(), 16)).zfill(8)))
+            elif (self.p_seven.isEnabled() == True) and (self.p_eight.isEnabled() == False):  # oct
+                self.p_label_hex_val.setText(str(hex(int(self.p_label_2.text(), 8))))
+                self.p_label_dec_val.setText(str(int(self.p_label_2.text(), 8)))
+                self.p_label_oct_val.setText(str('0o' + self.p_label_2.text()))
+                self.p_label_bin_val.setText(str(bin(int(self.p_label_2.text(), 8))))
+            elif (self.p_zero.isEnabled() == True) and (self.p_three.isEnabled() == False):  # bin
+                self.p_label_hex_val.setText(str(hex(int(self.p_label_2.text(), 2))))
+                self.p_label_dec_val.setText(str(int(self.p_label_2.text(), 2)))
+                self.p_label_oct_val.setText(str(oct(int(self.p_label_2.text(), 2))))
+                self.p_label_bin_val.setText(str('0b' + self.p_label_2.text()))
             self.reduce_font(self.p_label_2, len(self.p_label_2.text()))
 
 
@@ -2190,17 +2342,97 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
 
     def p_calculations(self, value):
         try:
-            get = eval(value)
-            if type(1.1) == type(get):
-                return math.trunc(get)
-            else:
-                return get
+            if (self.p_a.isEnabled() == False) and (self.p_nine.isEnabled() == True):  # dec
+                get = eval(value)
+                if type(1.1) == type(get):
+                    return math.trunc(get)
+                else:
+                    return get
+            elif (self.p_a.isEnabled() == True) and (self.p_nine.isEnabled() == True):  # hex
+                query = ''
+                operand = ''
+                for i in range(len(value)):
+                    if value[i] not in ['+', '-', '*', '/', '<', '>', '%', '(', ')']:
+                        operand = operand + value[i]
+                    elif value[i] in ['+', '-', '*', '/', '<', '>', '%', '(', ')']:
+                        if operand != '':
+                            operand = str(int(operand, 16))
+
+                        query = query + operand + value[i]
+                        operand = ''
+                else:
+                    if operand != '':
+                        operand = str(int(operand, 16))
+
+                    query = query + operand
+                    operand = ''
+
+
+                get = int(eval(query))
+                if type(1.1) == type(get):
+                    return hex(math.trunc(get))[2:]
+                else:
+                    return hex(get)[2:]
+            elif (self.p_seven.isEnabled() == True) and (self.p_eight.isEnabled() == False):  # oct
+                query = ''
+                operand = ''
+                for i in range(len(value)):
+                    if value[i] not in ['+', '-', '*', '/', '<', '>', '%', '(', ')']:
+                        operand = operand + value[i]
+
+                    elif value[i] in ['+', '-', '*', '/', '<', '>', '%', '(', ')']:
+                        if operand != '':
+                            operand = str(int(operand, 8))
+
+                        query = query + operand + value[i]
+                        operand = ''
+                else:
+                    if operand != '':
+                        operand = str(int(operand, 8))
+
+                    query = query + operand
+                    operand = ''
+
+                get = int(eval(query))
+                if type(1.1) == type(get):
+                    return oct(math.trunc(get))[2:]
+                else:
+                    return oct(get)[2:]
+
+            elif (self.p_zero.isEnabled() == True) and (self.p_three.isEnabled() == False):  # bin
+                query = ''
+                operand = ''
+                for i in range(len(value)):
+                    if value[i] not in ['+', '-', '*', '/', '<', '>', '%', '(', ')']:
+                        operand = operand + value[i]
+
+                    elif value[i] in ['+', '-', '*', '/', '<', '>', '%', '(', ')']:
+                        if operand != '':
+                            operand = str(int(operand, 2))
+
+                        query = query + operand + value[i]
+                        operand = ''
+                else:
+                    if operand != '':
+                        operand = str(int(operand, 2))
+
+                    query = query + operand
+                    operand = ''
+
+
+
+                get = int(eval(query))
+                if type(1.1) == type(get):
+                    return bin(math.trunc(get))[2:]
+                else:
+                    return bin(get)[2:]
         except ZeroDivisionError as e:
             self.p_label_3.clear()
             self.disable()
             return 'Error'
         except Exception as e:
             return 'Error'
+
     # Scientific window functions
     def get_scientific(self, data):
         if self.s_label_2.text() != 'Error':
@@ -2260,7 +2492,7 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
                 difference = len([x for x in list(self.s_label_3.text()) if x == '(']) - len(
                     [x for x in list(self.s_label_3.text()) if x == ')'])
                 self.s_label_3.setText(self.s_label_3.text() + self.s_label_2.text())
-                print("hbjsbjds")
+
                 try:
                     for i in range(difference):
                         self.s_label_3.setText(self.s_label_3.text() + ')')
@@ -2467,7 +2699,6 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
             result = '%.2E' % Decimal(result)
             obj.clear()
             obj.setText(result)
-
 
     def s_enable(self):
         self.s_plus.setEnabled(True)
@@ -2700,91 +2931,445 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
                 self.get('0')
             elif MyMainWindow.winFlag == 's':
                 self.get_scientific('0')
+            elif MyMainWindow.winFlag == 'p':
+                self.get_programmer('0')
+            elif MyMainWindow.winFlag == 'vol':
+                self.get_volume('0')
+            elif MyMainWindow.winFlag == 'len':
+                self.get_length('0')
+            elif MyMainWindow.winFlag == 'wm':
+                self.get_weightmass('0')
+            elif MyMainWindow.winFlag == 'temp':
+                self.get_temperature('0')
+            elif MyMainWindow.winFlag == 'ener':
+                self.get_energy('0')
+            elif MyMainWindow.winFlag == 'area':
+                self.get_area('0')
+            elif MyMainWindow.winFlag == 'sp':
+                self.get_speed('0')
+            elif MyMainWindow.winFlag == 't':
+                self.get_time('0')
+            elif MyMainWindow.winFlag == 'pow':
+                self.get_power('0')
+            elif MyMainWindow.winFlag == 'da':
+                self.get_data('0')
+            elif MyMainWindow.winFlag == 'pr':
+                self.get_pressure('0')
+            elif MyMainWindow.winFlag == 'a':
+                self.get_angle('0')
+
         elif event.key() == 49:  # 1
             if MyMainWindow.winFlag == 'n':
                 self.get('1')
             elif MyMainWindow.winFlag == 's':
                 self.get_scientific('1')
+            elif MyMainWindow.winFlag == 'p':
+                self.get_programmer('1')
+            elif MyMainWindow.winFlag == 'vol':
+                self.get_volume('1')
+            elif MyMainWindow.winFlag == 'len':
+                self.get_length('1')
+            elif MyMainWindow.winFlag == 'wm':
+                self.get_weightmass('1')
+            elif MyMainWindow.winFlag == 'temp':
+                self.get_temperature('1')
+            elif MyMainWindow.winFlag == 'ener':
+                self.get_energy('1')
+            elif MyMainWindow.winFlag == 'area':
+                self.get_area('1')
+            elif MyMainWindow.winFlag == 'sp':
+                self.get_speed('1')
+            elif MyMainWindow.winFlag == 't':
+                self.get_time('1')
+            elif MyMainWindow.winFlag == 'pow':
+                self.get_power('1')
+            elif MyMainWindow.winFlag == 'da':
+                self.get_data('1')
+            elif MyMainWindow.winFlag == 'pr':
+                self.get_pressure('1')
+            elif MyMainWindow.winFlag == 'a':
+                self.get_angle('1')
         elif event.key() == 50:  # 2
             if MyMainWindow.winFlag == 'n':
                 self.get('2')
             elif MyMainWindow.winFlag == 's':
                 self.get_scientific('2')
+            elif MyMainWindow.winFlag == 'p':
+                self.get_programmer('2')
+            elif MyMainWindow.winFlag == 'vol':
+                self.get_volume('2')
+            elif MyMainWindow.winFlag == 'len':
+                self.get_length('2')
+            elif MyMainWindow.winFlag == 'wm':
+                self.get_weightmass('2')
+            elif MyMainWindow.winFlag == 'temp':
+                self.get_temperature('2')
+            elif MyMainWindow.winFlag == 'ener':
+                self.get_energy('2')
+            elif MyMainWindow.winFlag == 'area':
+                self.get_area('2')
+            elif MyMainWindow.winFlag == 'sp':
+                self.get_speed('2')
+            elif MyMainWindow.winFlag == 't':
+                self.get_time('2')
+            elif MyMainWindow.winFlag == 'pow':
+                self.get_power('2')
+            elif MyMainWindow.winFlag == 'da':
+                self.get_data('2')
+            elif MyMainWindow.winFlag == 'pr':
+                self.get_pressure('2')
+            elif MyMainWindow.winFlag == 'a':
+                self.get_angle('2')
         elif event.key() == 51:  # 3
             if MyMainWindow.winFlag == 'n':
                 self.get('3')
             elif MyMainWindow.winFlag == 's':
                 self.get_scientific('3')
+            elif MyMainWindow.winFlag == 'p':
+                self.get_programmer('3')
+            elif MyMainWindow.winFlag == 'vol':
+                self.get_volume('3')
+            elif MyMainWindow.winFlag == 'len':
+                self.get_length('3')
+            elif MyMainWindow.winFlag == 'wm':
+                self.get_weightmass('3')
+            elif MyMainWindow.winFlag == 'temp':
+                self.get_temperature('3')
+            elif MyMainWindow.winFlag == 'ener':
+                self.get_energy('3')
+            elif MyMainWindow.winFlag == 'area':
+                self.get_area('3')
+            elif MyMainWindow.winFlag == 'sp':
+                self.get_speed('3')
+            elif MyMainWindow.winFlag == 't':
+                self.get_time('3')
+            elif MyMainWindow.winFlag == 'pow':
+                self.get_power('3')
+            elif MyMainWindow.winFlag == 'da':
+                self.get_data('3')
+            elif MyMainWindow.winFlag == 'pr':
+                self.get_pressure('3')
+            elif MyMainWindow.winFlag == 'a':
+                self.get_angle('3')
         elif event.key() == 52:  # 4
             if MyMainWindow.winFlag == 'n':
                 self.get('4')
             elif MyMainWindow.winFlag == 's':
                 self.get_scientific('4')
+            elif MyMainWindow.winFlag == 'p':
+                self.get_programmer('4')
+            elif MyMainWindow.winFlag == 'vol':
+                self.get_volume('4')
+            elif MyMainWindow.winFlag == 'len':
+                self.get_length('4')
+            elif MyMainWindow.winFlag == 'wm':
+                self.get_weightmass('4')
+            elif MyMainWindow.winFlag == 'temp':
+                self.get_temperature('4')
+            elif MyMainWindow.winFlag == 'ener':
+                self.get_energy('4')
+            elif MyMainWindow.winFlag == 'area':
+                self.get_area('4')
+            elif MyMainWindow.winFlag == 'sp':
+                self.get_speed('4')
+            elif MyMainWindow.winFlag == 't':
+                self.get_time('4')
+            elif MyMainWindow.winFlag == 'pow':
+                self.get_power('4')
+            elif MyMainWindow.winFlag == 'da':
+                self.get_data('4')
+            elif MyMainWindow.winFlag == 'pr':
+                self.get_pressure('4')
+            elif MyMainWindow.winFlag == 'a':
+                self.get_angle('4')
         elif event.key() == 53:  # 5
             if MyMainWindow.winFlag == 'n':
                 self.get('5')
             elif MyMainWindow.winFlag == 's':
                 self.get_scientific('5')
+            elif MyMainWindow.winFlag == 'p':
+                self.get_programmer('5')
+            elif MyMainWindow.winFlag == 'vol':
+                self.get_volume('5')
+            elif MyMainWindow.winFlag == 'len':
+                self.get_length('5')
+            elif MyMainWindow.winFlag == 'wm':
+                self.get_weightmass('5')
+            elif MyMainWindow.winFlag == 'temp':
+                self.get_temperature('5')
+            elif MyMainWindow.winFlag == 'ener':
+                self.get_energy('5')
+            elif MyMainWindow.winFlag == 'area':
+                self.get_area('5')
+            elif MyMainWindow.winFlag == 'sp':
+                self.get_speed('5')
+            elif MyMainWindow.winFlag == 't':
+                self.get_time('5')
+            elif MyMainWindow.winFlag == 'pow':
+                self.get_power('5')
+            elif MyMainWindow.winFlag == 'da':
+                self.get_data('5')
+            elif MyMainWindow.winFlag == 'pr':
+                self.get_pressure('5')
+            elif MyMainWindow.winFlag == 'a':
+                self.get_angle('5')
         elif event.key() == 54:  # 6
             if MyMainWindow.winFlag == 'n':
                 self.get('6')
             elif MyMainWindow.winFlag == 's':
                 self.get_scientific('6')
+            elif MyMainWindow.winFlag == 'p':
+                self.get_programmer('6')
+            elif MyMainWindow.winFlag == 'vol':
+                self.get_volume('6')
+            elif MyMainWindow.winFlag == 'len':
+                self.get_length('6')
+            elif MyMainWindow.winFlag == 'wm':
+                self.get_weightmass('6')
+            elif MyMainWindow.winFlag == 'temp':
+                self.get_temperature('6')
+            elif MyMainWindow.winFlag == 'ener':
+                self.get_energy('6')
+            elif MyMainWindow.winFlag == 'area':
+                self.get_area('6')
+            elif MyMainWindow.winFlag == 'sp':
+                self.get_speed('6')
+            elif MyMainWindow.winFlag == 't':
+                self.get_time('6')
+            elif MyMainWindow.winFlag == 'pow':
+                self.get_power('6')
+            elif MyMainWindow.winFlag == 'da':
+                self.get_data('6')
+            elif MyMainWindow.winFlag == 'pr':
+                self.get_pressure('6')
+            elif MyMainWindow.winFlag == 'a':
+                self.get_angle('6')
         elif event.key() == 55:  # 7
             if MyMainWindow.winFlag == 'n':
                 self.get('7')
             elif MyMainWindow.winFlag == 's':
                 self.get_scientific('7')
+            elif MyMainWindow.winFlag == 'p':
+                self.get_programmer('7')
+            elif MyMainWindow.winFlag == 'vol':
+                self.get_volume('7')
+            elif MyMainWindow.winFlag == 'len':
+                self.get_length('7')
+            elif MyMainWindow.winFlag == 'wm':
+                self.get_weightmass('7')
+            elif MyMainWindow.winFlag == 'temp':
+                self.get_temperature('7')
+            elif MyMainWindow.winFlag == 'ener':
+                self.get_energy('7')
+            elif MyMainWindow.winFlag == 'area':
+                self.get_area('7')
+            elif MyMainWindow.winFlag == 'sp':
+                self.get_speed('7')
+            elif MyMainWindow.winFlag == 't':
+                self.get_time('7')
+            elif MyMainWindow.winFlag == 'pow':
+                self.get_power('7')
+            elif MyMainWindow.winFlag == 'da':
+                self.get_data('7')
+            elif MyMainWindow.winFlag == 'pr':
+                self.get_pressure('7')
+            elif MyMainWindow.winFlag == 'a':
+                self.get_angle('7')
         elif event.key() == 56:  # 8
             if MyMainWindow.winFlag == 'n':
                 self.get('8')
             elif MyMainWindow.winFlag == 's':
                 self.get_scientific('8')
+            elif MyMainWindow.winFlag == 'p':
+                self.get_programmer('8')
+            elif MyMainWindow.winFlag == 'vol':
+                self.get_volume('8')
+            elif MyMainWindow.winFlag == 'len':
+                self.get_length('8')
+            elif MyMainWindow.winFlag == 'wm':
+                self.get_weightmass('8')
+            elif MyMainWindow.winFlag == 'temp':
+                self.get_temperature('8')
+            elif MyMainWindow.winFlag == 'ener':
+                self.get_energy('8')
+            elif MyMainWindow.winFlag == 'area':
+                self.get_area('8')
+            elif MyMainWindow.winFlag == 'sp':
+                self.get_speed('8')
+            elif MyMainWindow.winFlag == 't':
+                self.get_time('8')
+            elif MyMainWindow.winFlag == 'pow':
+                self.get_power('8')
+            elif MyMainWindow.winFlag == 'da':
+                self.get_data('8')
+            elif MyMainWindow.winFlag == 'pr':
+                self.get_pressure('8')
+            elif MyMainWindow.winFlag == 'a':
+                self.get_angle('8')
         elif event.key() == 57:  # 9
             if MyMainWindow.winFlag == 'n':
                 self.get('9')
             elif MyMainWindow.winFlag == 's':
                 self.get_scientific('9')
+            elif MyMainWindow.winFlag == 'p':
+                self.get_programmer('9')
+            elif MyMainWindow.winFlag == 'vol':
+                self.get_volume('9')
+            elif MyMainWindow.winFlag == 'len':
+                self.get_length('9')
+            elif MyMainWindow.winFlag == 'wm':
+                self.get_weightmass('9')
+            elif MyMainWindow.winFlag == 'temp':
+                self.get_temperature('9')
+            elif MyMainWindow.winFlag == 'ener':
+                self.get_energy('9')
+            elif MyMainWindow.winFlag == 'area':
+                self.get_area('9')
+            elif MyMainWindow.winFlag == 'sp':
+                self.get_speed('9')
+            elif MyMainWindow.winFlag == 't':
+                self.get_time('9')
+            elif MyMainWindow.winFlag == 'pow':
+                self.get_power('9')
+            elif MyMainWindow.winFlag == 'da':
+                self.get_data('9')
+            elif MyMainWindow.winFlag == 'pr':
+                self.get_pressure('9')
+            elif MyMainWindow.winFlag == 'a':
+                self.get_angle('9')
         elif event.key() == 43:  # +
             if MyMainWindow.winFlag == 'n':
                 self.get('+')
             elif MyMainWindow.winFlag == 's':
                 self.get_scientific('+')
+            elif MyMainWindow.winFlag == 'p':
+                self.get_programmer('+')
+
         elif event.key() == 45:  # -
             if MyMainWindow.winFlag == 'n':
                 self.get('-')
             elif MyMainWindow.winFlag == 's':
                 self.get_scientific('-')
+            elif MyMainWindow.winFlag == 'p':
+                self.get_programmer('-')
+
         elif event.key() == 42:  # *
             if MyMainWindow.winFlag == 'n':
                 self.get('*')
             elif MyMainWindow.winFlag == 's':
                 self.get_scientific('*')
+            elif MyMainWindow.winFlag == 'p':
+                self.get_programmer('*')
+
         elif event.key() == 47:  # /
             if MyMainWindow.winFlag == 'n':
                 self.get('/')
             elif MyMainWindow.winFlag == 's':
                 self.get_scientific('/')
+            elif MyMainWindow.winFlag == 'p':
+                self.get_programmer('/')
+
         elif event.key() == 37:  # %
             if MyMainWindow.winFlag == 'n':
                 self.get('%')
             elif MyMainWindow.winFlag == 's':
                 self.get_scientific('%')
+            elif MyMainWindow.winFlag == 'p':
+                self.get_programmer('%')
+
         elif event.key() == 16777219:  # Backspace
             if MyMainWindow.winFlag == 'n':
                 self.get('<')
             elif MyMainWindow.winFlag == 's':
                 self.get_scientific('<')
+            elif MyMainWindow.winFlag == 'p':
+                self.get_programmer('<')
+            elif MyMainWindow.winFlag == 'vol':
+                self.get_volume('<')
+            elif MyMainWindow.winFlag == 'len':
+                self.get_length('<')
+            elif MyMainWindow.winFlag == 'wm':
+                self.get_weightmass('<')
+            elif MyMainWindow.winFlag == 'temp':
+                self.get_temperature('<')
+            elif MyMainWindow.winFlag == 'ener':
+                self.get_energy('<')
+            elif MyMainWindow.winFlag == 'area':
+                self.get_area('<')
+            elif MyMainWindow.winFlag == 'sp':
+                self.get_speed('<')
+            elif MyMainWindow.winFlag == 't':
+                self.get_time('<')
+            elif MyMainWindow.winFlag == 'pow':
+                self.get_power('<')
+            elif MyMainWindow.winFlag == 'da':
+                self.get_data('<')
+            elif MyMainWindow.winFlag == 'pr':
+                self.get_pressure('<')
+            elif MyMainWindow.winFlag == 'a':
+                self.get_angle('<')
         elif event.key() == QtCore.Qt.Key_Enter:  # enter (=)
             if MyMainWindow.winFlag == 'n':
                 self.get('=')
             elif MyMainWindow.winFlag == 's':
                 self.get_scientific('=')
+            elif MyMainWindow.winFlag == 'p':
+                self.get_programmer('=')
+            elif MyMainWindow.winFlag == 'vol':
+                self.get_volume('=')
+            elif MyMainWindow.winFlag == 'len':
+                self.get_length('=')
+            elif MyMainWindow.winFlag == 'wm':
+                self.get_weightmass('=')
+            elif MyMainWindow.winFlag == 'temp':
+                self.get_temperature('=')
+            elif MyMainWindow.winFlag == 'ener':
+                self.get_energy('=')
+            elif MyMainWindow.winFlag == 'area':
+                self.get_area('=')
+            elif MyMainWindow.winFlag == 'sp':
+                self.get_speed('=')
+            elif MyMainWindow.winFlag == 't':
+                self.get_time('=')
+            elif MyMainWindow.winFlag == 'pow':
+                self.get_power('=')
+            elif MyMainWindow.winFlag == 'da':
+                self.get_data('=')
+            elif MyMainWindow.winFlag == 'pr':
+                self.get_pressure('=')
+            elif MyMainWindow.winFlag == 'a':
+                self.get_angle('=')
         elif event.key() == 61:
             if MyMainWindow.winFlag == 'n':
                 self.get('=')
             elif MyMainWindow.winFlag == 's':
                 self.get_scientific('=')
+            elif MyMainWindow.winFlag == 'p':
+                self.get_programmer('=')
+            elif MyMainWindow.winFlag == 'vol':
+                self.get_volume('=')
+            elif MyMainWindow.winFlag == 'len':
+                self.get_length('=')
+            elif MyMainWindow.winFlag == 'wm':
+                self.get_weightmass('=')
+            elif MyMainWindow.winFlag == 'temp':
+                self.get_temperature('=')
+            elif MyMainWindow.winFlag == 'ener':
+                self.get_energy('=')
+            elif MyMainWindow.winFlag == 'area':
+                self.get_area('=')
+            elif MyMainWindow.winFlag == 'sp':
+                self.get_speed('=')
+            elif MyMainWindow.winFlag == 't':
+                self.get_time('=')
+            elif MyMainWindow.winFlag == 'pow':
+                self.get_power('=')
+            elif MyMainWindow.winFlag == 'da':
+                self.get_data('=')
+            elif MyMainWindow.winFlag == 'pr':
+                self.get_pressure('=')
+            elif MyMainWindow.winFlag == 'a':
+                self.get_angle('=')
         elif event.key() == 46:  # . (point)
             if MyMainWindow.winFlag == 'n':
                 self.get('.')

@@ -11,7 +11,7 @@ class Ui_MainWindow_Time(object):
         MainWindow.setMaximumSize(QtCore.QSize(339, 565))
         MainWindow.setSizeIncrement(QtCore.QSize(0, 1))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../images/logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("../images/logo.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setToolTipDuration(-1)
         MainWindow.setLayoutDirection(QtCore.Qt.LeftToRight)
