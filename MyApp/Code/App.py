@@ -18,6 +18,7 @@ from MyApp.PythonUIfiles.light_theme_Data import Ui_MainWindow_Data
 from MyApp.PythonUIfiles.light_theme_Pressure import Ui_MainWindow_Pressure
 from MyApp.PythonUIfiles.light_theme_Angle import Ui_MainWindow_Angle
 import math
+from datetime import date
 from decimal import Decimal
 
 
@@ -212,6 +213,8 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
     def change_to_date(self):
         MyMainWindow.winflag = 'dc'  # date cal
         self.setupUiDate(self)
+        self.dc_from_date_btn.dateChanged.connect(lambda: self.finddays())
+        self.dc_to_date_btn.dateChanged.connect(lambda: self.finddays())
         # linking Menu bar function
         self.link_menu_fnc()
 
@@ -699,7 +702,6 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
 
     def change_value_bin(self, event): # bin in programmer window
         try:
-
             self.p_a.setEnabled(False)
             self.p_b.setEnabled(False)
             self.p_c.setEnabled(False)
@@ -772,18 +774,25 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow2, Ui_MainWindow_Scientif
 
     #date cal
     def finddays(self):
-        print("hello")
-        # DAYS_IN_WEEK = 7
-        # value = self.dc_to_date_btn.date()
-        # value1 = self.dc_from_date_btn.date()
-        # number_of_days = abs(value1-value)
-        # # Assume that years is
-        # # of 365 days
-        # year = int(number_of_days / 365)
-        # week = int((number_of_days % 365) /DAYS_IN_WEEK)
-        # days = (number_of_days % 365) % DAYS_IN_WEEK
-        # self.dc_diff_val_2.setText(number_of_days)
-        # self.dc_diff_val.setText(str(year) + "years" + str(week) + "weeks" + str(days) + "days")
+        DAYS_IN_WEEK = 7
+        value = self.dc_to_date_btn.date()
+        value1 = self.dc_from_date_btn.date()
+        # Assume that years is
+        # of 365 days
+        value = value.toString(QtCore.Qt.ISODate)
+        value1 = value1.toString(QtCore.Qt.ISODate)
+        value1 = value1.split('-')
+        value1 = date(int(value1[0]), int(value1[1]), int(value1[2]))
+        value = value.split('-')
+        value = date(int(value[0]), int(value[1]), int(value[2]))
+        number_of_days = value - value1
+        number_of_days = abs(int(number_of_days.days))
+        year = int(number_of_days / 365)
+        week = int((number_of_days % 365) /DAYS_IN_WEEK)
+        day = (number_of_days % 365) % DAYS_IN_WEEK
+        diff = str(year) + " years " + str(week) + " weeks " + str(day) + " days "
+        self.dc_diff_val_2.setText(str(number_of_days) + " days")
+        self.dc_diff_val.setText(diff)
 
         # angle
     def get_angle(self, data):
