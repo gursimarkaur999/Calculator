@@ -223,8 +223,7 @@ class Ui_MainWindow_Angle(object):
         icon3.addPixmap(QtGui.QPixmap("../images/recycle.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.menuConverter.setIcon(icon3)
         self.menuConverter.setObjectName("menuConverter")
-        self.menuHelp = QtWidgets.QMenu(self.menuBar)
-        self.menuHelp.setObjectName("menuHelp")
+
         MainWindow.setMenuBar(self.menuBar)
         self.actionDark = QtWidgets.QAction(MainWindow)
         self.actionDark.setObjectName("actionDark")
@@ -322,8 +321,7 @@ class Ui_MainWindow_Angle(object):
         icon21.addPixmap(QtGui.QPixmap("../images/angle.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.actionAngle.setIcon(icon21)
         self.actionAngle.setObjectName("actionAngle")
-        self.actionHelp = QtWidgets.QAction(MainWindow)
-        self.actionHelp.setObjectName("actionHelp")
+
         self.actionDark_ = QtWidgets.QAction(MainWindow)
         self.actionDark_.setObjectName("actionDark_")
         self.actionLight_ = QtWidgets.QAction(MainWindow)
@@ -349,7 +347,7 @@ class Ui_MainWindow_Angle(object):
         self.menuOption.addSeparator()
         self.menuOption.addAction(self.actionExit)
         self.menuBar.addAction(self.menuOption.menuAction())
-        self.menuBar.addAction(self.menuHelp.menuAction())
+
 
         self.a_retranslateUi(MainWindow)
         self.a_comboBox_2.setCurrentIndex(1)
@@ -384,7 +382,7 @@ class Ui_MainWindow_Angle(object):
         self.label.setText(_translate("MainWindow", "Angle"))
         self.menuCalculator.setTitle(_translate("MainWindow", "Calculator"))
         self.menuConverter.setTitle(_translate("MainWindow", "Converter"))
-        self.menuHelp.setTitle(_translate("MainWindow", "Help"))
+
         self.actionDark.setText(_translate("MainWindow", "Dark"))
         self.actionLight.setText(_translate("MainWindow", "Light"))
         self.actionSetting.setText(_translate("MainWindow", "Setting"))
@@ -406,7 +404,7 @@ class Ui_MainWindow_Angle(object):
         self.actionData.setText(_translate("MainWindow", "Data"))
         self.actionPressure.setText(_translate("MainWindow", "Pressure"))
         self.actionAngle.setText(_translate("MainWindow", "Angle"))
-        self.actionHelp.setText(_translate("MainWindow", "Help"))
+
         self.actionDark_.setText(_translate("MainWindow", "Dark"))
         self.actionLight_.setText(_translate("MainWindow", "Light"))
 
