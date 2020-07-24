@@ -5,15 +5,15 @@
 ---
 <!-- Step-2 Evaluate the project -->
 With this you can do basic-intermediate level calculations with handy GUI. Both keyword strokes and mouse click can be used to operate this system.
-![image](OutputImages/mainstandard.PNG)
+    ![image](OutputImages/mainstandard.PNG)
 
 
 <!-- Now describe who can use the project -->
 ### Features
 1. 4 calculators that are: Standard, Scientific, Programmer and Date Calculator.
-![image](OutputImages/calculatoroption.png)
+    ![image](OutputImages/calculatoroption.png)
 2. 12 converters: Volume, area, data, pressure, power, temperature, angle, length, time, weight and mass, speed and energy. 
-![image](OutputImages/converteroption.png)
+    ![image](OutputImages/converteroption.png)
 ### Users
 * Anyone.
 ---
